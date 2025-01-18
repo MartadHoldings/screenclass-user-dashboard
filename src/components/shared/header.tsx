@@ -4,7 +4,7 @@ import { inter } from "./fonts";
 
 function Header() {
   return (
-    <div className="flex items-center justify-between pt-7 pb-4 border-b border-b-SC-Deep-Blue">
+    <div className="ml-14 mr-7 flex items-center justify-between border-b border-b-SC-Deep-Blue pb-4 pt-7">
       <h1 className="segoe text-xl font-black text-[#1B1B1B]/80">
         My Students
       </h1>
@@ -20,7 +20,7 @@ function Header() {
         />
       </div>
       <div className="flex items-center gap-20">
-        <div className="flex gap-[18px] items-center">
+        <div className="flex items-center gap-[18px]">
           <Image
             src={"/guardian/ellipse.svg"}
             alt="ellipse"

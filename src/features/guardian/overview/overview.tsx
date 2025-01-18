@@ -3,7 +3,7 @@ import React from "react";
 import { inter } from "@/components/shared/fonts";
 import { publicSans } from "@/components/shared/fonts";
 import StudentsTable from "@/components/guardian/overview/students-table";
-import SubjectCard from "@/components/shared/subject-card";
+import SubjectCard from "@/components/guardian/my-students/subject-card";
 
 export const Overview = () => {
   return (
@@ -29,7 +29,7 @@ export const Overview = () => {
             <div className="mt-8 flex items-center justify-between rounded-[30px] bg-[rgba(27,181,247,0.29)] px-8 py-4">
               <div>
                 <h2
-                  className={`${inter.className} text-SC-Brand-Blue text-xl font-bold`}
+                  className={`${inter.className} text-xl font-bold text-SC-Brand-Blue`}
                 >
                   Welcome back IfeOluwa!
                 </h2>
@@ -71,7 +71,7 @@ export const Overview = () => {
                 width={80}
                 height={80}
               />
-              <div className="bg-SC-Brand-Blue -mt-2 ml-auto flex h-[18px] w-[18px] items-center justify-center rounded-full text-xl text-white">
+              <div className="-mt-2 ml-auto flex h-[18px] w-[18px] items-center justify-center rounded-full bg-SC-Brand-Blue text-xl text-white">
                 +
               </div>
             </div>

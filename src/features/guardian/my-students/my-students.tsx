@@ -5,7 +5,7 @@ import React from "react";
 function MyStudents() {
   return (
     <div className="min-h-screen bg-[#f1f1f1]">
-      <div className="min-h-screen ml-14 mr-7 bg-[#FAFAFA] pl-9 pr-[14px]">
+      <div className="min-h-screen bg-[#FAFAFA]">
         <Header />
         <Students />
       </div>
