@@ -1,10 +1,10 @@
 import React from "react";
-import { Settings } from "@/features/guardian/settings";
+import MyStudents from "@/features/guardian/my-students/my-students";
 
 export default function page() {
   return (
     <>
-      <Settings />
+      <MyStudents />
     </>
   );
 }

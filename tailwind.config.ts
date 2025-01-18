@@ -16,6 +16,8 @@ export default {
         "SC-Light-Blue": "#109AB7",
         "SC-Orange": "#F7631B",
         "SC-Brand-Blue": "#0966AB",
+        "SC-Bland": "#F5F5F5",
+        "SC-Blue": "#016AAD",
       },
     },
   },

@@ -7,7 +7,7 @@ import { inter } from "./fonts";
 
 function SideNav() {
   return (
-    <div className="fixed flex min-h-screen h-full overflow-y-scroll flex-col justify-between gap-28 2xl:gap-0 py-20">
+    <div className="fixed flex h-full min-h-screen flex-col justify-between gap-28 overflow-y-scroll bg-white py-20 2xl:gap-0">
       <div className="space-y-20">
         {/* logo */}
         <div className="flex items-center justify-center">
@@ -22,7 +22,7 @@ function SideNav() {
         </div>
         <Navlinks />
       </div>
-      <div className="flex justify-center items-center">
+      <div className="flex items-center justify-center">
         <div className="flex h-[200px] w-[170px] flex-col items-center justify-between rounded-[10px] bg-SC-Light-Blue/20 pb-3">
           <Image
             src={"/guardian/brazuca-planning.svg"}

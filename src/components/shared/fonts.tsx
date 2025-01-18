@@ -1,4 +1,4 @@
-import { Inter, Mulish, Public_Sans } from "next/font/google";
+import { Inter, Mulish, Nunito, Public_Sans } from "next/font/google";
 
 export const publicSans = Public_Sans({
   variable: "--font-public-sans",
@@ -12,5 +12,10 @@ export const inter = Inter({
 
 export const mulish = Mulish({
   variable: "--font-mulish",
+  subsets: ["latin"],
+});
+
+export const nunito = Nunito({
+  variable: "--font-nunito",
   subsets: ["latin"],
 });

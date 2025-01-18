@@ -19,7 +19,7 @@ const links = [
   {
     id: 2,
     name: "My Students",
-    href: "/guardian/dashboard/students",
+    href: "/guardian/my-students",
     iconSrc: StudentsIcon,
   },
   {

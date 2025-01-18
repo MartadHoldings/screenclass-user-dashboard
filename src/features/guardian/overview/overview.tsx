@@ -8,7 +8,7 @@ import SubjectCard from "@/components/shared/subject-card";
 export const Overview = () => {
   return (
     <>
-      <div className="">
+      <div className="bg-[#FBFBFB] pl-14">
         <div className="grid grid-cols-3 items-end gap-16">
           {/* hero */}
           <div className="col-span-2">
