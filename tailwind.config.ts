@@ -12,6 +12,10 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        "SC-Deep-Blue": "#082038",
+        "SC-Light-Blue": "#109AB7",
+        "SC-Orange": "#F7631B",
+        "SC-Brand-Blue": "#0966AB",
       },
     },
   },
