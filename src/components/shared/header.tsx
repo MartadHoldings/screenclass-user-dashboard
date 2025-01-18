@@ -2,11 +2,11 @@ import Image from "next/image";
 import React from "react";
 import { inter } from "./fonts";
 
-function Header() {
+function Header({title}: {title: string}) {
   return (
-    <div className="ml-14 mr-7 flex items-center justify-between border-b border-b-SC-Deep-Blue pb-4 pt-7">
+    <div className="flex items-center justify-between border-b border-b-SC-Deep-Blue pb-4 pt-7">
       <h1 className="segoe text-xl font-black text-[#1B1B1B]/80">
-        My Students
+        {title}
       </h1>
       <div className="flex items-center gap-6">
         <p className={`${inter.className} text-[15px] font-light`}>

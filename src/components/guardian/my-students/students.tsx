@@ -8,7 +8,7 @@ function Students() {
   const [showAddStudentModal, setShowAddStudentModal] = useState(false);
   const [showManageStudentsModal, setShowManageStudentsModal] = useState(false);
   return (
-    <div className="ml-14 mr-7">
+    <div className="">
       {showAddStudentModal && (
         <RegisterStudentModal
           isOpen={showAddStudentModal}

@@ -5,13 +5,13 @@ export const StudentPerformance = () => {
   return (
     <>
       <div className="min-h-screen bg-[#f1f1f1]">
-        <div className="min-h-screen bg-[#FAFAFA]">
-          <Header />
-          <div className="py-5 ml-14">
-            <h2 className="segoe text-xl text-[#1B1B1B]">
+        <div className="mx-7 pl-9 pr-4 min-h-screen bg-[#FAFAFA]">
+          <Header title="My Students" />
+          <div className="">
+            <h2 className="my-6 segoe text-xl text-[#1B1B1B]">
               Temilola Ann”s Performance
             </h2>
-            <div className="mt-6 space-y-2">
+            <div className="space-y-2">
               <PerformanceCard status="passed" />
               <PerformanceCard status="failed" />
               <PerformanceCard status="passed" />

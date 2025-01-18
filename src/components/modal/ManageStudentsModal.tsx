@@ -12,7 +12,7 @@ const links = [
   {
     id: 2,
     name: "Upgrade Student",
-    href: "/guardian/upgrade-student",
+    href: "/guardian/subscriptions",
   },
   {
     id: 3,
