@@ -1,28 +1,37 @@
 "use client";
-import React from "react";
-import Select from "react-select";
+import PremiumPlans from "@/components/modal/PremiumPlansModal";
+import Image from "next/image";
+import React, { useState } from "react";
 
 function SubscriptionForm() {
+  const [selectedPlan, setSelectedPlan] = useState('Monthly');
+  const [showPremiumPlansModal, setShowPremiumPlansModal] = useState(false);
   return (
-    <form className="mt-12">
-      <label htmlFor="plan" className="segoe text-sm text-[#1B1B1B]/90">
-        Choose Plan
-      </label>
-      <Select
-        id="plan"
-        className="segoe mt-1 text-xs font-light text-[#1B1B1B]/70"
-        styles={{
-          control: (baseStyles) => ({
-            ...baseStyles,
-            background: "transparent",
-            border: "1px solid #ccc",
-            borderRadius: "6px",
-            height: "35px",
-          }),
-        }}
-      />
-      <button className="rounded bg-SC-Blue w-full h-11 segoe text-white font-semibold text-[15px] mt-12">Subscribe</button>
-    </form>
+    <div className="mt-12">
+      {showPremiumPlansModal && (
+        <PremiumPlans
+          isOpen={showPremiumPlansModal}
+          setIsOpen={setShowPremiumPlansModal}
+          setSelectedPlan={setSelectedPlan}
+        />
+      )}
+      <p className="segoe text-sm text-[#1B1B1B]/90">Choose Plan</p>
+      <div
+        onClick={() => setShowPremiumPlansModal(true)}
+        className="segoe mt-1 flex h-[35px] cursor-pointer items-center justify-between rounded-md border border-[#ccc] bg-transparent pl-5 pr-3 text-xs font-light text-[#1B1B1B]/70"
+      >
+        <p>{selectedPlan}</p>
+        <Image
+          src={"/guardian/arrow-down.svg"}
+          alt="arrow down"
+          width={18}
+          height={18}
+        />
+      </div>
+      <button className="segoe mt-12 h-11 w-full rounded bg-SC-Blue text-[15px] font-semibold text-white">
+        Subscribe
+      </button>
+    </div>
   );
 }
 
