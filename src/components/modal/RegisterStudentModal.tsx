@@ -32,7 +32,7 @@ function RegisterStudentModal({
       onRequestClose={() => setIsOpen(false)}
       shouldCloseOnOverlayClick={true}
       contentLabel="Register Student Modal"
-      // ariaHideApp={false}
+      ariaHideApp={false}
     >
       <div className="w-[298px] bg-SC-Bland px-8 pb-3 pt-5">
         <h2 className="segoe font-semibold text-black">Register new student</h2>

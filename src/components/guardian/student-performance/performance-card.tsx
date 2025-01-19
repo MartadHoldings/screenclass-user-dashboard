@@ -1,13 +1,23 @@
-import React from "react";
+"use client";
+import PerformanceOverviewModal from "@/components/modal/PerformanceOverviewModal";
+import React, { useState } from "react";
 
 function PerformanceCard({ status }: { status: "passed" | "failed" }) {
+  const [showOverviewModal, setShowOverviewModal] = useState(false);
   return (
     <div
-      className="flex items-center justify-between bg-white py-3 pl-4 pr-[18px]"
+      onClick={() => setShowOverviewModal(true)}
+      className="flex cursor-pointer items-center justify-between bg-white py-3 pl-4 pr-[18px]"
       style={{
         boxShadow: "0px 12px 12px -12px rgba(0, 0, 0, 0.20)",
       }}
     >
+      {showOverviewModal && (
+        <PerformanceOverviewModal
+          isOpen={showOverviewModal}
+          setIsOpen={setShowOverviewModal}
+        />
+      )}
       <div>
         <h3 className={`text-sm font-bold text-SC-Brand-Blue`}>
           Fundamentals of Basic Science

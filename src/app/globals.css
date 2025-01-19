@@ -59,7 +59,7 @@ body {
   /* overflow: visible; */
   overflow-y: auto;
   overflow-x: hidden;
-  background-color: #F5F5F5;
+  background-color: transparent;
   z-index: 110;
   outline: none;
 }
