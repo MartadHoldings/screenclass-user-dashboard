@@ -1,8 +1,34 @@
-import Image from "next/image";
 import React from "react";
 import Modal from "react-modal";
+import BankCodeCard from "../guardian/subscriptions/bank-code-card";
+import FirstBankLogo from "../../../public/guardian/first-bank.svg";
+import GTBankLogo from "../../../public/guardian/gtbank-logo.svg";
+import WemaBankLogo from "../../../public/guardian/wema-logo.svg";
 
-function BankDepositModal({
+const banksCode = [
+  {
+    id: 1,
+    img: FirstBankLogo,
+    code: "*894*200*2034889408#",
+  },
+  {
+    id: 2,
+    img: GTBankLogo,
+    code: "*737*200*0486803862#",
+  },
+  {
+    id: 3,
+    img: GTBankLogo,
+    code: "*737*200*0486803862#",
+  },
+  {
+    id: 4,
+    img: GTBankLogo,
+    code: "*737*200*0486803862#",
+  },
+];
+
+function UssdCodeModal({
   isOpen,
   setIsOpen,
 }: {
@@ -19,10 +45,10 @@ function BankDepositModal({
       overlayClassName="backdrop"
       onRequestClose={() => setIsOpen(false)}
       shouldCloseOnOverlayClick={true}
-      contentLabel="Bank Deposit Modal"
+      contentLabel="USSD Code Modal"
       ariaHideApp={false}
     >
-      <div className="w-[390px] rounded-[10px] bg-white px-3 pb-3 pt-11">
+      <div className="w-[467px] bg-white px-14 py-11">
         <h2 className="text-center text-[15px] text-black">
           <span className="font-bold text-SC-Blue">Account Name:</span> Martad
           Education & Skills Development Ltd
@@ -41,25 +67,26 @@ function BankDepositModal({
             via SMS or WhatsApp.
           </li>
         </ul>
-        <div className="mt-4 flex items-center gap-3">
-          <Image
-            src={"/guardian/first-bank.svg"}
-            alt="first bank logo"
-            width={50}
-            height={50}
-          />
-          <div>
-            <p className="text-sm text-black">
-              <span className="font-bold">Account Number:</span> 2034889408
-            </p>
-            <p className="text-sm text-black">
-              <span className="font-bold">USSD Code:</span> *894#
-            </p>
-          </div>
+        <div className="mt-7 flex flex-col gap-8">
+          {banksCode.map((bank) => (
+            <BankCodeCard key={bank.id} imgSrc={bank.img} code={bank.code} />
+          ))}
+        </div>
+        <p className="my-5 text-center text-[13px] text-black">
+          For payment into banks listed below, pay into First bank account.
+        </p>
+        <div className="flex flex-col gap-8">
+          {Array.from({ length: 2 }, (_, i) => (
+            <BankCodeCard
+              key={i}
+              imgSrc={WemaBankLogo}
+              code="*737*200*0486803862#"
+            />
+          ))}
         </div>
       </div>
     </Modal>
   );
 }
 
-export default BankDepositModal;
+export default UssdCodeModal;
