@@ -3,13 +3,13 @@ import Modal from "react-modal";
 import { nunito } from "../shared/fonts";
 import SuccessModal from "./SuccessModal";
 
-function CardDetailsModal({
+const CardDetailsModal = ({
   isOpen,
   setIsOpen,
 }: {
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
-}) {
+}) => {
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   return (
     <Modal
@@ -97,6 +97,6 @@ function CardDetailsModal({
       </div>
     </Modal>
   );
-}
+};
 
 export default CardDetailsModal;

@@ -36,7 +36,7 @@ const links = [
   },
 ];
 
-function Navlinks() {
+const Navlinks = () => {
   const pathname = usePathname();
   return (
     <div className="flex flex-col gap-10 pl-6">
@@ -53,12 +53,12 @@ function Navlinks() {
             {link.name}
           </p>
           {link.href === pathname && (
-            <div className="bg-SC-Deep-Blue h-[30px] w-[3px] ml-auto" />
+            <div className="ml-auto h-[30px] w-[3px] bg-SC-Deep-Blue" />
           )}
         </Link>
       ))}
     </div>
   );
-}
+};
 
 export default Navlinks;

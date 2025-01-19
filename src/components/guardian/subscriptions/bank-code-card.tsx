@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-function BankCodeCard({ imgSrc, code }: { imgSrc: string; code: string }) {
+const BankCodeCard = ({ imgSrc, code }: { imgSrc: string; code: string }) => {
   return (
     <div
       className="flex items-center gap-8 bg-white py-2 pl-3 w-full"

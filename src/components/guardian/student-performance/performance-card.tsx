@@ -2,7 +2,7 @@
 import PerformanceOverviewModal from "@/components/modal/PerformanceOverviewModal";
 import React, { useState } from "react";
 
-function PerformanceCard({ status }: { status: "passed" | "failed" }) {
+const PerformanceCard = ({ status }: { status: "passed" | "failed" }) => {
   const [showOverviewModal, setShowOverviewModal] = useState(false);
   return (
     <>
@@ -43,6 +43,6 @@ function PerformanceCard({ status }: { status: "passed" | "failed" }) {
       </div>
     </>
   );
-}
+};
 
 export default PerformanceCard;

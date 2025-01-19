@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { inter } from "./fonts";
 
-function Header({title}: {title: string}) {
+const Header = ({title}: {title: string}) => {
   return (
     <div className="flex items-center justify-between border-b border-b-SC-Deep-Blue pb-4 pt-7">
       <h1 className="segoe text-xl font-black text-[#1B1B1B]/80">

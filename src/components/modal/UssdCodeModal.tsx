@@ -28,13 +28,13 @@ const banksCode = [
   },
 ];
 
-function UssdCodeModal({
+const UssdCodeModal = ({
   isOpen,
   setIsOpen,
 }: {
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
-}) {
+}) => {
   return (
     <Modal
       appElement={

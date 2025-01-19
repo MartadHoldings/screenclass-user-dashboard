@@ -2,16 +2,16 @@ import { nunito } from "@/components/shared/fonts";
 import Image from "next/image";
 import React from "react";
 
-function PaymentCard({
+const PaymentCard = ({
   mode,
   handleClick,
 }: {
   mode: string;
-  handleClick: any;
-}) {
+  handleClick: () => void;
+}) => {
   return (
     <div
-      onClick={handleClick}
+      onClick={() => handleClick()}
       className="flex h-[50px] w-[332px] cursor-pointer items-center justify-between rounded-[10px] border border-[#ccc] pl-2 pr-5"
       style={{
         boxShadow: "0px 4px 12px 0px rgba(0, 0, 0, 0.25)",
@@ -31,6 +31,6 @@ function PaymentCard({
       />
     </div>
   );
-}
+};
 
 export default PaymentCard;

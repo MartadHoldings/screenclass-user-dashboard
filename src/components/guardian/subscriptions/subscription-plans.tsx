@@ -4,7 +4,7 @@ import PremiumPlans from "@/components/modal/PremiumPlansModal";
 import Image from "next/image";
 import React, { useState } from "react";
 
-function SubscriptionForm() {
+const SubscriptionPlans = () => {
   const [selectedPlan, setSelectedPlan] = useState("Monthly");
   const [showPremiumPlansModal, setShowPremiumPlansModal] = useState(false);
   const [showPaymentModal, setShowPaymentModal] = useState(false);
@@ -44,6 +44,6 @@ function SubscriptionForm() {
       </button>
     </div>
   );
-}
+};
 
-export default SubscriptionForm;
+export default SubscriptionPlans;

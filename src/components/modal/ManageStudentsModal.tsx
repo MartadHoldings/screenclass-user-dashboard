@@ -26,13 +26,13 @@ const links = [
   },
 ];
 
-function ManageStudentsModal({
+const ManageStudentsModal = ({
   isOpen,
   setIsOpen,
 }: {
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
-}) {
+}) => {
   return (
     <Modal
       appElement={
@@ -64,6 +64,6 @@ function ManageStudentsModal({
       </div>
     </Modal>
   );
-}
+};
 
 export default ManageStudentsModal;

@@ -2,13 +2,13 @@ import Image from "next/image";
 import React from "react";
 import Modal from "react-modal";
 
-function BankDepositModal({
+const BankDepositModal = ({
   isOpen,
   setIsOpen,
 }: {
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
-}) {
+}) => {
   return (
     <Modal
       appElement={
@@ -60,6 +60,6 @@ function BankDepositModal({
       </div>
     </Modal>
   );
-}
+};
 
 export default BankDepositModal;

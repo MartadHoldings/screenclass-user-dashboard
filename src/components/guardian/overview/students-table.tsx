@@ -2,7 +2,7 @@ import React from "react";
 import { mulish } from "@/components/shared/fonts";
 import Image from "next/image";
 
-function StudentsTable() {
+const StudentsTable = () => {
   return (
     <div className="mt-3 rounded-l-lg border border-[#DFE0EB] bg-white">
       <h3
@@ -64,6 +64,6 @@ function StudentsTable() {
       </table>
     </div>
   );
-}
+};
 
 export default StudentsTable;

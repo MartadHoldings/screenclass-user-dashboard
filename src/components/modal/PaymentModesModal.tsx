@@ -15,13 +15,13 @@ const paymentModes = [
 
 type PaymentMode = (typeof paymentModes)[number];
 
-function PaymentModesModal({
+const PaymentModesModal = ({
   isOpen,
   setIsOpen,
 }: {
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
-}) {
+}) => {
   const [showCardDetailsModal, setShowCardDetailsModal] = useState(false);
   const [showBankDepositModal, setShowBankDepositModal] = useState(false);
   const [showUssdCodeModal, setShowUssdCodeModal] = useState(false);
@@ -79,6 +79,6 @@ function PaymentModesModal({
       </div>
     </Modal>
   );
-}
+};
 
 export default PaymentModesModal;

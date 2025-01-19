@@ -5,7 +5,7 @@ import Navlinks from "./nav-links";
 import { publicSans } from "./fonts";
 import { inter } from "./fonts";
 
-function SideNav() {
+const SideNav = () => {
   return (
     <div className="fixed flex h-full min-h-screen flex-col justify-between gap-28 overflow-y-scroll bg-white py-20 2xl:gap-0">
       <div className="space-y-20">
@@ -46,6 +46,6 @@ function SideNav() {
       </div>
     </div>
   );
-}
+};
 
 export default SideNav;

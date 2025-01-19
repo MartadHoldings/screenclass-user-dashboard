@@ -4,7 +4,7 @@ import { nunito } from "../shared/fonts";
 
 const plans = ["Monthly - #200", "Quarterly - #550", "Annually - #2000"];
 
-function PremiumPlansModal({
+const  PremiumPlansModal = ({
   isOpen,
   setIsOpen,
   setSelectedPlan,
@@ -12,7 +12,7 @@ function PremiumPlansModal({
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   setSelectedPlan: React.Dispatch<React.SetStateAction<string>>;
-}) {
+}) => {
   return (
     <Modal
       appElement={
