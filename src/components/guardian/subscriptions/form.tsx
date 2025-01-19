@@ -1,5 +1,5 @@
 "use client";
-import PremiumPaymentModal from "@/components/modal/PremiumPaymentModal";
+import PremiumPaymentModal from "@/components/modal/PaymentModesModal";
 import PremiumPlans from "@/components/modal/PremiumPlansModal";
 import Image from "next/image";
 import React, { useState } from "react";

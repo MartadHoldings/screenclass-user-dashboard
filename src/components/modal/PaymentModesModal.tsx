@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Modal from "react-modal";
 import PaymentCard from "../guardian/subscriptions/payment-card";
 import CardDetailsModal from "./CardDetailsModal";
+import BankDepositModal from "./BankDepositModal";
 
 const paymentModes = [
   "Debit Card (PayStack)",
@@ -13,7 +14,7 @@ const paymentModes = [
 
 type PaymentMode = (typeof paymentModes)[number];
 
-function PremiumPaymentModal({
+function PaymentModesModal({
   isOpen,
   setIsOpen,
 }: {
@@ -21,10 +22,13 @@ function PremiumPaymentModal({
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
   const [showCardDetailsModal, setShowCardDetailsModal] = useState(false);
+  const [showBankDepositModal, setShowBankDepositModal] = useState(false);
 
   const handlePaymentModeClick = (mode: PaymentMode) => {
     if (mode === "Debit Card (PayStack)" || mode === "Flutter wave") {
       setShowCardDetailsModal(true);
+    } else if (mode === "Bank Deposit") {
+      setShowBankDepositModal(true);
     }
   };
   return (
@@ -40,13 +44,19 @@ function PremiumPaymentModal({
       contentLabel="Premium Payment Modal"
       ariaHideApp={false}
     >
+      {showCardDetailsModal && (
+        <CardDetailsModal
+          isOpen={showCardDetailsModal}
+          setIsOpen={setShowCardDetailsModal}
+        />
+      )}
+      {showBankDepositModal && (
+        <BankDepositModal
+          isOpen={showBankDepositModal}
+          setIsOpen={setShowBankDepositModal}
+        />
+      )}
       <div className="rounded-[10px] bg-white px-7 pb-7 pt-8">
-        {showCardDetailsModal && (
-          <CardDetailsModal
-            isOpen={showCardDetailsModal}
-            setIsOpen={setShowCardDetailsModal}
-          />
-        )}
         <div className="flex flex-col gap-5">
           {paymentModes.map((mode) => (
             <PaymentCard
@@ -61,4 +71,4 @@ function PremiumPaymentModal({
   );
 }
 
-export default PremiumPaymentModal;
+export default PaymentModesModal;
