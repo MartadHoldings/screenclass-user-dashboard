@@ -1,6 +1,13 @@
 import React from "react";
 import Modal from "react-modal";
 
+const backgroundColor = (passNumber: number) => {
+  const passColor = "#AA10B7"; // Background color for passed area
+  const failColor = "#1FDCDC"; // Background color for failed area
+  const failNumber = 100 - passNumber;
+  return `conic-gradient(${failColor} 0%, ${failColor} ${failNumber}%, ${passColor} ${failNumber}%, ${passColor} 100%)`;
+};
+
 const PerformanceOverviewModal = ({
   isOpen,
   setIsOpen,
@@ -8,12 +15,6 @@ const PerformanceOverviewModal = ({
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
-  const backgroundColor = (passNumber: number) => {
-    const passColor = "#AA10B7"; // Background color for passed area
-    const failColor = "#1FDCDC"; // Background color for failed area
-    const failNumber = 100 - passNumber;
-    return `conic-gradient(${failColor} 0%, ${failColor} ${failNumber}%, ${passColor} ${failNumber}%, ${passColor} 100%)`;
-  };
   return (
     <Modal
       appElement={
@@ -57,9 +58,9 @@ const PerformanceOverviewModal = ({
           <p className="mt-4 text-sm text-[#1B1B1B]/80">
             <span className="text-SC-Brand-Blue">Status</span>: Passed
           </p>
-          <div className="mt-4 px-[10%] flex text-sm text-[#1B1B1B]/80">
-            <p className="text-SC-Orange m-0">Remarks:</p>
-            <p className="text-[#1B1B1B]/80 text-center m-0">
+          <div className="mt-4 flex px-[10%] text-sm text-[#1B1B1B]/80">
+            <p className="m-0 text-SC-Orange">Remarks:</p>
+            <p className="m-0 text-center text-[#1B1B1B]/80">
               You passed your subjects averagely. You need to brace up
             </p>
           </div>
