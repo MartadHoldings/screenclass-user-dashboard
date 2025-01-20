@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { inter } from "../../shared/fonts";
 
-function SubjectCard({
+const SubjectCard = ({
   bgColor,
   percentage,
   title,
@@ -12,7 +12,7 @@ function SubjectCard({
   percentage: number;
   title: string;
   subject: string;
-}) {
+}) => {
   return (
     <div className={`flex h-20 gap-3 rounded-[10px] ${bgColor} pb-1 pl-5 pt-5`}>
       <div className="segoe flex h-10 w-[55px] items-center justify-center rounded-md bg-[rgba(217,217,217,0.22)] text-sm font-bold text-white">
@@ -39,6 +39,6 @@ function SubjectCard({
       </div>
     </div>
   );
-}
+};
 
 export default SubjectCard;

@@ -4,7 +4,7 @@ import RegisterStudentModal from "@/components/modal/RegisterStudentModal";
 import Image from "next/image";
 import React, { useState } from "react";
 
-function Students() {
+const Students = () => {
   const [showAddStudentModal, setShowAddStudentModal] = useState(false);
   const [showManageStudentsModal, setShowManageStudentsModal] = useState(false);
   return (

@@ -26,13 +26,13 @@ const links = [
   },
 ];
 
-function ManageStudentsModal({
+const ManageStudentsModal = ({
   isOpen,
   setIsOpen,
 }: {
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
-}) {
+}) => {
   return (
     <Modal
       appElement={
@@ -44,7 +44,7 @@ function ManageStudentsModal({
       onRequestClose={() => setIsOpen(false)}
       shouldCloseOnOverlayClick={true}
       contentLabel="Register Student Modal"
-    //   ariaHideApp={false}
+      ariaHideApp={false}
     >
       <div className="bg-white pb-4 pl-7 pr-9 pt-6">
         <h2 className={`${nunito.className} text-xs font-bold text-[#407BFF]`}>
@@ -64,6 +64,6 @@ function ManageStudentsModal({
       </div>
     </Modal>
   );
-}
+};
 
 export default ManageStudentsModal;

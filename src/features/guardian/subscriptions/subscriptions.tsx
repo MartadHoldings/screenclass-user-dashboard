@@ -1,4 +1,4 @@
-import SubscriptionForm from "@/components/guardian/subscriptions/form";
+import SubscriptionForm from "@/components/guardian/subscriptions/subscription-plans";
 import Header from "@/components/shared/header";
 import React from "react";
 
