@@ -46,7 +46,7 @@ const RegisterStudentModal = ({
           <input
             id="full-name"
             type="text"
-            className="input-field mb-4 px-4 py-3"
+            className="input-field mb-4 px-4"
             placeholder="Ada George"
           />
           <label
@@ -58,7 +58,7 @@ const RegisterStudentModal = ({
           <input
             id="password"
             type="password"
-            className="input-field mb-4 px-4 py-3"
+            className="input-field mb-4 px-4"
             placeholder="....."
           />
           <label
@@ -70,7 +70,7 @@ const RegisterStudentModal = ({
           <input
             id="confirm-password"
             type="password"
-            className="input-field mb-4 px-4 py-3"
+            className="input-field mb-4 px-4"
             placeholder="....."
           />
           <label

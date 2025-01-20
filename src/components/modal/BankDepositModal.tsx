@@ -23,20 +23,20 @@ const BankDepositModal = ({
       ariaHideApp={false}
     >
       <div className="w-[390px] rounded-[10px] bg-white px-3 pb-3 pt-11">
-        <h2 className="text-center text-[15px] text-black">
+        <h2 className="sansation text-center text-[15px] text-black">
           <span className="font-bold text-SC-Blue">Account Name:</span> Martad
           Education & Skills Development Ltd
         </h2>
-        <p className="mt-4 text-sm font-bold text-black">Instructions:</p>
+        <p className="sansation mt-4 text-sm font-bold text-black">Instructions:</p>
         <ul className="mt-3 space-y-3 pl-4">
-          <li className="list-outside list-disc text-sm text-[#1b1b1b]/90">
+          <li className="sansation list-outside list-disc text-sm text-[#1b1b1b]/90">
             Make deposit to the account provided above or Make Payment via USSD
             code.
           </li>
-          <li className="list-outside list-disc text-sm text-[#1b1b1b]/90">
+          <li className="sansation list-outside list-disc text-sm text-[#1b1b1b]/90">
             Copy or Screenshot payment receipt
           </li>
-          <li className="list-outside list-disc text-sm text-[#1b1b1b]/90">
+          <li className="sansation list-outside list-disc text-sm text-[#1b1b1b]/90">
             Send the payment receipt to +234 704 330 3000 0r +234 703 330 3000
             via SMS or WhatsApp.
           </li>
@@ -50,10 +50,10 @@ const BankDepositModal = ({
           />
           <div>
             <p className="text-sm text-black">
-              <span className="font-bold">Account Number:</span> 2034889408
+              <span className="sansation font-bold">Account Number:</span> 2034889408
             </p>
             <p className="text-sm text-black">
-              <span className="font-bold">USSD Code:</span> *894#
+              <span className="sansation font-bold">USSD Code:</span> *894#
             </p>
           </div>
         </div>

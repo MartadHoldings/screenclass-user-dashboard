@@ -20,22 +20,22 @@ const PerformanceCard = ({ status }: { status: "passed" | "failed" }) => {
         }}
       >
         <div>
-          <h3 className={`text-sm font-bold text-SC-Brand-Blue`}>
+          <h3 className={`sansation text-sm font-bold text-SC-Brand-Blue`}>
             Fundamentals of Basic Science
           </h3>
-          <p className={`text-[13px] text-black`}>Introduction to Science</p>
-          <p className="mt-3 text-xs text-[rgba(27,27,27,0.70)]">
+          <p className={`sansation text-[13px] text-black`}>Introduction to Science</p>
+          <p className="sansation mt-3 text-xs text-[rgba(27,27,27,0.70)]">
             06-06-2023 10:00:34am
           </p>
-          <p className="text-xs text-[rgba(27,27,27,0.70)]">
+          <p className="sansation text-xs text-[rgba(27,27,27,0.70)]">
             Total Questions: <span>10</span> Passed: <span>9</span> Failed:{" "}
             <span>1</span>
           </p>
         </div>
         <div>
-          <p className="text-center text-[13px] text-black">90%</p>
+          <p className="sansation text-center text-[13px] text-black">90%</p>
           <div
-            className={`mt-4 h-[22px] ${status === "passed" ? "bg-[#CBFAC4] text-[#098315]" : "bg-[#FFD8D8] text-[#E41515]"} flex items-center px-4 text-xs capitalize`}
+            className={`sansation mt-4 h-[22px] ${status === "passed" ? "bg-[#CBFAC4] text-[#098315]" : "bg-[#FFD8D8] text-[#E41515]"} flex items-center px-4 text-xs capitalize`}
           >
             {status}
           </div>

@@ -32,12 +32,12 @@ const ActivityCard = ({
         }}
       >
         <div>
-          <h3 className={`text-sm font-bold text-SC-Brand-Blue`}>{title}</h3>
-          <p className={`text-[13px] text-black`}>{desc}</p>
-          <p className="mt-3 text-xs text-[rgba(27,27,27,0.70)]">{date}</p>
+          <h3 className={`sansation text-sm font-bold text-SC-Brand-Blue`}>{title}</h3>
+          <p className={`sansation text-[13px] text-black`}>{desc}</p>
+          <p className="sansation mt-3 text-xs text-[rgba(27,27,27,0.70)]">{date}</p>
         </div>
         <div>
-          <p className="text-[13px] text-black">{last_seen}</p>
+          <p className="sansation text-[13px] text-black">{last_seen}</p>
           <div
             className={`ml-auto mt-2 h-[6px] w-[6px] rounded-full ${status ? "bg-[#016AAD]" : "rgba(213,214,214,0.98)"}`}
           ></div>

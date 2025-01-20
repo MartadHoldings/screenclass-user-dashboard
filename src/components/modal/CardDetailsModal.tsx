@@ -1,3 +1,4 @@
+"use client"
 import React, { useState } from "react";
 import Modal from "react-modal";
 import { nunito } from "../shared/fonts";
@@ -89,7 +90,7 @@ const CardDetailsModal = ({
             </div>
           </div>
           <div className="flex w-full items-center justify-center">
-            <button className="mt-8 rounded bg-SC-Brand-Blue px-11 py-3 text-sm text-white">
+            <button className="sansation mt-8 rounded bg-SC-Brand-Blue px-11 py-3 text-sm text-white">
               Submit
             </button>
           </div>

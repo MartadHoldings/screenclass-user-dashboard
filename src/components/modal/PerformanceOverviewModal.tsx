@@ -29,7 +29,7 @@ const PerformanceOverviewModal = ({
       ariaHideApp={false}
     >
       <div className="w-[390px] rounded-[10px] bg-white py-7">
-        <h2 className="px-[20%] text-center text-sm text-[#1B1B1B]/80">
+        <h2 className="sansation px-[20%] text-center text-sm text-[#1B1B1B]/80">
           Hi Temitope, here is your overall performance
         </h2>
         <div className="flex flex-col items-center justify-center">
@@ -44,23 +44,23 @@ const PerformanceOverviewModal = ({
           <div className="mt-4 flex items-center gap-5">
             <div className="flex items-center gap-[15px]">
               <div className="h-4 w-4 rounded-full bg-[#1FDCDC]"></div>
-              <p className="text-[13px] text-[#1B1B1B]">
+              <p className="sansation text-[13px] text-[#1B1B1B]">
                 Fail Percentage (20%)
               </p>
             </div>
             <div className="flex items-center gap-[15px]">
               <div className="h-4 w-4 rounded-full bg-[#AA10B7]"></div>
-              <p className="text-[13px] text-[#1B1B1B]">
+              <p className="sansation text-[13px] text-[#1B1B1B]">
                 Pass Percentage (80%)
               </p>
             </div>
           </div>
           <p className="mt-4 text-sm text-[#1B1B1B]/80">
-            <span className="text-SC-Brand-Blue">Status</span>: Passed
+            <span className="sansation text-SC-Brand-Blue">Status</span>: Passed
           </p>
           <div className="mt-4 flex px-[10%] text-sm text-[#1B1B1B]/80">
-            <p className="m-0 text-SC-Orange">Remarks:</p>
-            <p className="m-0 text-center text-[#1B1B1B]/80">
+            <p className="sansation m-0 text-SC-Orange">Remarks:</p>
+            <p className="sansation m-0 text-center text-[#1B1B1B]/80">
               You passed your subjects averagely. You need to brace up
             </p>
           </div>

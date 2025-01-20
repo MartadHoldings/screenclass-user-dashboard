@@ -49,20 +49,20 @@ const UssdCodeModal = ({
       ariaHideApp={false}
     >
       <div className="w-[467px] bg-white px-14 py-11">
-        <h2 className="text-center text-[15px] text-black">
+        <h2 className="sansation text-center text-[15px] text-black">
           <span className="font-bold text-SC-Blue">Account Name:</span> Martad
           Education & Skills Development Ltd
         </h2>
-        <p className="mt-4 text-sm font-bold text-black">Instructions:</p>
+        <p className="sansation mt-4 text-sm font-bold text-black">Instructions:</p>
         <ul className="mt-3 space-y-3 pl-4">
-          <li className="list-outside list-disc text-sm text-[#1b1b1b]/90">
+          <li className="sansation list-outside list-disc text-sm text-[#1b1b1b]/90">
             Make deposit to the account provided above or Make Payment via USSD
             code.
           </li>
-          <li className="list-outside list-disc text-sm text-[#1b1b1b]/90">
+          <li className="sansation list-outside list-disc text-sm text-[#1b1b1b]/90">
             Copy or Screenshot payment receipt
           </li>
-          <li className="list-outside list-disc text-sm text-[#1b1b1b]/90">
+          <li className="sansation list-outside list-disc text-sm text-[#1b1b1b]/90">
             Send the payment receipt to +234 704 330 3000 0r +234 703 330 3000
             via SMS or WhatsApp.
           </li>
@@ -72,7 +72,7 @@ const UssdCodeModal = ({
             <BankCodeCard key={bank.id} imgSrc={bank.img} code={bank.code} />
           ))}
         </div>
-        <p className="my-5 text-center text-[13px] text-black">
+        <p className="sansation my-5 text-center text-[13px] text-black">
           For payment into banks listed below, pay into First bank account.
         </p>
         <div className="flex flex-col gap-8">

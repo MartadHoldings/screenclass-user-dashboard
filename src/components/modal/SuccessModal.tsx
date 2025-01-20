@@ -29,7 +29,7 @@ const SuccessModal = ({
           width={150}
           height={134}
         />
-        <p className="mt-6 px-[20%] text-center text-sm text-[#1b1b1b]/80">
+        <p className="sansation mt-6 px-[20%] text-center text-sm text-[#1b1b1b]/80">
           Your transaction to upgrade to monthly plan was successful!
         </p>
       </div>
