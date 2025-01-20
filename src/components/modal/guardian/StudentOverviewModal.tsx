@@ -1,16 +1,16 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import Modal from "react-modal";
-import { nunito } from "../shared/fonts";
+import { nunito } from "../../shared/fonts";
 import ManageStudentsModal from "./ManageStudentsModal";
 
-function StudentOverviewModal({
+const StudentOverviewModal = ({
   isOpen,
   setIsOpen,
 }: {
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
-}) {
+}) => {
   const [showManageStudentModal, setShowManageStudentModal] = useState(false);
   return (
     <Modal

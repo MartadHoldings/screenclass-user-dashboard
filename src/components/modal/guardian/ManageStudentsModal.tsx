@@ -1,6 +1,6 @@
 import React from "react";
 import Modal from "react-modal";
-import { nunito } from "../shared/fonts";
+import { nunito } from "@/components/shared/fonts";
 import Link from "next/link";
 
 const links = [

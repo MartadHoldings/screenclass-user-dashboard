@@ -1,15 +1,15 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import Modal from "react-modal";
 import StudentOverviewModal from "./StudentOverviewModal";
 
-function StudentSearchModal({
+const StudentSearchModal = ({
   isOpen,
   setIsOpen,
 }: {
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
-}) {
+}) => {
   const [showStudentOverviewModal, setShowStudentOverviewModal] =
     useState(false);
   return (

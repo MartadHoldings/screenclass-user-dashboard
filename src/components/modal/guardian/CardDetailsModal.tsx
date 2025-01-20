@@ -1,7 +1,7 @@
 "use client"
 import React, { useState } from "react";
 import Modal from "react-modal";
-import { nunito } from "../shared/fonts";
+import { nunito } from "@/components/shared/fonts";
 import SuccessModal from "./SuccessModal";
 
 const CardDetailsModal = ({

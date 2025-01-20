@@ -1,10 +1,10 @@
 import React from "react";
 import Modal from "react-modal";
-import { nunito } from "../shared/fonts";
+import { nunito } from "@/components/shared/fonts";
 
 const plans = ["Monthly - #200", "Quarterly - #550", "Annually - #2000"];
 
-const  PremiumPlansModal = ({
+const PremiumPlansModal = ({
   isOpen,
   setIsOpen,
   setSelectedPlan,

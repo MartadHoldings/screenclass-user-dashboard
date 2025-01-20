@@ -23,7 +23,7 @@ export const Subscriptions = () => {
                 (Upgrade your plan to Premium plan to enjoy more of our
                 explanatory videos)
               </p>
-             <SubscriptionForm />
+              <SubscriptionForm />
             </div>
           </div>
         </div>

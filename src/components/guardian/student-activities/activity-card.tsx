@@ -1,5 +1,5 @@
 "use client";
-import PerformanceOverviewModal from "@/components/modal/PerformanceOverviewModal";
+import PerformanceOverviewModal from "@/components/modal/guardian/PerformanceOverviewModal";
 import React, { useState } from "react";
 
 const ActivityCard = ({
@@ -32,9 +32,13 @@ const ActivityCard = ({
         }}
       >
         <div>
-          <h3 className={`sansation text-sm font-bold text-SC-Brand-Blue`}>{title}</h3>
+          <h3 className={`sansation text-sm font-bold text-SC-Brand-Blue`}>
+            {title}
+          </h3>
           <p className={`sansation text-[13px] text-black`}>{desc}</p>
-          <p className="sansation mt-3 text-xs text-[rgba(27,27,27,0.70)]">{date}</p>
+          <p className="sansation mt-3 text-xs text-[rgba(27,27,27,0.70)]">
+            {date}
+          </p>
         </div>
         <div>
           <p className="sansation text-[13px] text-black">{last_seen}</p>

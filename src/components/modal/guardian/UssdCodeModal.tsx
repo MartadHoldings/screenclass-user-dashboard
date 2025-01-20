@@ -1,6 +1,6 @@
 import React from "react";
 import Modal from "react-modal";
-import BankCodeCard from "../guardian/subscriptions/bank-code-card";
+import BankCodeCard from "@/components/guardian/subscriptions/bank-code-card";
 import FirstBankLogo from "../../../public/guardian/first-bank.svg";
 import GTBankLogo from "../../../public/guardian/gtbank-logo.svg";
 import WemaBankLogo from "../../../public/guardian/wema-logo.svg";

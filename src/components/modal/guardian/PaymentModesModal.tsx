@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Modal from "react-modal";
-import PaymentCard from "../guardian/subscriptions/payment-card";
+import PaymentCard from "../../guardian/subscriptions/payment-card";
 import CardDetailsModal from "./CardDetailsModal";
 import BankDepositModal from "./BankDepositModal";
 import UssdCodeModal from "./UssdCodeModal";

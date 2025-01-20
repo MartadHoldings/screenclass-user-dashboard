@@ -1,6 +1,6 @@
 "use client";
-import ManageStudentsModal from "@/components/modal/ManageStudentsModal";
-import RegisterStudentModal from "@/components/modal/RegisterStudentModal";
+import ManageStudentsModal from "@/components/modal/guardian/ManageStudentsModal";
+import RegisterStudentModal from "@/components/modal/guardian/RegisterStudentModal";
 import Image from "next/image";
 import React, { useState } from "react";
 

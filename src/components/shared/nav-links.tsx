@@ -8,7 +8,7 @@ import ManageStudentsIcon from "../../../public/guardian/manage-students-icon.sv
 import ProfileIcon from "../../../public/guardian/profile-icon.svg";
 import { publicSans } from "./fonts";
 import { usePathname } from "next/navigation";
-import StudentSearchModal from "../modal/StudentSearchModal";
+import StudentSearchModal from "../modal/guardian/StudentSearchModal";
 
 const links = [
   {
@@ -35,7 +35,7 @@ const links = [
   {
     id: 4,
     name: "My Profile",
-    href: "/guardian/dashboard/profile",
+    href: "/guardian/settings",
     iconSrc: ProfileIcon,
     type: "link",
   },

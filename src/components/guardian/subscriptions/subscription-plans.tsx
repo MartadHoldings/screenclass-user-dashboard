@@ -1,6 +1,6 @@
 "use client";
-import PremiumPaymentModal from "@/components/modal/PaymentModesModal";
-import PremiumPlans from "@/components/modal/PremiumPlansModal";
+import PremiumPaymentModal from "@/components/modal/guardian/PaymentModesModal";
+import PremiumPlansModal from "@/components/modal/guardian/PremiumPlansModal";
 import Image from "next/image";
 import React, { useState } from "react";
 
@@ -11,7 +11,7 @@ const SubscriptionPlans = () => {
   return (
     <div className="mt-12">
       {showPremiumPlansModal && (
-        <PremiumPlans
+        <PremiumPlansModal
           isOpen={showPremiumPlansModal}
           setIsOpen={setShowPremiumPlansModal}
           setSelectedPlan={setSelectedPlan}

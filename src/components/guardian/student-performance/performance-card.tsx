@@ -1,5 +1,5 @@
 "use client";
-import PerformanceOverviewModal from "@/components/modal/PerformanceOverviewModal";
+import PerformanceOverviewModal from "@/components/modal/guardian/PerformanceOverviewModal";
 import React, { useState } from "react";
 
 const PerformanceCard = ({ status }: { status: "passed" | "failed" }) => {
@@ -23,7 +23,9 @@ const PerformanceCard = ({ status }: { status: "passed" | "failed" }) => {
           <h3 className={`sansation text-sm font-bold text-SC-Brand-Blue`}>
             Fundamentals of Basic Science
           </h3>
-          <p className={`sansation text-[13px] text-black`}>Introduction to Science</p>
+          <p className={`sansation text-[13px] text-black`}>
+            Introduction to Science
+          </p>
           <p className="sansation mt-3 text-xs text-[rgba(27,27,27,0.70)]">
             06-06-2023 10:00:34am
           </p>
