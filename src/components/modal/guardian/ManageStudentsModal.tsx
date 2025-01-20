@@ -22,7 +22,7 @@ const links = [
   {
     id: 4,
     name: "View Profile",
-    href: "profile",
+    href: "/guardian/student-profile/123",
   },
 ];
 

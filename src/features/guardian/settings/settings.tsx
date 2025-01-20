@@ -8,7 +8,7 @@ export const Settings = () => {
     <div className="min-h-screen bg-[#f1f1f1]">
       <div className="mx-7 min-h-screen bg-[#FAFAFA] pb-40 pl-9 pr-4">
         <Header title="Account Settings" />
-        <PersonalDetailsForm />
+        <PersonalDetailsForm action="edit" />
         <SecurityDetails />
       </div>
     </div>
