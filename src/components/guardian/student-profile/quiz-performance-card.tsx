@@ -23,16 +23,16 @@ function backgroundColor(passMark: number) {
 const QuizPerformanceCard = () => {
   return (
     <div
-      className="flex h-[342px] w-[324px] flex-col items-center justify-center rounded-[13px] bg-white"
+      className="flex h-[280px] w-full flex-col items-center justify-center rounded-[13px] bg-white md:h-[342px] md:w-[324px]"
       style={{
         boxShadow: "0px 0px 1px 0px rgba(0, 0, 0, 0.25)",
       }}
     >
-      <p className={`${mulish.className} text-xl text-[#6c6c6c]`}>
+      <p className={`${mulish.className} text-lg md:text-xl text-[#6c6c6c]`}>
         Quiz Performances
       </p>
       <div
-        className="mt-16 flex h-[126px] w-[126px] items-center justify-center rounded-full"
+        className="mt-8 md:mt-16 flex h-[120px] md:h-[126px] w-[120px] md:w-[126px] items-center justify-center rounded-full"
         style={{
           background: backgroundColor(90),
         }}
@@ -43,7 +43,7 @@ const QuizPerformanceCard = () => {
         <div className="flex items-center gap-2">
           <div className="h-4 w-4 rounded-full bg-[#1FDCDC]"></div>
           <p
-            className={`${mulish.className} text-xl font-medium text-[#1B1B1B]/80`}
+            className={`${mulish.className} text-lg md:text-xl font-medium text-[#1B1B1B]/80`}
           >
             Pass
           </p>
@@ -51,7 +51,7 @@ const QuizPerformanceCard = () => {
         <div className="flex items-center gap-2">
           <div className="h-4 w-4 rounded-full bg-[#AA10B7]"></div>
           <p
-            className={`${mulish.className} text-xl font-medium text-[#1B1B1B]/80`}
+            className={`${mulish.className} text-lg md:text-xl font-medium text-[#1B1B1B]/80`}
           >
             Failed
           </p>

@@ -6,12 +6,10 @@ const PerformanceCard = ({ status }: { status: "passed" | "failed" }) => {
   const [showOverviewModal, setShowOverviewModal] = useState(false);
   return (
     <>
-      {showOverviewModal && (
-        <PerformanceOverviewModal
-          isOpen={showOverviewModal}
-          setIsOpen={setShowOverviewModal}
-        />
-      )}
+      <PerformanceOverviewModal
+        isOpen={showOverviewModal}
+        setIsOpen={setShowOverviewModal}
+      />
       <div
         onClick={() => setShowOverviewModal(true)}
         className="flex cursor-pointer items-center justify-between bg-white py-3 pl-4 pr-[18px]"

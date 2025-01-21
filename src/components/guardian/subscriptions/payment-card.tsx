@@ -12,7 +12,7 @@ const PaymentCard = ({
   return (
     <div
       onClick={() => handleClick()}
-      className="flex h-[50px] w-[332px] cursor-pointer items-center justify-between rounded-[10px] border border-[#ccc] pl-2 pr-5"
+      className="flex h-[50px] w-[300px] md:w-[332px] cursor-pointer items-center justify-between rounded-[10px] border border-[#ccc] pl-2 pr-5"
       style={{
         boxShadow: "0px 4px 12px 0px rgba(0, 0, 0, 0.25)",
       }}

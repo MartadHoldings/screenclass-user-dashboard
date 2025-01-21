@@ -37,45 +37,37 @@ const PaymentModesModal = ({
   };
   return (
     <Modal
-      appElement={
-        (document.getElementById("__next") as HTMLElement) || undefined
-      }
+      // appElement={
+      //   (document.getElementById("__next") as HTMLElement) || undefined
+      // }
       isOpen={isOpen}
-      className="modal"
+      className="modal rounded-[10px] bg-white px-7 pb-7 pt-8"
       overlayClassName="backdrop"
       onRequestClose={() => setIsOpen(false)}
       shouldCloseOnOverlayClick={true}
       contentLabel="Premium Payment Modal"
       ariaHideApp={false}
     >
-      {showCardDetailsModal && (
-        <CardDetailsModal
-          isOpen={showCardDetailsModal}
-          setIsOpen={setShowCardDetailsModal}
-        />
-      )}
-      {showBankDepositModal && (
-        <BankDepositModal
-          isOpen={showBankDepositModal}
-          setIsOpen={setShowBankDepositModal}
-        />
-      )}
-      {showUssdCodeModal && (
-        <UssdCodeModal
-          isOpen={showUssdCodeModal}
-          setIsOpen={setShowUssdCodeModal}
-        />
-      )}
-      <div className="rounded-[10px] bg-white px-7 pb-7 pt-8">
-        <div className="flex flex-col gap-5">
-          {paymentModes.map((mode) => (
-            <PaymentCard
-              key={mode}
-              mode={mode}
-              handleClick={() => handlePaymentModeClick(mode)}
-            />
-          ))}
-        </div>
+      <CardDetailsModal
+        isOpen={showCardDetailsModal}
+        setIsOpen={setShowCardDetailsModal}
+      />
+      <BankDepositModal
+        isOpen={showBankDepositModal}
+        setIsOpen={setShowBankDepositModal}
+      />
+      <UssdCodeModal
+        isOpen={showUssdCodeModal}
+        setIsOpen={setShowUssdCodeModal}
+      />
+      <div className="flex flex-col gap-5">
+        {paymentModes.map((mode) => (
+          <PaymentCard
+            key={mode}
+            mode={mode}
+            handleClick={() => handlePaymentModeClick(mode)}
+          />
+        ))}
       </div>
     </Modal>
   );
