@@ -1,6 +1,6 @@
 "use client";
-import PremiumPaymentModal from "@/components/modal/PaymentModesModal";
-import PremiumPlans from "@/components/modal/PremiumPlansModal";
+import PremiumPaymentModal from "@/components/modal/guardian/PaymentModesModal";
+import PremiumPlansModal from "@/components/modal/guardian/PremiumPlansModal";
 import Image from "next/image";
 import React, { useState } from "react";
 
@@ -10,19 +10,15 @@ const SubscriptionPlans = () => {
   const [showPaymentModal, setShowPaymentModal] = useState(false);
   return (
     <div className="mt-12">
-      {showPremiumPlansModal && (
-        <PremiumPlans
-          isOpen={showPremiumPlansModal}
-          setIsOpen={setShowPremiumPlansModal}
-          setSelectedPlan={setSelectedPlan}
-        />
-      )}
-      {showPaymentModal && (
-        <PremiumPaymentModal
-          isOpen={showPaymentModal}
-          setIsOpen={setShowPaymentModal}
-        />
-      )}
+      <PremiumPlansModal
+        isOpen={showPremiumPlansModal}
+        setIsOpen={setShowPremiumPlansModal}
+        setSelectedPlan={setSelectedPlan}
+      />
+      <PremiumPaymentModal
+        isOpen={showPaymentModal}
+        setIsOpen={setShowPaymentModal}
+      />
       <p className="segoe text-sm text-[#1B1B1B]/90">Choose Plan</p>
       <div
         onClick={() => setShowPremiumPlansModal(true)}

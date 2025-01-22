@@ -8,7 +8,7 @@ import ManageStudentsIcon from "../../../public/guardian/manage-students-icon.sv
 import ProfileIcon from "../../../public/guardian/profile-icon.svg";
 import { publicSans } from "./fonts";
 import { usePathname } from "next/navigation";
-import StudentSearchModal from "../modal/StudentSearchModal";
+import StudentSearchModal from "../modal/guardian/StudentSearchModal";
 
 const links = [
   {
@@ -35,7 +35,7 @@ const links = [
   {
     id: 4,
     name: "My Profile",
-    href: "/guardian/dashboard/profile",
+    href: "/guardian/settings",
     iconSrc: ProfileIcon,
     type: "link",
   },
@@ -46,13 +46,11 @@ const Navlinks = () => {
   const pathname = usePathname();
   return (
     <>
-      {showSearchStudentModal && (
-        <StudentSearchModal
-          isOpen={showSearchStudentModal}
-          setIsOpen={setShowSearchStudentModal}
-        />
-      )}
-      <div className="flex flex-col gap-10 pl-6">
+      <StudentSearchModal
+        isOpen={showSearchStudentModal}
+        setIsOpen={setShowSearchStudentModal}
+      />
+      <div className="flex flex-col gap-8 pl-6 xl:gap-10">
         {links.map((link) =>
           link.type === "link" ? (
             <Link
@@ -67,7 +65,7 @@ const Navlinks = () => {
                 height={24}
               />
               <p
-                className={`${publicSans.className} text-xl ${link.href.endsWith(pathname) ? "font-bold" : "font-normal"} pr-2`}
+                className={`${publicSans.className} text-base xl:text-xl ${link.href.endsWith(pathname) ? "font-bold" : "font-normal"} pr-2`}
               >
                 {link.name}
               </p>
@@ -87,12 +85,29 @@ const Navlinks = () => {
                 width={24}
                 height={24}
               />
-              <p className={`${publicSans.className} pr-2 text-xl font-normal`}>
+              <p
+                className={`${publicSans.className} pr-2 text-base font-normal xl:text-xl`}
+              >
                 {link.name}
               </p>
             </button>
           ),
         )}
+        {/* logout */}
+        <div className="flex items-center gap-8 md:hidden">
+          <Image
+            src={"/guardian/logout-icon.svg"}
+            alt="logout"
+            width={30}
+            height={30}
+            className="h-6 w-6"
+          />
+          <p
+            className={`${publicSans.className} pr-2 text-base font-normal xl:text-xl`}
+          >
+            Logout
+          </p>
+        </div>
       </div>
     </>
   );

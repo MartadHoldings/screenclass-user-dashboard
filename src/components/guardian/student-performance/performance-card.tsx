@@ -1,17 +1,15 @@
 "use client";
-import PerformanceOverviewModal from "@/components/modal/PerformanceOverviewModal";
+import PerformanceOverviewModal from "@/components/modal/guardian/PerformanceOverviewModal";
 import React, { useState } from "react";
 
 const PerformanceCard = ({ status }: { status: "passed" | "failed" }) => {
   const [showOverviewModal, setShowOverviewModal] = useState(false);
   return (
     <>
-      {showOverviewModal && (
-        <PerformanceOverviewModal
-          isOpen={showOverviewModal}
-          setIsOpen={setShowOverviewModal}
-        />
-      )}
+      <PerformanceOverviewModal
+        isOpen={showOverviewModal}
+        setIsOpen={setShowOverviewModal}
+      />
       <div
         onClick={() => setShowOverviewModal(true)}
         className="flex cursor-pointer items-center justify-between bg-white py-3 pl-4 pr-[18px]"
@@ -23,7 +21,9 @@ const PerformanceCard = ({ status }: { status: "passed" | "failed" }) => {
           <h3 className={`sansation text-sm font-bold text-SC-Brand-Blue`}>
             Fundamentals of Basic Science
           </h3>
-          <p className={`sansation text-[13px] text-black`}>Introduction to Science</p>
+          <p className={`sansation text-[13px] text-black`}>
+            Introduction to Science
+          </p>
           <p className="sansation mt-3 text-xs text-[rgba(27,27,27,0.70)]">
             06-06-2023 10:00:34am
           </p>
