@@ -1,6 +1,7 @@
 import React from "react";
 import Modal from "react-modal";
 import Image from "next/image";
+import useNoScroll from "@/components/hooks/useNoScroll";
 
 const SuccessModal = ({
   isOpen,
@@ -11,6 +12,7 @@ const SuccessModal = ({
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   successText: string;
 }) => {
+  useNoScroll(isOpen);
   return (
     <Modal
       // appElement={

@@ -1,3 +1,4 @@
+import useNoScroll from "@/components/hooks/useNoScroll";
 import Image from "next/image";
 import React from "react";
 import Modal from "react-modal";
@@ -9,6 +10,7 @@ const BankDepositModal = ({
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
+  useNoScroll(isOpen);
   return (
     <Modal
       // appElement={

@@ -1,6 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import { inter } from "./fonts";
 import MobileSideNav from "./mobile-sidenav";
 
 const Header = ({ title }: { title: string }) => {
@@ -12,7 +11,22 @@ const Header = ({ title }: { title: string }) => {
           {title}
         </h1>
       </div>
-      <div className="flex items-center gap-2 md:gap-6">
+      {/* search */}
+      <div className="relative h-[35px] w-[150px] rounded-lg bg-[rgba(150,152,213,0.30)] md:w-[250px]">
+        <input
+          type="text"
+          className="segoe h-full w-[90%] bg-transparent px-3 text-xs font-light outline-none placeholder:text-[#1b1b1b]/70"
+          placeholder="Search anything.."
+        />
+        <Image
+          src={"/guardian/search-icon.svg"}
+          alt="search icon"
+          width={30}
+          height={30}
+          className="absolute right-0 top-0"
+        />
+      </div>
+      {/* <div className="flex items-center gap-2 md:gap-6">
         <p className={`${inter.className} text-xs md:text-[15px] font-light`}>
           12th June, 2023
         </p>
@@ -22,15 +36,15 @@ const Header = ({ title }: { title: string }) => {
           width={40}
           height={40}
         />
-      </div>
-      <div className="hidden items-center md:flex gap-4">
+      </div> */}
+      <div className="hidden items-center gap-4 md:flex">
         <div className="flex items-center gap-3 md:gap-[18px]">
           <Image
             src={"/guardian/ellipse.svg"}
             alt="ellipse"
             width={80}
             height={80}
-            className="h-auto w-14 md:w-[80px]"
+            className="h-auto w-14 md:w-16 lg:w-20"
           />
           <div className="">
             <p className="segoe text-base text-[#7C7C7C] lg:text-lg">SC51124</p>

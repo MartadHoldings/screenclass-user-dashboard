@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
 import StudentOverviewModal from "./StudentOverviewModal";
+import useNoScroll from "@/components/hooks/useNoScroll";
 
 const StudentSearchModal = ({
   isOpen,
@@ -10,6 +11,7 @@ const StudentSearchModal = ({
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
+  useNoScroll(isOpen);
   const [showStudentOverviewModal, setShowStudentOverviewModal] =
     useState(false);
   return (

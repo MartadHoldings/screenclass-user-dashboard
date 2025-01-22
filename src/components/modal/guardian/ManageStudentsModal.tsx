@@ -2,6 +2,7 @@ import React from "react";
 import Modal from "react-modal";
 import { nunito } from "@/components/shared/fonts";
 import Link from "next/link";
+import useNoScroll from "@/components/hooks/useNoScroll";
 
 const links = [
   {
@@ -33,6 +34,7 @@ const ManageStudentsModal = ({
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
+  useNoScroll(isOpen);
   return (
     <Modal
       // appElement={

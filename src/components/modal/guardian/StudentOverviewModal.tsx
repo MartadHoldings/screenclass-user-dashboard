@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Modal from "react-modal";
 import { nunito } from "../../shared/fonts";
 import ManageStudentsModal from "./ManageStudentsModal";
+import useNoScroll from "@/components/hooks/useNoScroll";
 
 const StudentOverviewModal = ({
   isOpen,
@@ -10,7 +11,8 @@ const StudentOverviewModal = ({
 }: {
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
-}) => {
+  }) => {
+    useNoScroll(isOpen);
   const [showManageStudentModal, setShowManageStudentModal] = useState(false);
   return (
     <Modal

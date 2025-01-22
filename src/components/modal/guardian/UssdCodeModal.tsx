@@ -4,6 +4,7 @@ import BankCodeCard from "@/components/guardian/subscriptions/bank-code-card";
 import FirstBankLogo from "../../../../public/guardian/first-bank.svg";
 import GTBankLogo from "../../../../public/guardian/gtbank-logo.svg";
 import WemaBankLogo from "../../../../public/guardian/wema-logo.svg";
+import useNoScroll from "@/components/hooks/useNoScroll";
 
 const banksCode = [
   {
@@ -35,6 +36,7 @@ const UssdCodeModal = ({
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
+  useNoScroll(isOpen);
   return (
     <Modal
       // appElement={

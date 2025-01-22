@@ -44,8 +44,8 @@ const MobileSideNav = () => {
               >
                 <IoClose size={20} color="white" />
               </div>
-              {/* sm screen logo */}
-              <div className="flex items-center justify-center md:hidden">
+              {/* sm/md screen logo */}
+              <div className="flex items-center justify-center lg:hidden">
                 <Link href={"/"}>
                   <Image
                     src={"/guardian/screenclass-logo.svg"}
@@ -55,8 +55,8 @@ const MobileSideNav = () => {
                   />
                 </Link>
               </div>
-              {/* sm screen profile details */}
-              <div className="mt-3 flex items-center gap-3 px-3 py-2 md:hidden md:gap-[18px]">
+              {/* sm/md screen profile details */}
+              <div className="mt-3 flex items-center gap-3 px-3 py-2 lg:hidden lg:gap-[18px]">
                 <Image
                   src={"/guardian/ellipse.svg"}
                   alt="ellipse"
@@ -74,9 +74,9 @@ const MobileSideNav = () => {
                 </div>
               </div>
               <div className="flex h-full flex-col justify-between">
-                <div className="mt-5 md:space-y-10">
-                  {/* md/lg screen logo */}
-                  <div className="hidden items-center justify-center md:flex">
+                <div className="mt-5 lg:space-y-10">
+                  {/* lg screen logo */}
+                  <div className="hidden items-center justify-center lg:flex">
                     <Link href={"/"}>
                       <Image
                         src={"/guardian/screenclass-logo.svg"}
