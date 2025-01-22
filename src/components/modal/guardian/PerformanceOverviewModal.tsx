@@ -1,3 +1,4 @@
+import useNoScroll from "@/components/hooks/useNoScroll";
 import React from "react";
 import Modal from "react-modal";
 
@@ -15,6 +16,7 @@ const PerformanceOverviewModal = ({
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
+  useNoScroll(isOpen);
   return (
     <Modal
       // appElement={

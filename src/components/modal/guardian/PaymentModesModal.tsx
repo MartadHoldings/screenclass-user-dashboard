@@ -5,6 +5,7 @@ import PaymentCard from "../../guardian/subscriptions/payment-card";
 import CardDetailsModal from "./CardDetailsModal";
 import BankDepositModal from "./BankDepositModal";
 import UssdCodeModal from "./UssdCodeModal";
+import useNoScroll from "@/components/hooks/useNoScroll";
 
 const paymentModes = [
   "Debit Card (PayStack)",
@@ -22,13 +23,14 @@ const PaymentModesModal = ({
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
+  useNoScroll(isOpen);
   const [showCardDetailsModal, setShowCardDetailsModal] = useState(false);
   const [showBankDepositModal, setShowBankDepositModal] = useState(false);
   const [showUssdCodeModal, setShowUssdCodeModal] = useState(false);
 
   const handlePaymentModeClick = (mode: PaymentMode) => {
     if (mode === "Debit Card (PayStack)" || mode === "Flutter wave") {
-      setShowCardDetailsModal(true);
+      // setShowCardDetailsModal(true);
     } else if (mode === "Bank Deposit") {
       setShowBankDepositModal(true);
     } else {

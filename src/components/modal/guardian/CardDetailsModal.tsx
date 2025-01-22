@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Modal from "react-modal";
 import { nunito } from "@/components/shared/fonts";
 import SuccessModal from "./SuccessModal";
+import useNoScroll from "@/components/hooks/useNoScroll";
 
 const CardDetailsModal = ({
   isOpen,
@@ -11,6 +12,7 @@ const CardDetailsModal = ({
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
+  useNoScroll(isOpen);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [formData, setFormData] = useState({
     cardNumber: "",

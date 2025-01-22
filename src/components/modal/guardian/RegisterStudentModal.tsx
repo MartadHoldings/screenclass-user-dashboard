@@ -1,5 +1,5 @@
-"use client";
-import React, { useEffect } from "react";
+import useNoScroll from "@/components/hooks/useNoScroll";
+import React from "react";
 import Modal from "react-modal";
 import Select from "react-select";
 
@@ -10,17 +10,7 @@ const RegisterStudentModal = ({
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
-  useEffect(() => {
-    if (isOpen) {
-      document.body.classList.add("no-scroll");
-    } else {
-      document.body.classList.remove("no-scroll");
-    }
-
-    return () => {
-      document.body.classList.remove("no-scroll"); // Clean up on unmount
-    };
-  }, [isOpen]);
+  useNoScroll(isOpen);
   return (
     <Modal
       // appElement={

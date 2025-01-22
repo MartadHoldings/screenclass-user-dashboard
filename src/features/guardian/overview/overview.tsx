@@ -12,17 +12,31 @@ export const Overview = () => {
     <>
       <BackgroundContainer color="#FBFBFB">
         <div className="mx-auto min-h-screen max-w-[1240px] bg-[#FBFBFB] pl-3 pr-3 md:pl-7 md:pr-0 xl:pl-14">
-          <div className="grid items-end gap-8 md:grid-cols-3 xl:gap-16">
+          <div className="grid items-end gap-8 lg:grid-cols-3 xl:gap-16">
             {/* hero */}
-            <div className="md:col-span-2">
-              <div className="mt-3 flex items-center justify-between pl-2 pr-3 md:mt-0 md:pr-6">
+            <div className="lg:col-span-2">
+              <div className="mt-3 flex items-center justify-between pl-2 pr-3 lg:mt-0 md:pr-6">
                 <div className="flex items-center gap-3">
                   <MobileSideNav />
                   <h1 className="segoe text-lg font-bold md:text-xl">
                     Dashboard
                   </h1>
                 </div>
-                <div className="flex items-center gap-3 md:gap-6">
+                <div className="relative w-[150px] md:w-[250px] h-[35px] bg-[rgba(150,152,213,0.30)] rounded-lg">
+                  <input
+                    type="text"
+                    className="segoe w-[90%] h-full bg-transparent px-3 text-xs font-light outline-none placeholder:text-[#1b1b1b]/70"
+                    placeholder="Search anything.."
+                  />
+                  <Image
+                    src={"/guardian/search-icon.svg"}
+                    alt="search icon"
+                    width={30}
+                    height={30}
+                    className="absolute top-0 right-0"
+                  />
+                </div>
+                {/* <div className="flex items-center gap-3 md:gap-6">
                   <p
                     className={`${inter.className} text-sm font-light md:text-[15px]`}
                   >
@@ -34,7 +48,7 @@ export const Overview = () => {
                     width={40}
                     height={40}
                   />
-                </div>
+                </div> */}
               </div>
               <div className="mt-4 flex flex-col items-center justify-between rounded-[30px] bg-[rgba(27,181,247,0.29)] px-8 py-4 md:mt-8 md:flex-row">
                 <div>
@@ -53,13 +67,13 @@ export const Overview = () => {
                   alt="overview page hero"
                   width={296}
                   height={168}
-                  className="h-auto w-full md:w-60 lg:w-full"
+                  className="h-auto w-full"
                 />
               </div>
             </div>
             {/* logout */}
             <div
-              className="hidden flex-col items-center bg-white py-[50px] pl-9 pr-7 md:flex"
+              className="hidden flex-col items-center bg-white py-[50px] pl-9 pr-7 lg:flex"
               style={{
                 boxShadow: "0px 0px 20px -10px rgba(0, 0, 0, 0.25)",
               }}
@@ -105,7 +119,7 @@ export const Overview = () => {
                 >
                   All Subjects
                 </h4>
-                <div className="flex items-center gap-4">
+                {/* <div className="flex items-center gap-4">
                   <p className="segoe text-[15px] font-bold text-black/80">
                     More
                   </p>
@@ -115,7 +129,7 @@ export const Overview = () => {
                     width={16}
                     height={8}
                   />
-                </div>
+                </div> */}
               </div>
               {/* cards */}
               <div className="mt-5 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -141,7 +155,7 @@ export const Overview = () => {
             </div>
             {/* recent activities */}
             <div
-              className="bg-white pl-8 pr-3 pt-3"
+              className="bg-white pl-8 pr-3 pt-3 max-h-[224px] overflow-y-auto"
               style={{
                 boxShadow: "4px 4px 10px -10px rgba(0, 0, 0, 0.25)",
               }}
@@ -159,7 +173,7 @@ export const Overview = () => {
                   height={20}
                 />
               </div>
-              {Array.from({ length: 2 }, (_, index) => (
+              {Array.from({ length: 4 }, (_, index) => (
                 <p
                   key={index}
                   className="segoe border-b border-b-[#E0DFDF] py-5 text-[rgba(27,27,27,0.80)] last:border-b-0"

@@ -94,7 +94,7 @@ const Navlinks = () => {
           ),
         )}
         {/* logout */}
-        <div className="flex items-center gap-8 md:hidden">
+        <div className="flex items-center gap-8 lg:hidden">
           <Image
             src={"/guardian/logout-icon.svg"}
             alt="logout"

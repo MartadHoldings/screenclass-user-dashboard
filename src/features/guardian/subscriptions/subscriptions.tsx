@@ -9,11 +9,11 @@ export const Subscriptions = () => {
       <div className="mx-auto flex min-h-screen max-w-[1240px] items-center justify-center bg-[#f1f1f1]">
         <div className="mx-3 flex min-h-screen w-full flex-col bg-[#FAFAFA] pl-3 pr-3 md:mx-7 md:pl-4 md:pr-4 xl:pl-9">
           <Header title="Plan Subscriptions" />
-          <div className="h-full">
+          <div className="flex-grow flex flex-col h-full">
             <h2 className="segoe my-4 text-lg text-[#1B1B1B] md:text-xl">
               Subscribe
             </h2>
-            <div className="flex items-center justify-center">
+            <div className="flex flex-grow items-center justify-center">
               <div
                 className="bg-white px-8 pb-24 pt-6"
                 style={{
