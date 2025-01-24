@@ -1,7 +1,8 @@
 import React from "react";
 import Modal from "react-modal";
-import { nunito } from "../shared/fonts";
+import { nunito } from "@/components/shared/fonts";
 import Link from "next/link";
+import useNoScroll from "@/components/hooks/useNoScroll";
 
 const links = [
   {
@@ -22,48 +23,47 @@ const links = [
   {
     id: 4,
     name: "View Profile",
-    href: "profile",
+    href: "/guardian/student-profile/123",
   },
 ];
 
-function ManageStudentsModal({
+const ManageStudentsModal = ({
   isOpen,
   setIsOpen,
 }: {
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
-}) {
+}) => {
+  useNoScroll(isOpen);
   return (
     <Modal
-      appElement={
-        (document.getElementById("__next") as HTMLElement) || undefined
-      }
+      // appElement={
+      //   (document.getElementById("__next") as HTMLElement) || undefined
+      // }
       isOpen={isOpen}
-      className="modal"
+      className="modal bg-white pb-4 pl-7 pr-9 pt-6"
       overlayClassName="backdrop"
       onRequestClose={() => setIsOpen(false)}
       shouldCloseOnOverlayClick={true}
       contentLabel="Register Student Modal"
-    //   ariaHideApp={false}
+      ariaHideApp={false}
     >
-      <div className="bg-white pb-4 pl-7 pr-9 pt-6">
-        <h2 className={`${nunito.className} text-xs font-bold text-[#407BFF]`}>
-          Manage Students
-        </h2>
-        <div className="mt-4 flex flex-col gap-4">
-          {links.map((link) => (
-            <Link
-              key={link.id}
-              href={link.href}
-              className={`${nunito.className} text-[13px] text-[rgba(27,27,27,0.60)]`}
-            >
-              {link.name}
-            </Link>
-          ))}
-        </div>
+      <h2 className={`${nunito.className} text-xs font-bold text-[#407BFF]`}>
+        Manage Students
+      </h2>
+      <div className="mt-4 flex flex-col gap-4">
+        {links.map((link) => (
+          <Link
+            key={link.id}
+            href={link.href}
+            className={`${nunito.className} text-[13px] text-[rgba(27,27,27,0.60)]`}
+          >
+            {link.name}
+          </Link>
+        ))}
       </div>
     </Modal>
   );
-}
+};
 
 export default ManageStudentsModal;

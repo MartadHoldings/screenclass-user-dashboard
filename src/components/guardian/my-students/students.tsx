@@ -1,31 +1,27 @@
 "use client";
-import ManageStudentsModal from "@/components/modal/ManageStudentsModal";
-import RegisterStudentModal from "@/components/modal/RegisterStudentModal";
+import ManageStudentsModal from "@/components/modal/guardian/ManageStudentsModal";
+import RegisterStudentModal from "@/components/modal/guardian/RegisterStudentModal";
 import Image from "next/image";
 import React, { useState } from "react";
 
-function Students() {
+const Students = () => {
   const [showAddStudentModal, setShowAddStudentModal] = useState(false);
   const [showManageStudentsModal, setShowManageStudentsModal] = useState(false);
   return (
     <div className="">
-      {showAddStudentModal && (
-        <RegisterStudentModal
-          isOpen={showAddStudentModal}
-          setIsOpen={setShowAddStudentModal}
-        />
-      )}
-      {showManageStudentsModal && (
-        <ManageStudentsModal
-          isOpen={showManageStudentsModal}
-          setIsOpen={setShowManageStudentsModal}
-        />
-      )}
+      <RegisterStudentModal
+        isOpen={showAddStudentModal}
+        setIsOpen={setShowAddStudentModal}
+      />
+      <ManageStudentsModal
+        isOpen={showManageStudentsModal}
+        setIsOpen={setShowManageStudentsModal}
+      />
       <div className="my-5 flex items-center justify-between">
-        <h2 className="segoe text-xl text-[#1B1B1B]">Students</h2>
+        <h2 className="segoe text-lg text-[#1B1B1B] md:text-xl">Students</h2>
         <button
           onClick={() => setShowAddStudentModal(true)}
-          className="segoe w-[292px] rounded-md bg-SC-Orange py-[14px] text-sm font-black text-white"
+          className="segoe w-[150px] rounded-md bg-SC-Orange py-2 text-sm font-black text-white md:w-[292px] md:py-[14px]"
         >
           Add new student
         </button>
@@ -34,24 +30,27 @@ function Students() {
         {Array.from({ length: 5 }, (_, index) => (
           <div
             key={index}
-            className="flex items-center justify-between rounded-[10px] bg-white px-9 py-4"
+            className="flex items-center justify-between rounded-[10px] bg-white px-3 py-4 md:px-9"
             style={{
               boxShadow: "0px 0px 10px -2px rgba(0, 0, 0, 0.25)",
             }}
           >
-            <div className="flex items-center gap-[26px]">
+            <div className="flex items-center gap-4 md:gap-[26px]">
               <Image
                 src={"/guardian/students-ellipse.svg"}
                 alt="user icon"
                 width={70}
                 height={70}
+                className="h-auto w-14 md:w-[70px]"
               />
               <div>
-                <h3 className="segoe text-2xl font-semibold text-[#1B1B1B]">
+                <h3 className="segoe text-xl font-semibold text-[#1B1B1B] md:text-2xl">
                   Temilola Ann
                 </h3>
-                <p className="segoe text-[#1B1B1B]">Student&apos;s Class</p>
-                <p className="segoe mt-4 text-lg text-SC-Orange">
+                <p className="segoe text-sm text-[#1B1B1B] md:text-base">
+                  Student&apos;s Class
+                </p>
+                <p className="segoe mt-2 text-base text-SC-Orange md:mt-4 md:text-lg">
                   Student&apos;s ID
                 </p>
               </div>
@@ -65,6 +64,7 @@ function Students() {
                 alt="more icon"
                 width={34}
                 height={6}
+                className="h-auto w-7 md:w-full"
               />
             </div>
           </div>
@@ -72,6 +72,6 @@ function Students() {
       </div>
     </div>
   );
-}
+};
 
 export default Students;
