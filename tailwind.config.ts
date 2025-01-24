@@ -19,6 +19,21 @@ export default {
         "SC-Bland": "#F5F5F5",
         "SC-Blue": "#016AAD",
       },
+      animation: {
+        "fade-in": "fadeIn 0.3s ease-in-out",
+      },
+      keyframes: {
+        fadeIn: {
+          from: {
+            opacity: "0",
+            transform: "translateY(-10px)",
+          },
+          to: {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
+      },
     },
   },
   plugins: [],

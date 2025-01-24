@@ -6,10 +6,6 @@ interface SideNavBadgeProps {
 }
 
 const sidenavBadgeValues: SideNavBadgeProps[] = [
-  {
-    title: "official user",
-    value: "malcom dunamis",
-  },
   { title: "current class", value: "common entrance prep" },
   { title: "subject", value: "english" },
   { title: "topic", value: "comprehension" },
@@ -41,12 +37,10 @@ const SideNavBadge = ({ title, value }: SideNavBadgeProps) => {
   return (
     <div className="flex min-h-[100px] w-full flex-col justify-center rounded-sm bg-gray-200 px-2 py-3">
       <p className="text-[10px] font-extralight uppercase text-gray-400">
-        {title || "official user"}
+        {title}
       </p>
       <hr className="mb-3 mt-2 border-[1] border-gray-400" />
-      <p className="text-sm font-medium uppercase text-black">
-        {value || "malcom dunamis"}
-      </p>
+      <p className="text-sm font-medium uppercase text-black">{value}</p>
     </div>
   );
 };

@@ -1,7 +1,9 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Container, RadioButton, Pagination } from "@/components/cbt";
+import { QuizContainer, RadioButton, Pagination } from "@/components/cbt";
+import CalculatorModal from "@/components/modal/CBTExamsCalculator";
+import Image from "next/image";
 
 type Question = {
   options: string[];
@@ -26,6 +28,7 @@ export const QuizQuestion: React.FC<QuizQuestionProps> = ({
   // const [ currentAnswer, setCurrentAnswer ]
   const [selectedOption, setSelectedOption] = useState<string>("");
   const [remainingTime, setRemainingTime] = useState<number>(quizDuration);
+  const [isCalculatorOpen, setIsCalculatorOpen] = useState(false);
 
   // Countdown Timer Logic
   useEffect(() => {
@@ -57,57 +60,53 @@ export const QuizQuestion: React.FC<QuizQuestionProps> = ({
   };
 
   return (
-    <Container title="Recreation of love" className="relative">
-      <div className="flex w-full flex-col gap-y-5 pt-10">
-        <p className="text-base font-semibold text-black first-letter:capitalize">
-          {question}
-        </p>
-        <div className="flex flex-col gap-y-2">
-          {options.map((option) => (
-            <RadioButton
-              key={option}
-              name={option}
-              label={option}
-              value={option}
-              onChange={handleOptionChange}
-            />
-          ))}
-        </div>
-
-        <div className="absolute bottom-[3rem] left-0 w-full translate-x-[12.5%] px-6">
-          <Pagination totalPages={totalQuestions} currentPage={currentPage} />
-        </div>
-
-        {/* Progress Bar */}
-        {/* <div className="absolute bottom-0 left-0 w-full px-6">
-          <div className="w-full rounded-full bg-gray-200 dark:bg-gray-700">
-            <div className="absolute bottom-12 left-0 w-full px-6">
-              <p className="text-center text-sm font-semibold text-black">
-                Remaining Time: {formatTime(remainingTime)}
-              </p>
-            </div>
-          </div>
-        </div> */}
-
-        <div className="absolute bottom-0 left-0 w-full px-6">
-          <div className="relative w-full rounded-full bg-gray-200 dark:bg-gray-700">
-            <div
-              className="rounded-full bg-blue-600 p-0.5 text-center text-xs font-medium leading-none text-blue-100"
-              style={{
-                width: `${((quizDuration - remainingTime) / quizDuration) * 100}%`,
-              }}
-            >
-              {Math.round(
-                ((quizDuration - remainingTime) / quizDuration) * 100,
-              )}
-              %
-            </div>
-            <p className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-xs font-semibold text-black">
-              Remaining Time: {formatTime(remainingTime)}
+    <QuizContainer
+      title="Importance of Recreation"
+      timeRemaining={formatTime(remainingTime)}
+      className="relative"
+    >
+      <div className="flex w-full flex-col gap-y-5 p-10">
+        <div className="flex w-full flex-col justify-between gap-y-6 md:flex-row md:gap-y-0">
+          <div className="flex flex-col gap-y-2 max-sm:order-2">
+            <p className="text-base font-semibold text-black first-letter:capitalize">
+              {question}
             </p>
+            {options.map((option) => (
+              <RadioButton
+                key={option}
+                name={option}
+                label={option}
+                value={option}
+                onChange={handleOptionChange}
+              />
+            ))}
           </div>
+          <button
+            onClick={() => setIsCalculatorOpen(true)}
+            className="self-start rounded-lg max-sm:order-1 max-sm:self-end"
+          >
+            <Image
+              src="/icons/calculator-icon.svg"
+              alt="calculator icon"
+              width={50}
+              height={50}
+            />
+          </button>
         </div>
+
+        <div className="absolute bottom-[3rem] left-0 grid w-full place-items-center px-6">
+          <Pagination
+            totalPages={totalQuestions}
+            currentPage={currentPage}
+            isSelected={!!selectedOption}
+          />
+        </div>
+
+        <CalculatorModal
+          isOpen={isCalculatorOpen}
+          setIsOpen={setIsCalculatorOpen}
+        />
       </div>
-    </Container>
+    </QuizContainer>
   );
 };

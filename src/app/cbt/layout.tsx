@@ -1,28 +1,57 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { Header, SideNav, UserSidenav } from "@/components/cbt/nav-bar";
-import { useParams } from "next/navigation";
+import { CBTDrawer } from "@/components/cbt";
+import { useParams, usePathname } from "next/navigation";
+import Image from "next/image";
 
-const layout = ({ children }: { children: React.ReactNode }) => {
-  const params = useParams<{ id: string }>();
-  const questionNo = parseInt(params?.id);
+const Layout = ({ children }: { children: React.ReactNode }) => {
+  const params = useParams<{ id: string }>(); // Get route params like { id: '123' }
+  const questionNo = parseInt(params?.id, 10);
+  const pathname = usePathname();
+
+  const isCBTWithNumber = /^\/cbt\/\d+$/.test(pathname);
+
+  console.log(pathname, isCBTWithNumber);
+
+  // State to handle the modal toggle for smaller screens
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Function to toggle the modal
+  const toggleModal = () => setIsModalOpen((prev) => !prev);
+
   return (
-    <div className="bg- min-h-screen w-full bg-SC-Bland">
+    <div className="min-h-screen w-full bg-SC-Bland">
       <Header />
-      <main className="grid h-[calc(100dvh-50px)] w-full place-items-center py-4">
-        <div className="flex h-full w-[80vw] space-x-4">
-          <aside>
-            <SideNav />
-          </aside>
+      <main className="grid h-[calc(100dvh-50px)] w-full py-4">
+        <div className="flex h-full w-full max-[768px]:px-4 lg:mx-auto lg:w-[80vw] xl:space-x-4">
+          {/* Sidebar for larger screens */}
+          {!isCBTWithNumber && (
+            <aside className="hidden xl:block">
+              <SideNav />
+            </aside>
+          )}
+
+          {/* Main content */}
           <div className="w-full">{children}</div>
-          <aside>
-            <UserSidenav questionNo={questionNo} timeRemaining="00:30:00" />
-          </aside>
+
+          {/* UserSidenav for larger screens */}
+          {!isCBTWithNumber && (
+            <aside className="hidden xl:block">
+              <UserSidenav questionNo={questionNo} timeRemaining="00:30:00" />
+            </aside>
+          )}
         </div>
       </main>
+      <CBTDrawer
+        isOpen={isModalOpen}
+        onClose={toggleModal}
+        timeRemaining="00:30:00"
+        questionNo={questionNo}
+      />
     </div>
   );
 };
 
-export default layout;
+export default Layout;
