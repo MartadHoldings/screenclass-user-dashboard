@@ -5,18 +5,22 @@ interface RadioButtonProps {
   value: string;
   label: string;
   checked?: boolean;
+  index: number;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
+
+const alphabets = ["A", "B", "C", "D", "E", "F", "G"];
 
 export const RadioButton: React.FC<RadioButtonProps> = ({
   name,
   value,
   label,
   checked,
+  index,
   onChange,
 }) => {
   return (
-    <div className="flex w-fit cursor-pointer items-center">
+    <div className="flex w-full cursor-pointer items-center border-y border-gray-200 py-3">
       <input
         type="radio"
         name={name}
@@ -27,8 +31,9 @@ export const RadioButton: React.FC<RadioButtonProps> = ({
       />
       <label
         htmlFor={name}
-        className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+        className="ms-2 text-sm font-normal text-gray-900 dark:text-gray-300"
       >
+        <span className="mr-2 text-base font-bold uppercase">{`(${alphabets[index]})`}</span>
         {label}
       </label>
     </div>

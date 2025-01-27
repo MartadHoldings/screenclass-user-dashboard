@@ -11,11 +11,18 @@ type Question = {
   question: string;
 };
 
+type ResponseActions = {
+  recordResponse: (value: string) => void;
+  updateResponse: (value: string) => void;
+};
+
 interface QuizQuestionProps {
   currentQuestion: Question;
   currentPage: number;
   totalQuestions: number;
   quizDuration: number;
+  respones: string[];
+  responseActions: ResponseActions;
 }
 
 export const QuizQuestion: React.FC<QuizQuestionProps> = ({
@@ -23,10 +30,15 @@ export const QuizQuestion: React.FC<QuizQuestionProps> = ({
   currentPage,
   totalQuestions,
   quizDuration,
+  respones,
+  responseActions,
 }) => {
   const { answer, options, question } = currentQuestion;
   // const [ currentAnswer, setCurrentAnswer ]
-  const [selectedOption, setSelectedOption] = useState<string>("");
+  const [selectedOption, setSelectedOption] = useState<string>(
+    respones[currentPage - 1] || "",
+  );
+
   const [remainingTime, setRemainingTime] = useState<number>(quizDuration);
   const [isCalculatorOpen, setIsCalculatorOpen] = useState(false);
 
@@ -56,7 +68,12 @@ export const QuizQuestion: React.FC<QuizQuestionProps> = ({
 
   const handleOptionChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
+    if (value?.toLowerCase() !== selectedOption?.toLowerCase()) {
+      responseActions.updateResponse(value);
+    }
+
     setSelectedOption(value);
+    responseActions.recordResponse(value);
   };
 
   return (
@@ -65,36 +82,60 @@ export const QuizQuestion: React.FC<QuizQuestionProps> = ({
       timeRemaining={formatTime(remainingTime)}
       className="relative"
     >
-      <div className="flex w-full flex-col gap-y-5 p-10">
-        <div className="flex w-full flex-col justify-between gap-y-6 md:flex-row md:gap-y-0">
-          <div className="flex flex-col gap-y-2 max-sm:order-2">
-            <p className="text-base font-semibold text-black first-letter:capitalize">
+      <div className="flex w-full flex-col gap-y-5 px-4 py-6 md:p-10">
+        {/* Question and Calculator Section */}
+        <div className="flex w-full flex-col items-start gap-y-4 bg-gray-300 p-4 md:flex-row md:items-center md:gap-x-4">
+          {/* Question Section */}
+          <div className="flex-1 p-4 md:p-6">
+            <p className="text-sm font-semibold text-black first-letter:capitalize md:text-base">
               {question}
             </p>
-            {options.map((option) => (
-              <RadioButton
-                key={option}
-                name={option}
-                label={option}
-                value={option}
-                onChange={handleOptionChange}
-              />
-            ))}
           </div>
-          <button
-            onClick={() => setIsCalculatorOpen(true)}
-            className="self-start rounded-lg max-sm:order-1 max-sm:self-end"
-          >
-            <Image
-              src="/icons/calculator-icon.svg"
-              alt="calculator icon"
-              width={50}
-              height={50}
-            />
-          </button>
+
+          {/* Calculator Button */}
+          <div className="flex h-fit justify-start max-sm:self-end md:justify-end">
+            <button
+              onClick={() => setIsCalculatorOpen(true)}
+              className="rounded-lg bg-white p-2 shadow-md"
+            >
+              <Image
+                src="/icons/calculator-icon.svg"
+                alt="calculator icon"
+                width={30}
+                height={30}
+                className="md:h-[40px] md:w-[40px]"
+              />
+            </button>
+          </div>
         </div>
 
-        <div className="absolute bottom-[3rem] left-0 grid w-full place-items-center px-6">
+        {/* Options Section */}
+        <div className="mt-5 flex flex-col p-2 shadow-sm">
+          {options.map((option, index) => (
+            <RadioButton
+              key={option}
+              name={option}
+              label={option}
+              value={option}
+              index={index}
+              checked={selectedOption === option}
+              onChange={handleOptionChange}
+            />
+          ))}
+        </div>
+
+        {/* Submit Button Section */}
+        {/* <div className="flex w-full justify-end px-4">
+          <button
+            type="button"
+            className="flex h-12 w-28 items-center justify-center rounded-lg border-2 border-black bg-blue-400 text-sm font-medium hover:bg-blue-500 sm:w-32 md:w-[10rem]"
+          >
+            Submit
+          </button>
+        </div> */}
+
+        {/* Pagination Section */}
+        <div className="absolute bottom-6 left-0 grid w-full place-items-center px-4">
           <Pagination
             totalPages={totalQuestions}
             currentPage={currentPage}
@@ -102,6 +143,7 @@ export const QuizQuestion: React.FC<QuizQuestionProps> = ({
           />
         </div>
 
+        {/* Calculator Modal */}
         <CalculatorModal
           isOpen={isCalculatorOpen}
           setIsOpen={setIsCalculatorOpen}

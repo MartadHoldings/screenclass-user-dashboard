@@ -10,9 +10,7 @@ export const UserSidenav = ({
   questionNo?: number;
   timeRemaining?: string;
 }) => {
-  const minsInMillSeconds = 15 * 60 * 1000;
-  const convertedDate = new Date(minsInMillSeconds);
-  console.log(convertedDate);
+  
 
   return (
     <div className="sticky top-[5.25rem] h-[calc(100dvh-82px)] w-[250px] overflow-clip rounded-lg bg-white">

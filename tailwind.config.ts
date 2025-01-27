@@ -20,10 +20,10 @@ export default {
         "SC-Blue": "#016AAD",
       },
       animation: {
-        "fade-in": "fadeIn 0.3s ease-in-out",
+        "calculator-fade-in": "calFadeIn 0.3s ease-in-out",
       },
       keyframes: {
-        fadeIn: {
+        calFadeIn: {
           from: {
             opacity: "0",
             transform: "translateY(-10px)",

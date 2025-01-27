@@ -106,9 +106,9 @@ export const englishComprehensionQuestions = [
   },
 ];
 
-export type Question = typeof englishComprehensionQuestions;
+export type Questions = typeof englishComprehensionQuestions;
 
 // Function to randomize the array of objects
-export function randomizeArray(array: Question) {
+export function randomizeArray(array: Questions) {
   return array.sort(() => Math.random() - 0.5);
 }

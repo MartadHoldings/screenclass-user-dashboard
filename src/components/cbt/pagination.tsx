@@ -28,6 +28,8 @@ export const Pagination: React.FC<PaginationProps> = ({
   // Generate an array of page numbers based on totalPages
   const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
 
+  const selectedStyle = isSelected && "bg-green-500 text-white";
+
   const previousStyle = () => {
     let style: string;
     if (currentPage === 1) {
@@ -82,7 +84,7 @@ export const Pagination: React.FC<PaginationProps> = ({
                 page === currentPage
                   ? "border-blue-300 bg-blue-50 text-blue-600"
                   : "bg-white text-gray-500 hover:bg-gray-100 hover:text-gray-700"
-              } border border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white`}
+              } border border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white ${currentPage === page && selectedStyle}`}
             >
               {page}
             </button>

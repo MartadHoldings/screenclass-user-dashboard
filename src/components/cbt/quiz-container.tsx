@@ -22,7 +22,7 @@ export const QuizContainer = ({
   const router = useRouter();
   return (
     <div
-      className={`${height || "h-full"} w-full overflow-clip rounded-lg ${className}`}
+      className={`${height || "min-h-screen"} w-full overflow-clip rounded-lg ${className}`}
     >
       <div className="flex w-full items-center justify-between bg-gray-200 px-6 py-3">
         <div onClick={() => router.back()}>
@@ -33,15 +33,16 @@ export const QuizContainer = ({
             height={24}
           />
         </div>
-        <h4 className="text-base font-semibold capitalize text-black">
+        <h4 className="text-sm font-semibold capitalize text-black md:text-base">
           {title}
         </h4>
 
         <p className="text-sm font-medium capitalize text-black">
+          <span className="hidden font-bold md:inline">Time Remaining:</span>{" "}
           {timeRemaining}
         </p>
       </div>
-      <div className="clex-1 h-full min-h-[595px] w-full bg-white px-6">
+      <div className="clex-1 h-full min-h-[calc(100dvh-48px)] w-full bg-white px-6">
         {children}
       </div>
     </div>

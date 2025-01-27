@@ -24,7 +24,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="min-h-screen w-full bg-SC-Bland">
       <Header />
-      <main className="grid h-[calc(100dvh-50px)] w-full py-4">
+      <main className="grid min-h-[calc(100dvh-50px)] w-full py-4">
         <div className="flex h-full w-full max-[768px]:px-4 lg:mx-auto lg:w-[80vw] xl:space-x-4">
           {/* Sidebar for larger screens */}
           {!isCBTWithNumber && (
@@ -37,11 +37,11 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           <div className="w-full">{children}</div>
 
           {/* UserSidenav for larger screens */}
-          {!isCBTWithNumber && (
+          {/* {!isCBTWithNumber && (
             <aside className="hidden xl:block">
               <UserSidenav questionNo={questionNo} timeRemaining="00:30:00" />
             </aside>
-          )}
+          )} */}
         </div>
       </main>
       <CBTDrawer

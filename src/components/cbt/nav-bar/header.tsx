@@ -14,11 +14,11 @@ export const Header = () => {
               className="object-fit mt-2"
             />
           </div>
-          <div className="absolute inset-y-0 right-0 mb-[4px] h-fit w-fit bg-black p-[2px]">
+          {/* <div className="absolute inset-y-0 right-0 mb-[4px] h-fit w-fit bg-black p-[2px]">
             <p className="text-[10px] font-semibold uppercase text-white">
               cbt
             </p>
-          </div>
+          </div> */}
         </div>
 
         <div className="hidden items-center justify-center space-x-3 rounded-ee-[3rem] rounded-es-[3rem] bg-SC-Brand-Blue px-10 py-3 lg:flex">

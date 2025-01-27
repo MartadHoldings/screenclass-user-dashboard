@@ -1,5 +1,3 @@
-"use client";
-
 import { QuizSummary } from "@/features/cbt";
 import React from "react";
 
