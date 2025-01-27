@@ -1,40 +1,26 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 
-interface RadialChartProps {
+type RadialChartProps = {
   value1: number;
   value2: number;
-  value3: number;
-}
-
-const RadialChart: React.FC<RadialChartProps> = ({
-  value1,
-  value2,
-  value3,
-}) => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
+};
+const RadialChart3: React.FC<RadialChartProps> = ({ value1, value2 }) => {
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-
     const context = canvas.getContext("2d");
     if (!context) return;
 
-    const centerX = canvas.width / 2;
-    const centerY = canvas.height / 2;
+    const centerX = canvas.width / 3;
+    const centerY = canvas.height / 3;
     const radius = Math.min(centerX, centerY) - 10;
-    const lineWidth = 10;
-    // const labelFontSize = 16;
-    // const totalFontSize = 20;
-    // const label = "Total";
-
-    const total = value1 + value2 + value3;
-    const startAngles: number[] = [0];
-    startAngles.push(startAngles[0] + (value1 / total) * 2 * Math.PI);
-    startAngles.push(startAngles[1] + (value2 / total) * 2 * Math.PI);
-
-    const colors: string[] = ["#268B8D", "#EC8694", "#D9D9D9"];
+    const lineWidth = 20;
+    // const labelFontSize = 14;
+    // const totalFontSize = 24;
+    // const label = "scores";
 
     const drawSegment = (
       startAngle: number,
@@ -44,10 +30,11 @@ const RadialChart: React.FC<RadialChartProps> = ({
       context.beginPath();
       context.strokeStyle = color;
       context.lineWidth = lineWidth;
+      // context.lineCap = "round";
       context.arc(centerX, centerY, radius, startAngle, endAngle);
-      context.shadowBlur = 2;
-      context.shadowColor = "rgba(0, 0, 0, 0.3)";
-      context.shadowOffsetX = 0;
+      // context.shadowBlur = 2;
+      // context.shadowColor = "rgba(0, 0, 0, 0.3)";
+      context.shadowOffsetX = 1;
       context.stroke();
       context.shadowBlur = 0;
     };
@@ -72,29 +59,27 @@ const RadialChart: React.FC<RadialChartProps> = ({
     // };
 
     // const drawTotalValue = () => {
-    //   const totalText = total.toString();
+    //   //   const total = value1 + value2;
     //   context.font = `bold ${totalFontSize}px Arial`;
     //   context.fillStyle = "black";
     //   context.textAlign = "center";
-    //   context.fillText(totalText, centerX, centerY + labelFontSize + 5);
+    //   context.fillText("2/3", centerX, centerY + labelFontSize + 5);
     // };
 
     const drawRadialChart = () => {
       context.clearRect(0, 0, canvas.width, canvas.height);
       drawHollowCircle();
-
-      drawSegment(startAngles[0], startAngles[1], colors[0]);
-      drawSegment(startAngles[1], startAngles[2], colors[1]);
-      drawSegment(startAngles[2], 2 * Math.PI, colors[2]);
-
-      //   drawLabel();
-      //   drawTotalValue();
+      const percentage = value1 / (value1 + value2);
+      drawSegment(0, percentage * 2 * Math.PI, "#E980F2");
+      drawSegment(percentage * 2 * Math.PI, 2 * Math.PI, "#1FDCDC");
+      // drawLabel();
+      // drawTotalValue();
     };
 
     drawRadialChart();
-  }, [value1, value2, value3]);
+  }, [value1, value2]);
 
-  return <canvas ref={canvasRef} width={100} height={100} />;
+  return <canvas ref={canvasRef} width={200} height={200} />;
 };
 
-export default RadialChart;
+export default RadialChart3;

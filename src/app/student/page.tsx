@@ -1,6 +1,6 @@
 import React from "react";
 import Sidebar from "@/features/student/Components/Sidebar/Sidebar";
-import Dashboard from "@/features/student/Components/Dashboard/Dashboard";
+import Dashboard from "@/features/student/Dashboard/Dashboard";
 import Sideprofile from "@/features/student/Components/Sideprofile/Sideprofile";
 
 export default function page() {

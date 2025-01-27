@@ -52,7 +52,7 @@ export const MyClass = () => {
                     className="absolute right-[136px] top-[45px] max-h-[21px] max-w-[21px]"
                   />
                 </div>
-                <div className="hiddee=items-center flex flex-col">
+                <div className="flex flex-col items-center">
                   <h2 className="text-xl font-light">SC51125</h2>
                   <h2 className="text-xl font-light text-[#F7631B]">Student</h2>
                 </div>
@@ -85,6 +85,7 @@ export const MyClass = () => {
                   type="text"
                   placeholder="Basic Class"
                   className="mt-2 h-12 w-full rounded-md border p-7 outline-none"
+                  disabled
                 />
                 <button
                   onClick={() => setOpen(true)}

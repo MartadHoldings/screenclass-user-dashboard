@@ -3,7 +3,7 @@ import React from "react";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import EastOutlinedIcon from "@mui/icons-material/EastOutlined";
 import Image from "next/image";
-import student from "../../assets/student.svg";
+import student from "../assets/student.svg";
 import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDownOutlined";
 import { learning, learningItems, quiz, subject } from "./data";
 
@@ -84,15 +84,9 @@ const Dashboard = () => {
                   <h2 className="mb-3">{items.day}</h2>
                   <div className="relative flex h-[300px] w-[5px] flex-col items-end justify-center overflow-hidden rounded bg-[#DFDFDF]">
                     {/* arrange in desceding order (the lowest percentage to the highest) */}
-                    <span
-                      className={`h-[${items.hsci}] w-full bg-[#DFDFDF]`}
-                    ></span>
-                    <span
-                      className={`h-[${items.maths}] w-full bg-[#EC8694]`}
-                    ></span>
-                    <span
-                      className={`h-[${items.eng}] w-full bg-[#6C72FF]`}
-                    ></span>
+                    <span className={`h-[20%] w-full bg-[#DFDFDF]`}></span>
+                    <span className={`h-[20%] w-full bg-[#EC8694]`}></span>
+                    <span className={`h-[60%] w-full bg-[#6C72FF]`}></span>
                   </div>
                 </div>
               ))}

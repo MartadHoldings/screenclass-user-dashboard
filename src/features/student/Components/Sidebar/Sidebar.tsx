@@ -103,7 +103,7 @@ const Sidebar = () => {
       </div>
       {!isActive && sidebar && (
         <div
-          className={`fixed right-1 top-[66px] z-20 flex h-[540px] w-56 flex-col justify-center overflow-y-scroll overscroll-none rounded-md border-b border-l bg-white p-3`}
+          className={`fixed right-1 top-[66px] z-20 flex h-[440px] w-56 flex-col justify-center overflow-y-scroll overscroll-none rounded-md border-b border-l bg-white p-3`}
         >
           <div className="min-h-[100%]">
             <div className="flex flex-col space-y-6">
