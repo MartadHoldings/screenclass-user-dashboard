@@ -14,7 +14,10 @@ const Page = () => {
   const id = parseInt(params?.id || "1", 10);
 
   const [randomizedQuestions, setRandomizedQuestions] = useState<Questions>([]);
-  const [responses, setResponses] = useState<string[]>([]);
+  // need to make it store it as [{page: number, response: string}]
+  const [responses, setResponses] = useState<
+    { id: number; response: string }[]
+  >([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -34,6 +37,8 @@ const Page = () => {
             setRandomizedQuestions(JSON.parse(storedQuestions));
           }
 
+          setRandomizedQuestions(JSON.parse(storedQuestions));
+
           // Load responses from local storage
           setResponses(JSON.parse(storedResponses));
         } catch (error) {
@@ -42,6 +47,7 @@ const Page = () => {
       } else {
         // Randomize questions and save to local storage
         const newQuestions = randomizeArray(englishComprehensionQuestions);
+        console.log(newQuestions);
         setRandomizedQuestions(newQuestions);
         localStorage.setItem(
           "randomizedQuestions",
@@ -57,14 +63,20 @@ const Page = () => {
   }, []);
 
   const recordResponse = (value: string) => {
-    setResponses((prevResponses) => [...prevResponses, value]);
-    localStorage.setItem("responses", JSON.stringify([...responses, value]));
+    setResponses((prevResponses) => {
+      const newResponse = { id, response: value };
+      const updatedResponses = [...prevResponses, newResponse];
+      localStorage.setItem("responses", JSON.stringify(updatedResponses));
+      return updatedResponses;
+    });
   };
 
   const updateResponse = (value: string) => {
     setResponses((prevResponses) => {
-      const updatedResponses = [...prevResponses];
-      updatedResponses[id - 1] = value;
+      const updatedResponses = prevResponses.map((response) =>
+        response.id === id ? { ...response, response: value } : response,
+      );
+
       localStorage.setItem("responses", JSON.stringify(updatedResponses));
       return updatedResponses;
     });
@@ -86,6 +98,8 @@ const Page = () => {
   if (loading) {
     return <div>Loading...</div>;
   }
+
+  console.log(currentQuestion, sliceQuestions);
 
   // Handle invalid question or ID edge case
   if (!currentQuestion) {

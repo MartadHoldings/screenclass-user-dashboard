@@ -4,60 +4,82 @@ import React from "react";
 import { useRouter } from "next/navigation";
 
 interface PaginationProps {
-  totalPages: number; // Total number of pages
-  currentPage: number; // Current active page
-  isSelected: boolean;
+  totalPages: number;
+  currentPage: number;
+  responses: { id: number; response: string }[];
   children?: React.ReactNode;
 }
 
 export const Pagination: React.FC<PaginationProps> = ({
   totalPages,
   currentPage,
-  isSelected,
+  responses,
   children,
 }) => {
   const router = useRouter();
 
-  // Function to handle page changes
   const handlePageChange = (page: number) => {
     if (page >= 1 && page <= totalPages) {
-      router.push(`/cbt/${page}`); // Redirects to the desired page route
+      router.push(`/cbt/${page}`);
     }
   };
 
-  // Generate an array of page numbers based on totalPages
   const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
 
-  const selectedStyle = isSelected && "bg-green-500 text-white";
+  const getPageStyle = (page: number) => {
+    const baseStyle =
+      "flex h-10 w-10 items-center justify-center rounded-md border transition-colors duration-200";
 
-  const previousStyle = () => {
-    let style: string;
-    if (currentPage === 1) {
-      style = "cursor-not-allowed bg-gray-200 text-gray-400";
-    } else if (currentPage === totalPages) {
-      style = "bg-blue-500 text-white hover:bg-blue-600";
-    } else {
-      style = "bg-blue-400 text-white hover:bg-blue-500";
+    if (responses?.length > 0) {
+      const hasResponse = responses.some((response) => response.id === page);
+      const lastResponseId = Math.max(
+        ...responses.map((response) => response.id),
+      ); // Find the highest id in responses
+
+      if (hasResponse) {
+        // Page has a response
+        return `${baseStyle} bg-green-500 text-white hover:bg-green-600`;
+      } else if (page > lastResponseId) {
+        // Page is ahead of the last response's id
+        return `${baseStyle} bg-white text-gray-500 hover:bg-gray-100 hover:text-gray-700`;
+      } else {
+        // Page is behind or in-between responses and does not have a response
+        return `${baseStyle} bg-red-500 text-white hover:bg-red-600`;
+      }
     }
 
-    return style;
+    // Default styling when no responses or current page
+    return `${baseStyle} ${
+      page === currentPage
+        ? "border-blue-300 bg-blue-50 text-blue-600"
+        : "bg-white text-gray-500 hover:bg-gray-100 hover:text-gray-700"
+    } border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white`;
+  };
+
+  const getPreviousButtonStyle = () => {
+    const baseStyle =
+      "flex h-12 w-28 items-center justify-center rounded-lg text-sm font-medium md:w-[10rem]";
+
+    if (currentPage === 1) {
+      return `${baseStyle} cursor-not-allowed bg-gray-200 text-gray-400`;
+    } else if (currentPage === totalPages) {
+      return `${baseStyle} bg-blue-500 text-white hover:bg-blue-600`;
+    }
+    return `${baseStyle} bg-blue-400 text-white hover:bg-blue-500`;
   };
 
   return (
     <nav aria-label="Page navigation" className="w-full lg:w-[80%]">
-      {/* Previous and Next Buttons */}
       <div className="mb-10 flex justify-between">
-        {/* Previous Button */}
         <button
           type="button"
           onClick={() => handlePageChange(currentPage - 1)}
           disabled={currentPage === 1}
-          className={`sm:32 flex h-12 w-28 items-center justify-center rounded-lg text-sm font-medium md:w-[10rem] ${previousStyle()}`}
+          className={`sm:32 ${getPreviousButtonStyle()}`}
         >
           Previous
         </button>
 
-        {/* Next Button */}
         <button
           type="button"
           onClick={() => handlePageChange(currentPage + 1)}
@@ -73,18 +95,14 @@ export const Pagination: React.FC<PaginationProps> = ({
         {children}
       </div>
 
-      {/* Page Numbers */}
       <ul className="flex flex-wrap justify-center gap-2 text-sm">
         {pageNumbers.map((page) => (
           <li key={page}>
             <button
               type="button"
               onClick={() => handlePageChange(page)}
-              className={`flex h-10 w-10 items-center justify-center rounded-md ${
-                page === currentPage
-                  ? "border-blue-300 bg-blue-50 text-blue-600"
-                  : "bg-white text-gray-500 hover:bg-gray-100 hover:text-gray-700"
-              } border border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white ${currentPage === page && selectedStyle}`}
+              className={getPageStyle(page)}
+              aria-current={page === currentPage ? "page" : undefined}
             >
               {page}
             </button>

@@ -21,7 +21,7 @@ interface QuizQuestionProps {
   currentPage: number;
   totalQuestions: number;
   quizDuration: number;
-  respones: string[];
+  respones: { id: number; response: string }[];
   responseActions: ResponseActions;
 }
 
@@ -36,7 +36,8 @@ export const QuizQuestion: React.FC<QuizQuestionProps> = ({
   const { answer, options, question } = currentQuestion;
   // const [ currentAnswer, setCurrentAnswer ]
   const [selectedOption, setSelectedOption] = useState<string>(
-    respones[currentPage - 1] || "",
+    () =>
+      respones.find((response) => response.id === currentPage)?.response || "",
   );
 
   const [remainingTime, setRemainingTime] = useState<number>(quizDuration);
@@ -71,6 +72,7 @@ export const QuizQuestion: React.FC<QuizQuestionProps> = ({
     if (value?.toLowerCase() !== selectedOption?.toLowerCase()) {
       responseActions.updateResponse(value);
     }
+    console.log(value);
 
     setSelectedOption(value);
     responseActions.recordResponse(value);
@@ -139,7 +141,7 @@ export const QuizQuestion: React.FC<QuizQuestionProps> = ({
           <Pagination
             totalPages={totalQuestions}
             currentPage={currentPage}
-            isSelected={!!selectedOption}
+            responses={respones}
           />
         </div>
 
