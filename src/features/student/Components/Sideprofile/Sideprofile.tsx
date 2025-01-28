@@ -12,6 +12,7 @@ const Sideprofile = () => {
   return (
     <nav className="h-full bg-[#ffffff] tracking-wide">
       <div className="relative hidden flex-col lg:flex">
+        {/* topbar */}
         <div className="mt-16 flex w-[370px] items-center justify-between bg-clip-text px-7">
           <h1 className="text-xl font-bold text-[#082038]">Logout</h1>
           <div className="flex items-center justify-center space-x-4">

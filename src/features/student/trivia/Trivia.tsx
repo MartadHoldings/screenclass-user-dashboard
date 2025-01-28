@@ -5,12 +5,10 @@ import logout from "../assets/logout.svg";
 import profilepic from "../assets/profilepic.svg";
 import add from "../assets/add.svg";
 import Image from "next/image";
-import { englishData } from "./data";
-import Link from "next/link";
 
-export const English = () => {
+export const Trivia = () => {
   return (
-    <div className="flex h-full w-full flex-col bg-[#F1F1F1] tracking-wide text-slate-900 sm:flex-row">
+    <div className="flex h-full w-full flex-col overflow-y-scroll bg-[#F1F1F1] tracking-wide text-slate-900 sm:flex-row">
       <div className="lg:w-[14%]">
         <Sidebar />
       </div>
@@ -18,7 +16,7 @@ export const English = () => {
         <div className="flex h-full w-full flex-col items-center bg-[#ffffff]">
           {/* topbar */}
           <section className="mt-24 hidden w-full items-center justify-between border-b-2 border-gray-600 px-4 sm:mt-8 sm:flex sm:px-7 sm:py-2">
-            <h1 className="text-xl font-bold text-[#082038]">My Subjects</h1>
+            <h1 className="text-xl font-bold text-[#082038]">Trivia</h1>
             <div className="flex items-center justify-center space-x-4">
               <h1 className="text-md font-extralight text-[#082038]">
                 09 June, 2023
@@ -63,30 +61,8 @@ export const English = () => {
           </section>
           {/* body */}
           <div className="h-full w-full">
-            <section className="mt-24 flex w-full items-center justify-between px-4 sm:mt-9 sm:flex sm:px-7 sm:py-2">
-              <h1 className="text-xl font-bold text-[#082038]">
-                English Language
-              </h1>
-            </section>
-            <section className="mb-16 mt-8 flex w-full flex-col space-y-6 px-4 sm:mb-0 sm:space-y-8 sm:px-7">
-              {englishData.map((data, index) => (
-                <Link key={index} href={data.link}>
-                  <div
-                    className={`flex h-[130px] w-full items-center justify-between rounded-md border bg-[${data.color}] px-4 py-6 drop-shadow-md sm:px-8`}
-                  >
-                    <div className="flex flex-col items-start">
-                      <h2 className="font-semibold">{data.topic}</h2>
-                      <h2 className="text-md mt-1 text-gray-500">
-                        {data.subtopic}
-                      </h2>
-                      <h2 className="text-md mt-3 text-gray-500">
-                        {data.units} units
-                      </h2>
-                    </div>
-                    <h2 className="font-semibold">{data.time}</h2>
-                  </div>
-                </Link>
-              ))}
+            <section className="mt-24 flex h-full w-full items-center justify-center px-4 sm:mt-9 sm:px-7 sm:py-2">
+              <h2 className="text-center text-4xl">Trivia Content Goes Here</h2>
             </section>
           </div>
         </div>
