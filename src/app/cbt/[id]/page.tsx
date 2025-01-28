@@ -82,6 +82,16 @@ const Page = () => {
     });
   };
 
+  const deleteResponse = (id: number) => {
+    setResponses((prevResponses) => {
+      const updatedResponses = prevResponses.filter(
+        (response) => response.id !== id,
+      );
+      localStorage.setItem("responses", JSON.stringify(updatedResponses));
+      return updatedResponses;
+    });
+  };
+
   // Slice and get the current question
   const sliceQuestions = randomizedQuestions.slice(0, 10);
   const currentQuestion = sliceQuestions[id - 1];
@@ -98,8 +108,6 @@ const Page = () => {
   if (loading) {
     return <div>Loading...</div>;
   }
-
-  console.log(currentQuestion, sliceQuestions);
 
   // Handle invalid question or ID edge case
   if (!currentQuestion) {
@@ -118,8 +126,8 @@ const Page = () => {
         currentPage={id}
         totalQuestions={totalQuestions}
         quizDuration={quizDuration}
-        respones={responses}
-        responseActions={{ recordResponse, updateResponse }}
+        responses={responses}
+        responseActions={{ recordResponse, updateResponse, deleteResponse }}
       />
     </div>
   );

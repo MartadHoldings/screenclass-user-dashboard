@@ -38,13 +38,13 @@ export const Pagination: React.FC<PaginationProps> = ({
 
       if (hasResponse) {
         // Page has a response
-        return `${baseStyle} bg-green-500 text-white hover:bg-green-600`;
+        return `${baseStyle} bg-blue-500 text-white hover:bg-bluw-600`;
       } else if (page > lastResponseId) {
         // Page is ahead of the last response's id
         return `${baseStyle} bg-white text-gray-500 hover:bg-gray-100 hover:text-gray-700`;
       } else {
         // Page is behind or in-between responses and does not have a response
-        return `${baseStyle} bg-red-500 text-white hover:bg-red-600`;
+        return `${baseStyle} border-red-500  hover:border-red-600`;
       }
     }
 
