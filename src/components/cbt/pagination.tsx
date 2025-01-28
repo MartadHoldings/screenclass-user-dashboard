@@ -18,6 +18,8 @@ export const Pagination: React.FC<PaginationProps> = ({
 }) => {
   const router = useRouter();
 
+  console.log(router);
+
   const handlePageChange = (page: number) => {
     if (page >= 1 && page <= totalPages) {
       router.push(`/cbt/${page}`);
