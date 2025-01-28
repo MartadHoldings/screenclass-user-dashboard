@@ -24,6 +24,7 @@ export const MyClass = () => {
       </div>
       <div className="w-full p-0 md:pl-6 lg:w-[85%] lg:pl-7">
         <div className="flex h-full w-full flex-col items-center bg-[#ffffff]">
+          {/* topbar */}
           <div className="mt-24 hidden w-full items-center justify-between border-b-2 border-gray-600 px-4 sm:mt-8 sm:flex sm:px-7 sm:py-2">
             <h1 className="text-xl font-bold text-[#082038]">Switch Class</h1>
             <div className="flex items-center justify-center space-x-4">
@@ -68,6 +69,7 @@ export const MyClass = () => {
               </div>
             </div>
           </div>
+          {/* body */}
           <div className="mt-32 flex h-full items-center justify-center sm:mb-36">
             <div className="flex h-[450px] w-[90%] flex-col items-start border-2 p-8 shadow-xl md:w-[90%] lg:w-[700px]">
               <h2 className="text-2xl font-bold">Switch Class</h2>

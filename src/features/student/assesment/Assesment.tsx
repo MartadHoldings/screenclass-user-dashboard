@@ -16,6 +16,7 @@ export const Assesment = () => {
       </div>
       <div className="w-full p-0 md:pl-6 lg:w-[85%] lg:pl-7">
         <div className="flex h-full w-full flex-col items-center bg-[#ffffff]">
+          {/* topbar */}
           <section className="mt-24 hidden w-full items-center justify-between border-b-2 border-gray-600 px-4 sm:mt-8 sm:flex sm:px-7 sm:py-2">
             <h1 className="text-xl font-bold text-[#082038]">Take Quiz</h1>
             <div className="flex items-center justify-center space-x-4">
@@ -60,6 +61,7 @@ export const Assesment = () => {
               </div>
             </div>
           </section>
+          {/* body */}
           <div className="h-full w-full">
             <section className="mt-24 flex w-full justify-between space-x-10 px-5 sm:mt-9 sm:justify-normal sm:px-7 sm:py-2">
               <h1 className="text-xl font-bold text-[#082038]">Quiz</h1>
@@ -72,6 +74,7 @@ export const Assesment = () => {
                 <h2>00:50</h2>
               </div>
             </section>
+            {/* progressbar */}
             <section className="mt-4 w-full px-7 sm:mt-6">
               <div className="h-2 w-full rounded-lg bg-neutral-200 dark:bg-gray-300">
                 <div
@@ -80,6 +83,7 @@ export const Assesment = () => {
                 ></div>
               </div>
             </section>
+            {/* questions & options */}
             <section className="mt-4 w-full px-7">
               {quiz.map((item, index) => (
                 <div

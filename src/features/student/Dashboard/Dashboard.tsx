@@ -10,6 +10,7 @@ import { learning, learningItems, quiz, subject } from "./data";
 const Dashboard = () => {
   return (
     <div className="flex h-full w-full flex-col items-center bg-[#ffffff]">
+      {/* Topbar */}
       <div className="mt-24 flex w-full items-center justify-between px-4 sm:mt-16 sm:px-7">
         <h1 className="text-xl font-bold text-[#082038]">Dashboard</h1>
         <div className="flex items-center justify-center space-x-4">
@@ -21,6 +22,7 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
+      {/* Hero */}
       <div className="mt-2 flex w-full items-center justify-center p-4 sm:mt-0 sm:p-7">
         <div className="flex h-full w-full flex-col items-center justify-between rounded-[2rem] bg-[#F7631B4D] p-6 sm:flex-row md:p-2 lg:p-6">
           <div className="relative left-0 flex flex-col sm:left-7">
@@ -43,6 +45,7 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
+      {/* charts */}
       <div className="w-full px-6 sm:px-10">
         <div className="flex h-full w-full flex-col items-start justify-start space-y-8 md:h-full md:flex-col md:space-y-8 lg:h-[400px] lg:flex-row lg:space-x-6 lg:space-y-0">
           <div className="flex w-full flex-col items-start">
@@ -84,9 +87,15 @@ const Dashboard = () => {
                   <h2 className="mb-3">{items.day}</h2>
                   <div className="relative flex h-[300px] w-[5px] flex-col items-end justify-center overflow-hidden rounded bg-[#DFDFDF]">
                     {/* arrange in desceding order (the lowest percentage to the highest) */}
-                    <span className={`h-[20%] w-full bg-[#DFDFDF]`}></span>
-                    <span className={`h-[20%] w-full bg-[#EC8694]`}></span>
-                    <span className={`h-[60%] w-full bg-[#6C72FF]`}></span>
+                    <span
+                      className={`h-[${items.hsci}] w-full bg-[#DFDFDF]`}
+                    ></span>
+                    <span
+                      className={`h-[${items.mathematics}] w-full bg-[#EC8694]`}
+                    ></span>
+                    <span
+                      className={`h-[${items.eng}] w-full bg-[#6C72FF]`}
+                    ></span>
                   </div>
                 </div>
               ))}

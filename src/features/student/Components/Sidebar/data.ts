@@ -29,12 +29,12 @@ export const sidebarItems = [
   //   text: "Take Quiz",
   // },
   {
-    link: "/student",
+    link: "/student/subscribe",
     image: sub,
     text: "Subscripitions",
   },
   {
-    link: "/student",
+    link: "/student/trivia",
     image: trivia,
     text: "Trivia",
   },
@@ -44,7 +44,7 @@ export const sidebarItems = [
   //   text: "Games",
   // },
   {
-    link: "/student",
+    link: "/student/profile",
     image: profile,
     text: "My Profile",
   },

@@ -37,6 +37,7 @@ export const Subjects = () => {
       </div>
       <div className="w-full p-0 md:pl-6 lg:w-[85%] lg:pl-7">
         <div className="flex h-full w-full flex-col items-center bg-[#ffffff]">
+          {/* topbar */}
           <section className="mt-24 hidden w-full items-center justify-between border-b-2 border-gray-600 px-4 sm:mt-8 sm:flex sm:px-7 sm:py-2">
             <h1 className="text-xl font-bold text-[#082038]">My Subjects</h1>
             <div className="flex items-center justify-center space-x-4">
@@ -81,6 +82,7 @@ export const Subjects = () => {
               </div>
             </div>
           </section>
+          {/* body */}
           <div className="h-full w-full">
             <section className="mt-24 flex w-full items-center justify-between px-4 sm:mt-9 sm:flex sm:px-7 sm:py-2">
               <h1 className="text-xl font-bold text-[#082038]">All Subjects</h1>
@@ -90,6 +92,7 @@ export const Subjects = () => {
               >
                 Add new subjects
               </button>
+              {/* Add a subject modal */}
               <Modal
                 aria-labelledby="modal-title"
                 aria-describedby="modal-desc"
@@ -123,6 +126,7 @@ export const Subjects = () => {
                   <div className="mt-4 flex w-full flex-col items-start">
                     <h2 className="text-md mb-4 mt-0">Choose a subject</h2>
                     <div className="relative flex w-full items-center">
+                      {/* input within modal */}
                       <FormControl fullWidth>
                         <InputLabel id="demo-simple-select-label">
                           Subject
@@ -148,6 +152,7 @@ export const Subjects = () => {
                     >
                       Add Subject
                     </button>
+                    {/* done modal  */}
                     <Modal
                       aria-labelledby="modal-title"
                       aria-describedby="modal-desc"
@@ -184,6 +189,7 @@ export const Subjects = () => {
                 </Sheet>
               </Modal>
             </section>
+            {/* subjects data */}
             <section className="mb-16 mt-10 flex w-full flex-col items-center space-y-8 px-8 sm:space-y-0 md:mb-16 md:flex-col md:space-y-4 lg:mb-0 lg:flex-row lg:space-x-10 lg:space-y-0">
               {subjectsdata.map((data, index) => (
                 <Link key={index} href={data.link}>
