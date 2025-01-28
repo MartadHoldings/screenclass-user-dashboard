@@ -19,6 +19,21 @@ export default {
         "SC-Bland": "#F5F5F5",
         "SC-Blue": "#016AAD",
       },
+      animation: {
+        "calculator-fade-in": "calFadeIn 0.3s ease-in-out",
+      },
+      keyframes: {
+        calFadeIn: {
+          from: {
+            opacity: "0",
+            transform: "translateY(-10px)",
+          },
+          to: {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
+      },
     },
   },
   plugins: [],
