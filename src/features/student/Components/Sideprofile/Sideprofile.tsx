@@ -10,7 +10,7 @@ import { activities, performance } from "./data";
 
 const Sideprofile = () => {
   return (
-    <nav className="h-full bg-[#ffffff] tracking-wide">
+    <nav className="h-full w-full border-2 border-black bg-[#ffffff] tracking-wide">
       <div className="relative hidden flex-col lg:flex">
         {/* topbar */}
         <div className="mt-16 flex w-[370px] items-center justify-between bg-clip-text px-7">

@@ -1,13 +1,19 @@
+"use client";
+
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { inter } from "@/components/shared/fonts";
 import { publicSans } from "@/components/shared/fonts";
 import StudentsTable from "@/components/guardian/overview/students-table";
 import SubjectCard from "@/components/guardian/my-students/subject-card";
-import MobileSideNav from "@/components/shared/mobile-sidenav";
+// import MobileSideNav from "@/components/shared/mobile-sidenav";
+import { GuardianMobileNavbar } from "@/components/guardian/side-navbar";
 import BackgroundContainer from "@/components/shared/background-container";
-
+import { HeroSection } from "@/components/shared";
+import { GiHamburgerMenu } from "react-icons/gi";
 export const Overview = () => {
+  const [showMobileSideNav, setShowMobileSideNav] = useState(false);
+
   return (
     <>
       <BackgroundContainer color="#FBFBFB">
@@ -15,17 +21,22 @@ export const Overview = () => {
           <div className="grid items-end gap-8 lg:grid-cols-3 xl:gap-16">
             {/* hero */}
             <div className="lg:col-span-2">
-              <div className="mt-3 flex items-center justify-between pl-2 pr-3 lg:mt-0 md:pr-6">
+              <div className="mt-3 flex items-center justify-between pl-2 pr-3 md:pr-6 lg:mt-0">
                 <div className="flex items-center gap-3">
-                  <MobileSideNav />
+                  <div
+                    onClick={() => setShowMobileSideNav(true)}
+                    className="block cursor-pointer pl-2 xl:hidden"
+                  >
+                    <GiHamburgerMenu size={24} />
+                  </div>
                   <h1 className="segoe text-lg font-bold md:text-xl">
                     Dashboard
                   </h1>
                 </div>
-                <div className="relative w-[150px] md:w-[250px] h-[35px] bg-[rgba(150,152,213,0.30)] rounded-lg">
+                <div className="relative h-[35px] w-[150px] rounded-lg bg-[rgba(150,152,213,0.30)] md:w-[250px]">
                   <input
                     type="text"
-                    className="segoe w-[90%] h-full bg-transparent px-3 text-xs font-light outline-none placeholder:text-[#1b1b1b]/70"
+                    className="segoe h-full w-[90%] bg-transparent px-3 text-xs font-light outline-none placeholder:text-[#1b1b1b]/70"
                     placeholder="Search anything.."
                   />
                   <Image
@@ -33,7 +44,7 @@ export const Overview = () => {
                     alt="search icon"
                     width={30}
                     height={30}
-                    className="absolute top-0 right-0"
+                    className="absolute right-0 top-0"
                   />
                 </div>
                 {/* <div className="flex items-center gap-3 md:gap-6">
@@ -50,26 +61,10 @@ export const Overview = () => {
                   />
                 </div> */}
               </div>
-              <div className="mt-4 flex flex-col items-center justify-between rounded-[30px] bg-[rgba(27,181,247,0.29)] px-8 py-4 md:mt-8 md:flex-row">
-                <div>
-                  <h2
-                    className={`${inter.className} text-xl font-bold text-SC-Brand-Blue`}
-                  >
-                    Welcome back IfeOluwa!
-                  </h2>
-                  <p className="mt-4 text-[15px] font-light text-[#1B1B1B]">
-                    You’ve learned 80% of your goal this week! keep it up and
-                    improve your result
-                  </p>
-                </div>
-                <Image
-                  src={"/guardian/overview-hero.svg"}
-                  alt="overview page hero"
-                  width={296}
-                  height={168}
-                  className="h-auto w-full"
-                />
-              </div>
+              <HeroSection
+                heroColor="bg-SC-Brand-Blue"
+                heroImg="/images/guardian-hero-img.png"
+              />
             </div>
             {/* logout */}
             <div
@@ -155,7 +150,7 @@ export const Overview = () => {
             </div>
             {/* recent activities */}
             <div
-              className="bg-white pl-8 pr-3 pt-3 max-h-[224px] overflow-y-auto"
+              className="max-h-[224px] overflow-y-auto bg-white pl-8 pr-3 pt-3"
               style={{
                 boxShadow: "4px 4px 10px -10px rgba(0, 0, 0, 0.25)",
               }}
@@ -186,6 +181,12 @@ export const Overview = () => {
           </div>
         </div>
       </BackgroundContainer>
+
+      {/* the guardianMobileNavbar */}
+      <GuardianMobileNavbar
+        setShowMobileSideNav={setShowMobileSideNav}
+        showMobileSideNav={showMobileSideNav}
+      />
     </>
   );
 };

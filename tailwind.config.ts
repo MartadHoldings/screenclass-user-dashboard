@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+// import * as tailwindScrollbar from "tailwind-scrollbar";
 
 export default {
   content: [
@@ -9,6 +10,11 @@ export default {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        "task-bg-one": "url('/images/task-bg-one.png')",
+        "task-bg-two": "url('/images/task-bg-two.png')",
+        "main-bg": "url('/images/bg-one.png')",
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
@@ -18,6 +24,7 @@ export default {
         "SC-Brand-Blue": "#0966AB",
         "SC-Bland": "#F5F5F5",
         "SC-Blue": "#016AAD",
+        "SC-Light-orange": "rgba(244, 122, 28, 0.17)",
       },
       animation: {
         "calculator-fade-in": "calFadeIn 0.3s ease-in-out",
@@ -36,5 +43,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar")],
 } satisfies Config;
