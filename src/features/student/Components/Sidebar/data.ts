@@ -1,51 +1,51 @@
-import dashboard from "../../assets/dashboard.svg";
-import Myclass from "../../assets/class.svg";
-import subject from "../../assets/subject.svg";
-// import quiz from "../../assets/quiz.svg";
-import sub from "../../assets/sub.svg";
-import trivia from "../../assets/trivia.svg";
-// import game from "../../assets/game.svg";
-import profile from "../../assets/profile.svg";
+import dashboardIcon from "../../assets/welcome-icons.png";
+import myClassIcon from "../../assets/my-class-icon.png";
+import subjectIcon from "../../assets/subjects-icon.png";
+import quizIcon from "../../assets/quiz-icon.png";
+import subscriptionIcon from "../../assets/subscriptions-icon.png";
+import triviaIcon from "../../assets/trivia.png";
+import gamesIcon from "../../assets/games-icon.png";
+import profileIcon from "../../assets/my-profile-icon.png";
 
 export const sidebarItems = [
   {
     link: "/student",
-    image: dashboard,
+    image: dashboardIcon,
     text: "Dashboard",
   },
   {
     link: "/student/my-class",
-    image: Myclass,
+    image: myClassIcon,
     text: "My Class",
   },
   {
     link: "/student/subjects",
-    image: subject,
+    image: subjectIcon,
     text: "Subjects",
   },
-  // {
-  //   link: "/student",
-  //   image: quiz,
-  //   text: "Take Quiz",
-  // },
+  {
+    link: "#",
+    image: quizIcon,
+    text: "Take Quiz",
+  },
   {
     link: "/student/subscribe",
-    image: sub,
+    image: subscriptionIcon,
     text: "Subscripitions",
   },
   {
     link: "/student/trivia",
-    image: trivia,
+    image: triviaIcon,
     text: "Trivia",
   },
-  // {
-  //   link: "/student",
-  //   image: game,
-  //   text: "Games",
-  // },
+  {
+    link: "#",
+    image: gamesIcon,
+    text: "Games",
+  },
   {
     link: "/student/profile",
-    image: profile,
+    image: profileIcon,
     text: "My Profile",
   },
 ];

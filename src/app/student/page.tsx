@@ -1,20 +1,17 @@
 import React from "react";
 import Sidebar from "@/features/student/Components/Sidebar/Sidebar";
 import Dashboard from "@/features/student/Dashboard/Dashboard";
-import Sideprofile from "@/features/student/Components/Sideprofile/Sideprofile";
+import { SideProfile } from "@/features/student/Components/Sideprofile";
 
 export default function page() {
   return (
-    <div className="flex h-full w-full flex-col bg-[#F1F1F1] tracking-wide text-slate-900 sm:flex-row">
-      <div className="lg:w-[14%]">
-        <Sidebar />
-      </div>
-      <div className="w-full p-0 md:pl-6 lg:w-[66%] lg:pl-7">
+    <section className="lg:grid-area-['dashboard', 'sideProfile'] grid gap-x-6 lg:grid-cols-[1fr_auto]">
+      <div className="lg:grid-in-dashboard">
         <Dashboard />
       </div>
-      <div className="w-[20%] pl-7">
-        <Sideprofile />
+      <div className="lg:grid-in-sideProfile hidden w-[330px] lg:block lg:min-h-screen">
+        <SideProfile />
       </div>
-    </div>
+    </section>
   );
 }

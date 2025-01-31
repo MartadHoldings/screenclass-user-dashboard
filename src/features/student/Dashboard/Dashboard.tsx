@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
+import { HeroSection } from "@/components/shared";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import EastOutlinedIcon from "@mui/icons-material/EastOutlined";
 import Image from "next/image";
-import student from "../assets/student.svg";
 import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDownOutlined";
 import { learning, learningItems, quiz, subject } from "./data";
 
@@ -13,38 +13,17 @@ const Dashboard = () => {
       {/* Topbar */}
       <div className="mt-24 flex w-full items-center justify-between px-4 sm:mt-16 sm:px-7">
         <h1 className="text-xl font-bold text-[#082038]">Dashboard</h1>
-        <div className="flex items-center justify-center space-x-4">
+        {/* <div className="flex items-center justify-center space-x-4">
           <h1 className="text-md font-extralight text-[#082038] opacity-50">
             09 June, 2023
           </h1>
           <div className="rounded-md bg-[#9698D54D] p-1">
             <SearchOutlinedIcon />
           </div>
-        </div>
+        </div> */}
       </div>
       {/* Hero */}
-      <div className="mt-2 flex w-full items-center justify-center p-4 sm:mt-0 sm:p-7">
-        <div className="flex h-full w-full flex-col items-center justify-between rounded-[2rem] bg-[#F7631B4D] p-6 sm:flex-row md:p-2 lg:p-6">
-          <div className="relative left-0 flex flex-col sm:left-7">
-            <h2 className="md: text-center text-3xl font-semibold text-[#F65F74] sm:text-start md:text-[28px] lg:text-5xl">
-              Welcome back Ifeoluwa!
-            </h2>
-            <h2 className="mt-5 max-w-[370px] text-center text-lg opacity-60 sm:text-start">
-              You{"'"}ve learned 80% of your goal this week! keep it up and
-              improve your result
-            </h2>
-          </div>
-          <div>
-            <Image
-              src={student}
-              alt="logo"
-              width={1}
-              height={1}
-              className="relative right-0 mt-4 min-h-[200px] min-w-[300px] sm:right-10 sm:mt-0 md:min-w-[250px] lg:min-w-[400px]"
-            />
-          </div>
-        </div>
-      </div>
+      <HeroSection heroColor="bg-[#FFA414]" />
       {/* charts */}
       <div className="w-full px-6 sm:px-10">
         <div className="flex h-full w-full flex-col items-start justify-start space-y-8 md:h-full md:flex-col md:space-y-8 lg:h-[400px] lg:flex-row lg:space-x-6 lg:space-y-0">

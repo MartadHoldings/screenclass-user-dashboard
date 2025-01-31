@@ -25,8 +25,8 @@ const Sidebar = () => {
   return (
     <nav className="bg-[rgb(255,255,255)] tracking-wide md:w-[270px] lg:w-full">
       <div className="relative hidden flex-col sm:flex">
-        <div className="flex h-[150px] w-[250px] items-center justify-center">
-          <Link href="/student">
+        <div className="flex h-[150px] w-full items-center justify-center border-2 border-black">
+          <Link href="/student" className="w-fit">
             <Image
               src={logo}
               alt="logo"
@@ -36,18 +36,18 @@ const Sidebar = () => {
           </Link>
         </div>
         <div className="mb-28">
-          <div className="ml-10 flex flex-col space-y-6">
+          <div className="flex flex-col space-y-6">
             {sidebarItems.map((item, index) => (
               <Link href={item.link} key={index}>
-                <li className="flex cursor-pointer items-center gap-8 p-2">
+                <li className="flex cursor-pointer items-center gap-4 p-2">
                   <Image
                     src={item.image}
-                    alt="logo"
+                    alt={`${item.text} icon`}
                     width={100}
                     height={100}
                     className="max-h-[21px] max-w-[21px]"
                   />
-                  <span className="ml-2 text-xl text-[#082038]">
+                  <span className="ml-2 text-[#082038] md:text-base xl:text-xl">
                     {item.text}
                   </span>
                 </li>
@@ -76,11 +76,13 @@ const Sidebar = () => {
           </div>
         </div>
       </div>
-      {/* mobile screen configuration */}
+      {/* mobile screen configuration 
+        The isActive state is been used to change the background color of the sidebar when the user scrolls only on mobile
+      */}
       <div
         className={`${
           isActive ? "bg-white py-4 shadow-md" : "bg-none py-4"
-        } fixed z-50 flex w-full items-center justify-between border-b border-gray-900 p-5 transition-all md:hidden lg:hidden`}
+        } fixed z-50 flex w-screen items-center justify-between border-2 border-gray-900 p-5 transition-all md:hidden lg:hidden`}
       >
         <Link href="/student">
           <Image
