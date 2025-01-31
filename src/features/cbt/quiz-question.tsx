@@ -1,7 +1,12 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { QuizContainer, RadioButton, Pagination } from "@/components/cbt";
+import {
+  QuizContainer,
+  RadioButton,
+  Pagination,
+  CheckBox,
+} from "@/components/cbt";
 import CalculatorModal from "@/components/modal/CBTExamsCalculator";
 import Image from "next/image";
 
@@ -14,6 +19,7 @@ type Question = {
 type ResponseActions = {
   recordResponse: (value: string) => void;
   updateResponse: (value: string) => void;
+  deleteResponse: (id: number) => void;
 };
 
 interface QuizQuestionProps {
@@ -21,7 +27,7 @@ interface QuizQuestionProps {
   currentPage: number;
   totalQuestions: number;
   quizDuration: number;
-  respones: { id: number; response: string }[];
+  responses: { id: number; response: string }[];
   responseActions: ResponseActions;
 }
 
@@ -30,14 +36,14 @@ export const QuizQuestion: React.FC<QuizQuestionProps> = ({
   currentPage,
   totalQuestions,
   quizDuration,
-  respones,
+  responses,
   responseActions,
 }) => {
   const { answer, options, question } = currentQuestion;
   // const [ currentAnswer, setCurrentAnswer ]
   const [selectedOption, setSelectedOption] = useState<string>(
     () =>
-      respones.find((response) => response.id === currentPage)?.response || "",
+      responses.find((response) => response.id === currentPage)?.response || "",
   );
 
   const [remainingTime, setRemainingTime] = useState<number>(quizDuration);
@@ -67,15 +73,38 @@ export const QuizQuestion: React.FC<QuizQuestionProps> = ({
     return `${hours}:${minutes}:${secs}`;
   };
 
+  // const handleOptionChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   const { value } = e.target;
+  //   if (value?.toLowerCase() !== selectedOption?.toLowerCase()) {
+  //     responseActions.updateResponse(value);
+  //   }
+  //   console.log(value);
+
+  //   setSelectedOption(value);
+  //   responseActions.recordResponse(value);
+  // };
+
   const handleOptionChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
-    if (value?.toLowerCase() !== selectedOption?.toLowerCase()) {
-      responseActions.updateResponse(value);
-    }
+    const isStored = responses.some((response) => response.id === currentPage);
+
     console.log(value);
 
-    setSelectedOption(value);
-    responseActions.recordResponse(value);
+    if (value?.toLowerCase() === selectedOption?.toLowerCase()) {
+      console.log("running");
+      setSelectedOption("");
+      responseActions.deleteResponse(currentPage);
+    } else if (isStored) {
+      responseActions.updateResponse(value);
+      setSelectedOption(value);
+      console.log("is running when true");
+    } else {
+      setSelectedOption(value);
+      responseActions.recordResponse(value);
+      console.log("is running when false");
+    }
+
+    console.log(value, isStored);
   };
 
   return (
@@ -114,13 +143,22 @@ export const QuizQuestion: React.FC<QuizQuestionProps> = ({
         {/* Options Section */}
         <div className="mt-5 flex flex-col p-2 shadow-sm">
           {options.map((option, index) => (
-            <RadioButton
+            // <RadioButton
+            //   key={option}
+            //   name={option}
+            //   label={option}
+            //   value={option}
+            //   index={index}
+            // checked={selectedOption === option}
+            //   onChange={handleOptionChange}
+            // />
+            <CheckBox
               key={option}
               name={option}
               label={option}
               value={option}
               index={index}
-              checked={selectedOption === option}
+              isChecked={selectedOption === option}
               onChange={handleOptionChange}
             />
           ))}
@@ -141,7 +179,7 @@ export const QuizQuestion: React.FC<QuizQuestionProps> = ({
           <Pagination
             totalPages={totalQuestions}
             currentPage={currentPage}
-            responses={respones}
+            responses={responses}
           />
         </div>
 
