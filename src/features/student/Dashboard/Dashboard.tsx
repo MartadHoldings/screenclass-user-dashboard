@@ -67,13 +67,16 @@ const Dashboard = () => {
                   <div className="relative flex h-[300px] w-[5px] flex-col items-end justify-center overflow-hidden rounded bg-[#DFDFDF]">
                     {/* arrange in desceding order (the lowest percentage to the highest) */}
                     <span
-                      className={`h-[${items.hsci}] w-full bg-[#DFDFDF]`}
+                      className="w-full bg-[#DFDFDF]"
+                      style={{ height: items.hsci }}
                     ></span>
                     <span
-                      className={`h-[${items.mathematics}] w-full bg-[#EC8694]`}
+                      className="w-full bg-[#EC8694]"
+                      style={{ height: items.mathematics }}
                     ></span>
                     <span
-                      className={`h-[${items.eng}] w-full bg-[#6C72FF]`}
+                      className="w-full bg-[#6C72FF]"
+                      style={{ height: items.eng }}
                     ></span>
                   </div>
                 </div>
@@ -111,7 +114,8 @@ const Dashboard = () => {
         {subject.map((subj) => (
           <div
             key={subj.id}
-            className={`flex w-full items-center justify-start gap-4 rounded-lg bg-[${subj.color}] px-[8px] py-3 text-white`}
+            className="flex w-full items-center justify-start gap-4 rounded-lg px-[8px] py-3 text-white"
+            style={{ backgroundColor: subj.color }}
           >
             <div className="ml-3 flex size-16 items-center justify-center rounded-[15px] bg-[#D9D9D938]">
               <h2>{subj.score}</h2>

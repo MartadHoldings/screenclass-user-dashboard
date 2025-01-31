@@ -16,7 +16,7 @@ export const Scores = () => {
       {/* <div className="lg:w-[14%]">
         <Sidebar />
       </div> */}
-      <div className="w-full p-0 md:pl-6 lg:w-[85%] lg:pl-7">
+      <div className="w-full p-0 lg:w-full">
         <div className="flex h-full w-full flex-col items-center bg-[#ffffff]">
           {/* topbar */}
           <section className="mt-24 hidden w-full items-center justify-between border-b-2 border-gray-600 px-4 sm:mt-8 sm:flex sm:px-7 sm:py-2">
@@ -75,7 +75,7 @@ export const Scores = () => {
             <section className="mt-24 w-full space-x-10 px-5 sm:mt-9 sm:justify-normal sm:px-7 sm:py-2">
               <h1 className="text-xl font-bold text-[#082038]">Quiz</h1>
             </section>
-            <section className="mt-6 flex w-full flex-col items-center space-y-8 px-7 sm:mt-0 sm:space-y-0 md:flex-col md:space-y-6 lg:flex-row lg:justify-around">
+            <section className="mt-6 flex w-full flex-col items-center space-y-8 px-7 sm:mt-0 md:flex-col md:space-y-6 lg:flex-row lg:justify-around lg:space-y-0">
               <div className="flex h-[170px] w-[350px] flex-col items-start justify-center rounded-lg bg-white px-4 drop-shadow-md md:w-full lg:w-[350px]">
                 <h2 className="text-lg font-semibold">Common Fractions</h2>
                 <h2 className="mt-2 text-gray-500">Fractions</h2>
@@ -110,7 +110,7 @@ export const Scores = () => {
                 </div>
               </div>
             </section>
-            <section className="mb-16 mt-6 flex w-full flex-col items-start space-y-6 px-7 sm:mb-0 sm:mt-12 md:flex-col md:px-7 lg:flex-row lg:px-28">
+            <section className="mb-16 mt-6 flex w-full flex-col items-start space-y-6 px-7 sm:mb-0 sm:mt-12 md:flex-col md:px-7 lg:flex-row lg:px-7">
               <div className="flex w-full flex-col items-start space-y-6 sm:w-[600px] sm:space-y-6">
                 <div className="flex w-full flex-row items-center space-x-6">
                   <div className="flex h-[90px] w-[170px] flex-col items-start justify-center rounded-2xl bg-[#FF99A6] px-4 font-semibold text-white drop-shadow-2xl">
