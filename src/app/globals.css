@@ -1,4 +1,5 @@
 @import "../components/styles/typography.css";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -31,6 +32,37 @@ body {
 
 .sansation {
   font-family: "Sansation", sans-serif;
+}
+
+.poppins-400 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+.poppins-500 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+.poppins-600 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+.poppins-700 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}
+.poppins-800 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+}
+
+@layer components {
+  .max-container {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+  /* .input-outline {
+    @apply outline-1 outline-blue;
+  } */
 }
 
 /* width */

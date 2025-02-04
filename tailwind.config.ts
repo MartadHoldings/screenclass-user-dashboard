@@ -14,6 +14,12 @@ export default {
         "task-bg-one": "url('/images/task-bg-one.png')",
         "task-bg-two": "url('/images/task-bg-two.png')",
         "main-bg": "url('/images/bg-one.png')",
+        "bg-index-one": "url('/images/bg-index-one.png')",
+        "bg-index-two": "url('/images/bg-index-two.png')",
+        "bg-index-three": "url('/images/bg-index-three.png')",
+      },
+      fontFamily: {
+        poppins: ["Poppins", "serif"],
       },
       colors: {
         background: "var(--background)",
@@ -23,6 +29,7 @@ export default {
         "SC-Orange": "#F7631B",
         "SC-Brand-Blue": "#0966AB",
         "SC-Bland": "#F5F5F5",
+        "SC-Nav-Blue": "#0B67B0",
         "SC-Blue": "#016AAD",
         "SC-Light-orange": "rgba(244, 122, 28, 0.17)",
       },

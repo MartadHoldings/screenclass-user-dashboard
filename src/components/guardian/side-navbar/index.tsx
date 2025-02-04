@@ -19,7 +19,7 @@ export const GuardianSideNavBar = () => {
     {
       image: "/images/manage-students-icon.png",
       text: "Manage Students",
-      link: "/guardian/my-students",
+      link: "#",
       onClick: () => setShowSearchStudentModal(true),
     },
     {

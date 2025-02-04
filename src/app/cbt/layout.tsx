@@ -21,7 +21,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   const toggleModal = () => setIsModalOpen((prev) => !prev);
 
   return (
-    <div className="bg-main-bg min-h-screen w-full bg-SC-Bland bg-cover bg-center bg-no-repeat">
+    <div className="min-h-screen w-full bg-[#FFF3E9]">
       <Header />
       <main className="grid min-h-[calc(100dvh-50px)] w-full py-4">
         <div className="flex h-full w-full max-[768px]:px-4 lg:mx-auto lg:w-[80vw] xl:space-x-4">

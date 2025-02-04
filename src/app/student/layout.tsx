@@ -4,12 +4,12 @@ import { Navbar } from "@/features/student/Components/navbar";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="grid min-h-[100dvh] max-w-[100dvw] grid-cols-1 gap-x-6 gap-y-10 bg-[#F1F1F1] bg-main-bg bg-cover bg-center bg-no-repeat tracking-wide text-slate-900 sm:grid-rows-[auto_1fr] md:grid md:grid-cols-[auto_1fr]">
-      <div className="w-full md:col-span-2 md:row-start-1">
+    <div className="grid min-h-[100dvh] max-w-[100dvw] grid-cols-1 gap-x-6 gap-y-10 bg-[#FFF3E9] tracking-wide text-slate-900 sm:grid-rows-[auto_1fr] md:grid md:grid-cols-[auto_1fr]">
+      <div className="w-full md:col-span-1 md:row-start-1">
         <Navbar />
       </div>
 
-      <div className="sticky top-0 hidden h-[100dvh] w-[300px] overflow-auto bg-white p-6 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-gray-400 lg:col-start-1 lg:col-end-2 lg:row-span-full lg:block">
+      <div className="sticky top-0 hidden h-[100dvh] w-[300px] overflow-auto bg-white py-6 pl-6 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-gray-400 lg:col-start-1 lg:col-end-2 lg:row-span-full lg:block">
         <SideNav />
       </div>
 
@@ -19,5 +19,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     </div>
   );
 };
+
+//e9f9ff
 
 export default Layout;

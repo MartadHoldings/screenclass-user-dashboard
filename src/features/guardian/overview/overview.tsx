@@ -17,7 +17,7 @@ export const Overview = () => {
   return (
     <>
       <BackgroundContainer color="#FBFBFB">
-        <div className="mx-auto min-h-screen max-w-[1240px] bg-[#FBFBFB] pl-3 pr-3 md:pl-7 md:pr-0 xl:pl-14">
+        <div className="mx-auto min-h-screen max-w-[1240px] rounded-md bg-[#FBFBFB] pl-3 pr-3 md:pl-7 md:pr-0 xl:pl-14">
           <div className="grid items-end gap-8 lg:grid-cols-3 xl:gap-16">
             {/* hero */}
             <div className="lg:col-span-2">
@@ -29,9 +29,9 @@ export const Overview = () => {
                   >
                     <GiHamburgerMenu size={24} />
                   </div>
-                  <h1 className="segoe text-lg font-bold md:text-xl">
+                  {/* <h1 className="segoe text-lg font-bold md:text-xl">
                     Dashboard
-                  </h1>
+                  </h1> */}
                 </div>
                 <div className="relative h-[35px] w-[150px] rounded-lg bg-[rgba(150,152,213,0.30)] md:w-[250px]">
                   <input

@@ -11,13 +11,14 @@ export const SideNav = () => {
   const isLinkActive = (link: string): boolean => {
     if (!link) return false;
 
-    if (pathname.includes(link)) return true;
+    // if (pathname.includes(link)) return true;
+    if (pathname === link) return true;
     return false;
   };
 
   return (
     <nav className="h-full w-full">
-      <div className="mb-12 w-full border-b-2 border-SC-Blue">
+      <div className="mb-12 w-[238px] border-b-2 border-SC-Blue">
         <Image
           src="/guardian/screenclass-logo.svg"
           alt="screenclass logo"
@@ -31,10 +32,10 @@ export const SideNav = () => {
         {sidebarItems.map((item, index) => (
           <Link href={item.link} key={index}>
             <li
-              className={`${isLinkActive(item.link) ? "bg-SC-Light-orange" : "bg-transparent"} flex h-12 w-full items-center gap-x-4 rounded-3xl px-4`}
+              className={`${isLinkActive(item.link) ? "bg-SC-Light-orange" : "bg-transparent"} flex h-12 w-full items-center gap-x-4 rounded-s-3xl px-4`}
             >
               <div
-                className={`flex h-8 w-8 items-center justify-center rounded-full ${isLinkActive(item.link) ? "bg-SC-Orange" : "bg-transparent"}`}
+                className={`flex h-8 w-8 items-center justify-center rounded-full ${isLinkActive(item.link) ? "bg-SC-Orange shadow-lg" : "bg-transparent"}`}
               >
                 <Image
                   src={item.image}
