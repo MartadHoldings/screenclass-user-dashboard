@@ -14,7 +14,7 @@ export const Comprehension = () => {
       {/* <div className="lg:w-[14%]">
         <Sidebar />
       </div> */}
-      <div className="w-full p-0 md:pl-6 lg:w-[85%] lg:pl-7">
+      <div className="w-full p-0 lg:w-full">
         <div className="flex h-full w-full flex-col items-center bg-[#ffffff]">
           {/* topbar */}
           <section className="mt-24 hidden w-full items-center justify-between border-b-2 border-gray-600 px-4 sm:mt-8 sm:flex sm:px-7 sm:py-2">
