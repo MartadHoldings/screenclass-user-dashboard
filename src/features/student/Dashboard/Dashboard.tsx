@@ -23,7 +23,7 @@ const Dashboard = () => {
         </div> */}
       </div>
       {/* Hero */}
-      <HeroSection heroColor="bg-[#FFA414]" />
+      <HeroSection heroColor="bg-[#0B67B0]" />
       {/* charts */}
       <div className="w-full px-6 sm:px-10">
         <div className="flex h-full w-full flex-col items-start justify-start space-y-8 md:h-full md:flex-col md:space-y-8 lg:h-[400px] lg:flex-row lg:space-x-6 lg:space-y-0">
