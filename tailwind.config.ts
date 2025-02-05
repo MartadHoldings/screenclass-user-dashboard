@@ -32,6 +32,12 @@ export default {
         "SC-Nav-Blue": "#0B67B0",
         "SC-Blue": "#016AAD",
         "SC-Light-orange": "rgba(244, 122, 28, 0.17)",
+        "SC-text-red": "#BC3508",
+        "custom-yellow": "#FCCB04",
+        "custom-green": "#015E43",
+      },
+      boxShadow: {
+        custom: "20px 20px 60px #bebebe, -20px -20px 60px #ffffff",
       },
       animation: {
         "calculator-fade-in": "calFadeIn 0.3s ease-in-out",
