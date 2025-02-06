@@ -1,14 +1,21 @@
-import Image from "next/image";
-import { Carousel } from "../components";
+import { SwiperCoverflow } from "../components";
 import { EmblaOptionsType } from "embla-carousel";
 
 export const PartnersSection = () => {
-  const videoThumbnails = [
-    { imgSrc: "/images/martad-logo.png", color: "white" },
-    { imgSrc: "/images/mtn-logo.png", color: "custom-yellow" },
-    { imgSrc: "/images/9mobile-logo.png", color: "custom-green" },
-    { imgSrc: "/images/airtel-logo.png", color: "white" },
-    { imgSrc: "/images/ltv-logo.png", color: "white" },
+  // const videoThumbnails = [
+  //   { imgSrc: "/images/martad-logo.png", color: "#ffffff" },
+  //   { imgSrc: "/images/mtn-logo.png", color: "#FCCB04" },
+  //   { imgSrc: "/images/9mobile-logo.png", color: "#015E43" },
+  //   { imgSrc: "/images/airtel-logo.png", color: "#ffffff" },
+  //   { imgSrc: "/images/ltv-logo.png", color: "#ffffff" },
+  // ];
+
+  const partners = [
+    { imgSrc: "/images/9mobile.svg", color: "bg-[#015E43]" },
+    { imgSrc: "/images/Airtel.svg", color: "bg-white" },
+    { imgSrc: "/images/Mtn.svg", color: "bg-[#FCCB04]" },
+    { imgSrc: "/images/Martad logo.png", color: "bg-white" },
+    { imgSrc: "/images/screenClass.png", color: "bg-[#0968AC]" },
   ];
 
   //   const videoThumbnails = [
@@ -32,8 +39,9 @@ export const PartnersSection = () => {
         <h3 className="text-center text-lg font-semibold text-black md:text-2xl lg:text-4xl xl:text-5xl">
           OUR PARTNERS
         </h3>
-        <div className="grid h-[390px] w-[90%] items-center self-end">
-          <Carousel
+        <div className="slider-container grid h-[390px] w-full items-center self-end">
+          <SwiperCoverflow videoThumbnails={partners} />
+          {/* <Carousel
             isAutoPlay
             autoPlayInterval={3000}
             options={carouselSettings}
@@ -56,7 +64,7 @@ export const PartnersSection = () => {
                 </div>
               </div>
             ))}
-          </Carousel>
+          </Carousel> */}
         </div>
         <p className="text-center text-lg font-medium text-black lg:text-2xl">
           Trusted by <span className="text-SC-Orange">100+</span> Top Companies

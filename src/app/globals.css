@@ -1,5 +1,9 @@
 @import "../components/styles/typography.css";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+/* for swiper default styling */
+@import "swiper/css";
+@import "swiper/css/effect-coverflow";
+@import "swiper/css/autoplay";
 
 @tailwind base;
 @tailwind components;
@@ -16,6 +20,22 @@
     --foreground: #ededed;
   }
 } */
+
+/* Override Swiper's overflow styles */
+.swiper-container {
+  overflow-x: hidden !important;
+  overflow-y: visible !important;
+}
+
+.section-bg-gradient {
+  @apply relative w-full bg-gradient-to-br from-[#D4D4D4] from-30% via-[#EFEFEF] via-50% to-[#D4D4D4] to-90%;
+}
+
+/* If needed, target the swiper-wrapper directly to adjust the overflow behavior */
+.swiper-wrapper {
+  overflow-x: hidden !important;
+  overflow-y: visible !important;
+}
 
 body {
   color: var(--foreground);
