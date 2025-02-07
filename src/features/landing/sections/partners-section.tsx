@@ -1,5 +1,15 @@
-import { SwiperCoverflow } from "../components";
+"use client"; // Prevent SSR issues
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectCoverflow, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import { twMerge } from "tailwind-merge";
+
+import { SwiperCoverflow, Carousel } from "../components";
 import { EmblaOptionsType } from "embla-carousel";
+import { PartnerBlock } from "../components";
+// import { PartnerBlock } from "./new-partners-section";
 
 export const PartnersSection = () => {
   // const videoThumbnails = [
@@ -35,36 +45,28 @@ export const PartnersSection = () => {
 
   return (
     <section className="grid min-h-screen w-full place-items-center bg-bg-index-two bg-cover bg-center bg-no-repeat py-6 pl-2 font-poppins sm:pl-8 lg:pl-14">
-      <div className="flex min-h-[60dvh] w-full flex-col gap-y-12">
+      <div className="mx-auto flex min-h-[60dvh] w-full max-w-screen-xl flex-col gap-y-12">
         <h3 className="text-center text-lg font-semibold text-black md:text-2xl lg:text-4xl xl:text-5xl">
           OUR PARTNERS
         </h3>
-        <div className="slider-container grid h-[390px] w-full items-center self-end">
-          <SwiperCoverflow videoThumbnails={partners} />
-          {/* <Carousel
-            isAutoPlay
-            autoPlayInterval={3000}
-            options={carouselSettings}
-            className="h-[374px] flex-[0_0_70%] px-2 sm:flex-[0_0_50%] md:flex-[0_0_40%] lg:flex-[0_0_25%] xl:flex-[0_0_22.25%]"
-          >
-            {videoThumbnails.map((item, index) => (
-              <div
-                className={`relative grid h-[373px] w-full transform place-items-center rounded-2xl bg-${item.color} hover:rotate-x-6 hover:rotate-y-6 shadow-xl transition-transform duration-500 ease-in-out hover:shadow-2xl`}
-                key={index}
-                style={{ perspective: "1200px" }}
-              >
-                <div className="transform rounded-2xl hover:scale-105">
-                  <Image
-                    src={item.imgSrc}
-                    alt="card thumbnail"
-                    width={100}
-                    height={100}
-                    className="object-contain"
-                  />
-                </div>
-              </div>
-            ))}
-          </Carousel> */}
+        <div className="h-[390px] w-full max-w-[90dvw]">
+          <div className="h-full w-full">
+            <Carousel
+              isAutoPlay
+              autoPlayInterval={2000}
+              options={carouselSettings}
+              className="h-fit px-2"
+            >
+              {partners.map((item, index) => (
+                <PartnerBlock
+                  key={index}
+                  imgUrl={item.imgSrc}
+                  className={item.color}
+                />
+              ))}
+            </Carousel>
+            {/* <SwiperCoverflow videoThumbnails={partners} /> */}
+          </div>
         </div>
         <p className="text-center text-lg font-medium text-black lg:text-2xl">
           Trusted by <span className="text-SC-Orange">100+</span> Top Companies

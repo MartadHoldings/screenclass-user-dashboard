@@ -6,3 +6,4 @@ export * from "./features-card";
 export * from "./footer";
 export * from "./swiper-coverflow";
 export * from "./testimonial-slider";
+export * from "./partner-block";
