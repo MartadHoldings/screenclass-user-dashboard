@@ -22,9 +22,29 @@
 } */
 
 /* Override Swiper's overflow styles */
-.swiper-container {
+/* .swiper-container {
   overflow-x: hidden !important;
   overflow-y: visible !important;
+}
+
+.swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+} */
+
+.swiper-slide {
+  width: 300px;
+  height: 400px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+  filter: grayscale(80%);
+  transition: all 0.8s cubic-bezier(0.25, 0.4, 0.45, 1.4);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.swiper-slide-active {
+  filter: none;
 }
 
 .section-bg-gradient {

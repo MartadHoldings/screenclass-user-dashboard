@@ -244,20 +244,10 @@ export const TestimonialSlider = ({ data }: { data: Testimonials }) => {
         disableOnInteraction: false,
       }}
       className="swiper-container relative z-20 w-full"
-      style={{ overflow: "visible !important" }}
     >
       {data.map((item, index) => (
         <SwiperSlide key={index}>
-          <div className="rounded-2xl bg-[#0D2450E5] p-4 text-white lg:p-8">
-            {/* Top Quote */}
-            <Image
-              src="/images/Quote-Left.png"
-              alt="Quote Left"
-              width={60}
-              height={60}
-              className="absolute -top-6 left-1/2 z-40 -translate-x-1/2 transform"
-            />
-
+          <div className="rounded-2xl bg-[#0D2450] p-4 text-white lg:p-8">
             {/* Stars */}
             <div className="mb-6 flex items-center gap-2">
               {Array.from({ length: item.stars }).map((_, i) => (
@@ -279,15 +269,6 @@ export const TestimonialSlider = ({ data }: { data: Testimonials }) => {
                 {item.occupation}
               </p>
             </div>
-
-            {/* Bottom Quote */}
-            <Image
-              src="/images/Quote-Right.png"
-              alt="Quote Right"
-              width={60}
-              height={60}
-              className="absolute -bottom-6 left-1/2 z-40 -translate-x-1/2 transform"
-            />
           </div>
         </SwiperSlide>
       ))}
