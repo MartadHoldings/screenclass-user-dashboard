@@ -34,8 +34,6 @@ export const Carousel: React.FC<PropType> = ({
     }
   }, [children, emblaApi]);
 
-  //  flex-[0_0_100%] px-2
-
   return (
     <section className="embla m-auto w-full">
       <div className="embla__viewport overflow-hidden" ref={emblaRef}>

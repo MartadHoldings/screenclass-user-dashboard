@@ -49,14 +49,24 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Navbar } from "./navbar";
+import { Navbar, MobileNavLink } from "./navbar";
 
 const navLinks = [
   { link: "/", label: "Home" },
   { link: "#", label: "Pricing" },
   { link: "#", label: "Contact Us" },
-  { link: "#", label: "About Us" },
+  { link: "/about-us", label: "About Us" },
   { link: "#", label: "FAQs" },
+];
+
+const mobileNavLinks: MobileNavLink[] = [
+  { link: "/", label: "Home", icon: "/icons/home-icon.svg" },
+  { link: "#", label: "Pricing", icon: "/icons/pricing-icon.svg" },
+  { link: "#", label: "Contact Us", icon: "/icons/contact-us-icon.svg" },
+  { link: "/about-us", label: "About Us", icon: "/icons/about-us-icon.svg" },
+  { link: "#", label: "FAQs", icon: "/icons/faq-icon.svg" },
+  { link: "#", label: "Login", icon: "/icons/login-icon.svg" },
+  { link: "#", label: "Sign up", icon: "/icons/sign-up-icon.svg" },
 ];
 
 export const Header = () => {
@@ -86,6 +96,7 @@ export const Header = () => {
             : "/images/screenclass-logo-white.png"
         }
         isSticky={isSticky}
+        mobileLinks={mobileNavLinks}
       />
     </header>
   );

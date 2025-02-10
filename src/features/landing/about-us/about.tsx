@@ -1,5 +1,16 @@
 import React from "react";
+import {
+  AboutHeroSection,
+  LMSSection,
+  SupportClassSection,
+} from "../sections/about-us";
 
 export const About = () => {
-  return <div>this is the about page</div>;
+  return (
+    <section className="min-h-screen w-full font-poppins">
+      <AboutHeroSection />
+      <LMSSection />
+      <SupportClassSection />
+    </section>
+  );
 };

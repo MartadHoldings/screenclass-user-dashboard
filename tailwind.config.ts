@@ -17,6 +17,11 @@ export default {
         "bg-index-one": "url('/images/bg-index-one.png')",
         "bg-index-two": "url('/images/bg-index-two.png')",
         "bg-index-three": "url('/images/bg-index-three.png')",
+        "bg-about-hero": "url('/images/about-hero-img.png')",
+        "bg-about-section-2": "url('/images/about-bg-img-2.png')",
+        "bg-about-section-3": "url('/images/about-bg-img-3.png')",
+        "bg-about-section-4": "url('/images/about-bg-img-5.png')",
+        "bg-about-section-5": "url('/images/about-bg-img-6.png')",
       },
       fontFamily: {
         poppins: ["Poppins", "serif"],
