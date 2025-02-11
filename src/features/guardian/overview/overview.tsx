@@ -8,16 +8,17 @@ import StudentsTable from "@/components/guardian/overview/students-table";
 import SubjectCard from "@/components/guardian/my-students/subject-card";
 // import MobileSideNav from "@/components/shared/mobile-sidenav";
 import { GuardianMobileNavbar } from "@/components/guardian/side-navbar";
-import BackgroundContainer from "@/components/shared/background-container";
 import { HeroSection } from "@/components/shared";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { Navbar } from "@/features/student/Components/navbar";
 export const Overview = () => {
   const [showMobileSideNav, setShowMobileSideNav] = useState(false);
 
   return (
     <>
-      <BackgroundContainer color="#FBFBFB">
-        <div className="mx-auto min-h-screen max-w-[1240px] rounded-md bg-[#FBFBFB] pl-3 pr-3 md:pl-7 md:pr-0 xl:pl-14">
+      <div className="space-y-5 mx-auto ml-0 min-h-screen max-w-[1240px] xl:ml-7">
+        <Navbar />
+        <div className="rounded-md bg-[#FBFBFB] pl-3 pr-3 md:pr-0">
           <div className="grid items-end gap-8 lg:grid-cols-3 xl:gap-16">
             {/* hero */}
             <div className="lg:col-span-2">
@@ -180,7 +181,7 @@ export const Overview = () => {
             </div>
           </div>
         </div>
-      </BackgroundContainer>
+      </div>
 
       {/* the guardianMobileNavbar */}
       <GuardianMobileNavbar
