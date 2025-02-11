@@ -8,7 +8,7 @@ import {
   Services,
   PartnersSection,
   FooterSection,
-} from "../sections";
+} from "../sections/home";
 // import PartnersSection from "../sections/new-partners-section";
 export const Home = () => {
   return (

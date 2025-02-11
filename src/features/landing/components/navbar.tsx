@@ -4,21 +4,32 @@ import { useState } from "react";
 
 import Image from "next/image";
 import Link from "next/link";
-import { Drawer } from "@/components/shared";
+import { MobileNavBar } from "./mobile-navbar";
 
 interface NavLink {
   label: string;
   link: string;
 }
 
+export interface MobileNavLink extends NavLink {
+  icon: string;
+}
+
 interface NavbarProps {
   logoSrc: string;
   brandName?: string;
   links: NavLink[];
+  mobileLinks: MobileNavLink[];
   isSticky?: boolean;
 }
 
-export function Navbar({ logoSrc, brandName, links, isSticky }: NavbarProps) {
+export function Navbar({
+  logoSrc,
+  brandName,
+  links,
+  isSticky,
+  mobileLinks,
+}: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -99,20 +110,11 @@ export function Navbar({ logoSrc, brandName, links, isSticky }: NavbarProps) {
       </nav>
 
       {/* mobile nav bar */}
-      <Drawer isOpen={isOpen} onClose={() => setIsOpen(false)} position="right">
-        <ul className="mt-4 flex flex-col rounded-lg p-4 font-medium md:mt-0 md:flex-row md:space-x-8 md:p-0">
-          {links.map((link) => (
-            <li key={link.label}>
-              <Link
-                href={link.link}
-                className="block rounded-sm px-3 py-2 text-SC-Nav-Blue hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-SC-Blue"
-              >
-                {link.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </Drawer>
+      <MobileNavBar
+        navLinks={mobileLinks}
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+      />
     </>
   );
 }
