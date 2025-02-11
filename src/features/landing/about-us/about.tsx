@@ -3,6 +3,8 @@ import {
   AboutHeroSection,
   LMSSection,
   SupportClassSection,
+  WhoWeAreSection,
+  WhatWeDoSection,
 } from "../sections/about-us";
 
 export const About = () => {
@@ -11,6 +13,8 @@ export const About = () => {
       <AboutHeroSection />
       <LMSSection />
       <SupportClassSection />
+      <WhoWeAreSection />
+      <WhatWeDoSection />
     </section>
   );
 };

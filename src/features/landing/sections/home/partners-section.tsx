@@ -1,5 +1,6 @@
 import { PartnerCarousel } from "../../components";
 import { PartnerBlock } from "../../components";
+import { EmblaOptionsType } from "embla-carousel";
 
 export const PartnersSection = () => {
   const partners = [
@@ -10,12 +11,9 @@ export const PartnersSection = () => {
     { imgSrc: "/images/screenClass.png", color: "bg-[#0968AC]" },
   ];
 
-  // const carouselSettings: EmblaOptionsType = {
-  //   loop: true,
-  //   align: "start",
-  //   dragFree: false,
-  //   startIndex: 0,
-  // };
+  const carouselSettings: EmblaOptionsType = {
+    dragFree: false,
+  };
 
   return (
     <section className="grid min-h-screen w-full place-items-center bg-bg-index-two bg-cover bg-center bg-no-repeat py-6 pl-2 font-poppins sm:pl-8 lg:pl-14">
@@ -28,7 +26,7 @@ export const PartnersSection = () => {
             <PartnerCarousel
               isAutoPlay
               autoPlayInterval={2000}
-              // className="h-fit max-h-[320px] px-2"
+              options={carouselSettings}
               isCoverflow={true}
             >
               {partners.map((item, index) => (
@@ -39,7 +37,6 @@ export const PartnersSection = () => {
                 />
               ))}
             </PartnerCarousel>
-            {/* <SwiperCoverflow videoThumbnails={partners} /> */}
           </div>
         </div>
         <p className="text-center text-lg font-medium text-black lg:text-2xl">

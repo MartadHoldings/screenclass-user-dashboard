@@ -3,10 +3,10 @@ import { Header } from "../../components";
 
 export const AboutHeroSection = () => {
   return (
-    <section className="bg-bg-about-hero min-h-fit w-full bg-cover bg-center bg-no-repeat">
+    <section className="min-h-fit w-full bg-bg-about-hero bg-cover bg-center bg-no-repeat">
       <Header />
       {/* info section */}
-      <div className="flex min-h-[calc(100dvh-83px)] w-full flex-col px-8 md:flex-row lg:px-[3.5rem]">
+      <div className="flex min-h-[calc(100dvh-83px)] w-full flex-col px-8 max-sm:justify-end max-sm:pb-12 md:flex-row lg:px-[3.5rem]">
         <div className="flex min-h-full w-full justify-end">
           <div className="flex w-[80%] flex-col justify-center lg:w-[50%]">
             <div className="flex w-full justify-center">

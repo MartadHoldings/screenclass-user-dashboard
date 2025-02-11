@@ -34,7 +34,7 @@ export const PartnerCarousel: React.FC<PropType> = ({
       ...options,
       loop: true,
       align: "center",
-      containScroll: false,
+      //   containScroll: false,
     },
     [
       Autoplay({
@@ -110,8 +110,11 @@ export const PartnerCarousel: React.FC<PropType> = ({
   }, [emblaApi, isCoverflow]);
 
   return (
-    <div className="w-full overflow-hidden">
-      <div className="embla relative mx-auto max-w-[1200px]" ref={emblaRef}>
+    <div className="embla w-full overflow-hidden">
+      <div
+        className="embla__viewport relative mx-auto max-w-[1200px]"
+        ref={emblaRef}
+      >
         <div className="embla__container relative flex h-[390px] items-center justify-center">
           {React.Children.map(children, (child, index) => {
             const transform = slideTransforms[index] || {
