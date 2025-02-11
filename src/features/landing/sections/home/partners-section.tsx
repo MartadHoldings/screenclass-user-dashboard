@@ -1,15 +1,5 @@
-"use client"; // Prevent SSR issues
-
-import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow, Autoplay } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/effect-coverflow";
-import { twMerge } from "tailwind-merge";
-
-import { SwiperCoverflow, Carousel } from "../../components";
-import { EmblaOptionsType } from "embla-carousel";
+import { PartnerCarousel } from "../../components";
 import { PartnerBlock } from "../../components";
-// import { PartnerBlock } from "./new-partners-section";
 
 export const PartnersSection = () => {
   const partners = [
@@ -20,12 +10,12 @@ export const PartnersSection = () => {
     { imgSrc: "/images/screenClass.png", color: "bg-[#0968AC]" },
   ];
 
-  const carouselSettings: EmblaOptionsType = {
-    loop: true,
-    align: "center",
-    dragFree: false,
-    startIndex: 0,
-  };
+  // const carouselSettings: EmblaOptionsType = {
+  //   loop: true,
+  //   align: "start",
+  //   dragFree: false,
+  //   startIndex: 0,
+  // };
 
   return (
     <section className="grid min-h-screen w-full place-items-center bg-bg-index-two bg-cover bg-center bg-no-repeat py-6 pl-2 font-poppins sm:pl-8 lg:pl-14">
@@ -35,11 +25,11 @@ export const PartnersSection = () => {
         </h3>
         <div className="h-[390px] w-full max-w-[90dvw]">
           <div className="h-full w-full">
-            <Carousel
+            <PartnerCarousel
               isAutoPlay
               autoPlayInterval={2000}
-              options={carouselSettings}
-              className="h-fit px-2"
+              // className="h-fit max-h-[320px] px-2"
+              isCoverflow={true}
             >
               {partners.map((item, index) => (
                 <PartnerBlock
@@ -48,7 +38,7 @@ export const PartnersSection = () => {
                   className={item.color}
                 />
               ))}
-            </Carousel>
+            </PartnerCarousel>
             {/* <SwiperCoverflow videoThumbnails={partners} /> */}
           </div>
         </div>
