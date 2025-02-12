@@ -5,6 +5,7 @@ import {
   SupportClassSection,
   WhoWeAreSection,
   WhatWeDoSection,
+  Features,
 } from "../sections/about-us";
 
 export const About = () => {
@@ -15,6 +16,7 @@ export const About = () => {
       <SupportClassSection />
       <WhoWeAreSection />
       <WhatWeDoSection />
+      <Features />
     </section>
   );
 };

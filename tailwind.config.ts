@@ -22,6 +22,10 @@ export default {
         "bg-about-section-3": "url('/images/about-bg-img-3.png')",
         "bg-about-section-4": "url('/images/about-bg-img-5.png')",
         "bg-about-section-5": "url('/images/about-bg-img-6.png')",
+        "bg-contact-hero": "url('/images/contact-us-hero.png')",
+        "bg-contact-map": "url('/images/contact-map.png')",
+        "bg-contact-e-learning": "url('/images/contact-e-learning.png')",
+        "bg-contact-brain": "url('/images/contact-brain.png')",
       },
       fontFamily: {
         poppins: ["Poppins", "serif"],

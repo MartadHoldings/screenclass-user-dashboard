@@ -24,8 +24,8 @@ export const Services = () => {
   };
 
   return (
-    <section className="grid min-h-screen w-full grid-cols-1 grid-rows-[70dvh_40dvh] bg-white font-poppins">
-      <div className="relative row-start-1 row-end-2 w-full">
+    <section className="grid h-screen min-h-screen w-full grid-cols-1 grid-rows-[60dvh_40dvh] bg-white font-poppins">
+      <div className="relative row-start-1 row-end-2 h-[60dvh] w-full">
         <Image
           src="/images/video-banner.png"
           alt="video banner"
