@@ -5,18 +5,22 @@ import { Navbar, MobileNavLink } from "./navbar";
 
 const navLinks = [
   { link: "/", label: "Home" },
-  { link: "#", label: "Pricing" },
+  { link: "/pricing", label: "Pricing" },
   { link: "/contact-us", label: "Contact Us" },
   { link: "/about-us", label: "About Us" },
-  { link: "#", label: "FAQs" },
+  { link: "/faq", label: "FAQs" },
 ];
 
 const mobileNavLinks: MobileNavLink[] = [
   { link: "/", label: "Home", icon: "/icons/home-icon.svg" },
-  { link: "#", label: "Pricing", icon: "/icons/pricing-icon.svg" },
-  { link: "#", label: "Contact Us", icon: "/icons/contact-us-icon.svg" },
+  { link: "/pricing", label: "Pricing", icon: "/icons/pricing-icon.svg" },
+  {
+    link: "/contact-us",
+    label: "Contact Us",
+    icon: "/icons/contact-us-icon.svg",
+  },
   { link: "/about-us", label: "About Us", icon: "/icons/about-us-icon.svg" },
-  { link: "#", label: "FAQs", icon: "/icons/faq-icon.svg" },
+  { link: "/faq", label: "FAQs", icon: "/icons/faq-icon.svg" },
   { link: "#", label: "Login", icon: "/icons/login-icon.svg" },
   { link: "#", label: "Sign up", icon: "/icons/sign-up-icon.svg" },
 ];

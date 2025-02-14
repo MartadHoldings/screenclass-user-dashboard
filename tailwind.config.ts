@@ -26,6 +26,10 @@ export default {
         "bg-contact-map": "url('/images/contact-map.png')",
         "bg-contact-e-learning": "url('/images/contact-e-learning.png')",
         "bg-contact-brain": "url('/images/contact-brain.png')",
+        "bg-pricing-main": "url('/images/pricing-bg-main.png')",
+        "bg-pricing-sub": "url('/images/bg-pricing-sub.png')",
+        "bg-pricing-feature": "url('/images/pricing-people-gathering-1.png')",
+        "bg-pricing-feature-sm": "url('/images/pricing-people-gathering.png')",
       },
       fontFamily: {
         poppins: ["Poppins", "serif"],

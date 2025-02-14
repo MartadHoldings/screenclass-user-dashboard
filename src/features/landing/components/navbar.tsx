@@ -37,7 +37,7 @@ export function Navbar({
       <nav className={`z-20 w-full`}>
         <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
           <Link
-            href="#"
+            href="/"
             className="relative flex h-[19px] w-[92px] items-center space-x-3 lg:h-[51px] lg:w-[252px]"
           >
             <Image
@@ -98,7 +98,7 @@ export function Navbar({
                 <li key={link.label}>
                   <Link
                     href={link.link}
-                    className={`${isSticky ? "text-SC-Nav-Blue" : "text-white"} block rounded-sm px-3 py-2 text-sm hover:text-SC-Blue md:p-0 md:hover:bg-transparent lg:text-base`}
+                    className={`${isSticky ? "text-SC-Nav-Blue hover:text-SC-Nav-Blue" : "text-white hover:text-white"} block rounded-sm px-3 py-2 text-sm md:p-0 md:hover:bg-transparent lg:text-base`}
                   >
                     {link.label}
                   </Link>

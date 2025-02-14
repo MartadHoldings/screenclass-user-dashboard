@@ -108,6 +108,92 @@ export const englishComprehensionQuestions = [
 
 export type Questions = typeof englishComprehensionQuestions;
 
+export interface PricingsType {
+  solution: string;
+  starter: string;
+  pro: string;
+  enterprise: string;
+}
+
+export const pricings: { [key: string]: PricingsType[] } = {
+  monthly: [
+    {
+      solution: "Edu Videos",
+      starter: "N100",
+      pro: "N100",
+      enterprise: "N100",
+    },
+    {
+      solution: "Edu Games",
+      starter: "N100",
+      pro: "N100",
+      enterprise: "N100",
+    },
+    {
+      solution: "Online Exams",
+      starter: "N100",
+      pro: "N100",
+      enterprise: "N100",
+    },
+    {
+      solution: "Online Tests",
+      starter: "N100",
+      pro: "N100",
+      enterprise: "N100",
+    },
+    {
+      solution: "Online Quiz",
+      starter: "N100",
+      pro: "N100",
+      enterprise: "N100",
+    },
+    {
+      solution: "CBT Exams",
+      starter: "N100",
+      pro: "N100",
+      enterprise: "N100",
+    },
+  ],
+  annually: [
+    {
+      solution: "Edu Videos",
+      starter: "N100",
+      pro: "N100",
+      enterprise: "N100",
+    },
+    {
+      solution: "Edu Games",
+      starter: "N100",
+      pro: "N100",
+      enterprise: "N100",
+    },
+    {
+      solution: "Online Exams",
+      starter: "N300",
+      pro: "N300",
+      enterprise: "N100",
+    },
+    {
+      solution: "Online Tests",
+      starter: "N100",
+      pro: "N100",
+      enterprise: "N100",
+    },
+    {
+      solution: "Online Quiz",
+      starter: "N100",
+      pro: "N100",
+      enterprise: "N100",
+    },
+    {
+      solution: "CBT Exams",
+      starter: "N100",
+      pro: "N100",
+      enterprise: "N100",
+    },
+  ],
+};
+
 // Function to randomize the array of objects
 export function randomizeArray(array: Questions) {
   return array.sort(() => Math.random() - 0.5);
