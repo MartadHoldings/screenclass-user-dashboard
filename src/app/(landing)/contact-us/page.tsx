@@ -1,5 +1,5 @@
 import React from "react";
-import { Contact } from "@/features/landing/contact-us";
+import { Contact } from "@/features/landing/contaniers/contact-us";
 
 export default function page() {
   return (
