@@ -4,8 +4,8 @@ import React from "react";
 
 export const Footer = () => {
   return (
-    <div className="mx-auto w-full max-w-screen-xl p-8">
-      <div className="mb-6 md:mb-0">
+    <div className="w-full pb-5 pt-10">
+      <div className="mx-auto mb-6 max-w-screen-xl px-8 md:mb-0 xl:px-0">
         <Link href="/" className="w-fit">
           <Image
             src="/images/screenclass-logo-white.png"
@@ -16,7 +16,7 @@ export const Footer = () => {
           />
         </Link>
       </div>
-      <div className="mt-9 grid grid-cols-2 justify-around gap-8 sm:gap-6 lg:grid-cols-[auto_1fr_1fr_1fr]">
+      <div className="mx-auto mt-9 grid max-w-screen-xl grid-cols-2 justify-around gap-8 px-8 sm:gap-6 lg:grid-cols-[auto_1fr_1fr_1fr] xl:px-0">
         <div className="flex w-full flex-col gap-y-8 lg:w-[323px]">
           <p className="text-xs font-medium text-white md:text-base lg:text-xl">
             A product of{" "}
@@ -35,7 +35,7 @@ export const Footer = () => {
           <ul className="font-medium text-gray-500">
             <li className="mb-4">
               <Link
-                href="/"
+                href="/about-us"
                 className="text-xs font-medium text-white sm:text-sm"
               >
                 About Us
@@ -43,7 +43,7 @@ export const Footer = () => {
             </li>
             <li className="mb-4">
               <Link
-                href="/"
+                href="/contact-us"
                 className="text-xs font-medium text-white sm:text-sm"
               >
                 Contact
@@ -105,7 +105,7 @@ export const Footer = () => {
         </div>
       </div>
       <hr className="my-2 h-[1px] w-full bg-white" />
-      <div className="mt-8 w-full">
+      <div className="max-screen-xl mx-auto mt-8 w-full px-8 xl:px-0">
         <p className="text-center text-[10px] text-white sm:text-xs">
           © 2025{" "}
           <Link href="/" className="hover:underline">

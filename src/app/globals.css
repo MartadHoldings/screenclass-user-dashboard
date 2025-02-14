@@ -14,25 +14,6 @@
   --foreground: #171717;
 }
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-} */
-
-/* Override Swiper's overflow styles */
-/* .swiper-container {
-  overflow-x: hidden !important;
-  overflow-y: visible !important;
-}
-
-.swiper {
-  width: 100%;
-  padding-top: 50px;
-  padding-bottom: 50px;
-} */
-
 .swiper-slide {
   width: 300px;
   height: 400px;

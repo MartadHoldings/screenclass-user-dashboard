@@ -8,3 +8,6 @@ export * from "./swiper-coverflow";
 export * from "./testimonial-slider";
 export * from "./partner-block";
 export * from "./partner-carousel";
+export * from "./about-features-card";
+export * from "./pricing-tabs";
+export * from "./pricing-table";
