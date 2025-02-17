@@ -16,11 +16,15 @@ export const FAQHeroSection = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   return (
-    <section className="bg-bg-faq-hero-sm lg:bg-bg-faq-hero min-h-fit w-full bg-cover bg-center bg-no-repeat">
-      <Header />
+    <section className="relative min-h-fit w-full bg-bg-faq-hero-sm bg-cover bg-center bg-no-repeat lg:bg-bg-faq-hero">
+      <div className="absolute inset-0 z-10 h-full w-full bg-black bg-opacity-20" />
+
+      <div className="relative z-40">
+        <Header />
+      </div>
       {/* Spacer to prevent layout shift */}
       {isSticky && <div className="h-[83px] w-full border-2 border-black" />}
-      <div className="relative mx-auto flex min-h-[calc(100dvh-83px)] w-full max-w-screen-xl flex-col items-center px-8 max-sm:pb-12 lg:flex-row lg:px-[3.5rem]">
+      <div className="relative z-30 mx-auto flex min-h-[calc(100dvh-83px)] w-full max-w-screen-xl flex-col items-center px-8 max-sm:pb-12 lg:flex-row lg:px-[3.5rem]">
         <div className="mt-3 w-fit">
           <h2 className="text-2xl font-normal capitalize text-black lg:text-5xl">
             Frequently <br /> Asked{" "}

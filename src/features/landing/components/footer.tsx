@@ -16,8 +16,8 @@ export const Footer = () => {
           />
         </Link>
       </div>
-      <div className="mx-auto mt-9 grid max-w-screen-xl grid-cols-2 justify-around gap-8 px-8 sm:gap-6 lg:grid-cols-[auto_1fr_1fr_1fr] xl:px-0">
-        <div className="flex w-full flex-col gap-y-8 lg:w-[323px]">
+      <div className="mx-auto mt-9 grid max-w-screen-xl grid-cols-[auto_auto] justify-between gap-8 px-8 sm:gap-6 lg:grid-cols-[auto_auto_auto_auto] xl:px-0">
+        <div className="flex w-[159px] flex-col gap-y-8 md:w-[250px] lg:w-[323px]">
           <p className="text-xs font-medium text-white md:text-base lg:text-xl">
             A product of{" "}
             <span className="font-semibold">
@@ -28,12 +28,12 @@ export const Footer = () => {
             3B, Alegbe Close, Mende Maryland, Lagos, Nigeria.
           </p>
         </div>
-        <div className="w-fit">
-          <h5 className="mb-6 text-xs font-semibold uppercase text-white sm:text-sm lg:text-lg">
+        <div className="flex w-fit flex-col gap-y-4">
+          <h5 className="text-xs font-semibold uppercase text-white sm:text-sm lg:text-lg">
             Explore
           </h5>
-          <ul className="font-medium text-gray-500">
-            <li className="mb-4">
+          <ul className="flex flex-col gap-y-4 font-medium text-gray-500">
+            <li>
               <Link
                 href="/about-us"
                 className="text-xs font-medium text-white sm:text-sm"
@@ -41,7 +41,7 @@ export const Footer = () => {
                 About Us
               </Link>
             </li>
-            <li className="mb-4">
+            <li>
               <Link
                 href="/contact-us"
                 className="text-xs font-medium text-white sm:text-sm"
@@ -49,7 +49,7 @@ export const Footer = () => {
                 Contact
               </Link>
             </li>
-            <li className="mb-4">
+            <li>
               <Link
                 href="/"
                 className="text-xs font-medium text-white sm:text-sm"
@@ -59,12 +59,12 @@ export const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="w-fit">
-          <h5 className="mb-6 text-xs font-semibold uppercase text-white sm:text-sm lg:text-lg">
+        <div className="flex w-fit flex-col gap-y-4">
+          <h5 className="text-xs font-semibold uppercase text-white sm:text-sm lg:text-lg">
             Contact Us
           </h5>
-          <ul className="font-medium text-gray-500">
-            <li className="mb-4">
+          <ul className="flex flex-col gap-y-4 font-medium text-gray-500">
+            <li>
               <p className="text-xs font-medium text-white sm:text-sm">
                 +234 704 330 300
               </p>
@@ -81,22 +81,22 @@ export const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="w-fit">
-          <h5 className="mb-6 text-xs font-semibold uppercase text-white sm:text-sm lg:text-lg">
+        <div className="flex w-fit flex-col gap-y-4">
+          <h5 className="text-xs font-semibold uppercase text-white sm:text-sm lg:text-lg">
             Features
           </h5>
-          <ul className="font-medium text-gray-500">
-            <li className="mb-4">
+          <ul className="flex flex-col gap-y-4 font-medium text-gray-500">
+            <li>
               <p className="text-xs font-medium text-white sm:text-sm">
                 Primary
               </p>
             </li>
-            <li className="mb-4">
+            <li>
               <p className="text-xs font-medium text-white sm:text-sm">
                 Secondary
               </p>
             </li>
-            <li className="mb-4">
+            <li>
               <p className="text-xs font-medium text-white sm:text-sm">
                 Pre-varsity
               </p>

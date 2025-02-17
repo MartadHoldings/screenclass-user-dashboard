@@ -77,7 +77,7 @@ export const HeroSection = () => {
             alt="hero image"
             width={318}
             height={322}
-            className="object-cover md:h-full md:w-full lg:w-[550px]"
+            className="object-cover md:h-full md:w-full"
             style={{ height: "auto" }}
             sizes="(max-width: 1440px): 100vw, (max-width:780px): 50vw"
           />
