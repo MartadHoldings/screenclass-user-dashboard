@@ -10,7 +10,7 @@ export const HeroSection = () => {
         {/* Left Content */}
         <div className="flex min-h-full w-full flex-col justify-center gap-y-6 lg:w-fit xl:w-[50%]">
           <div className="w-full text-white">
-            <h2
+            {/* <h2
               // className="text-4xl font-semibold leading-[58px] lg:text-[54px] lg:leading-[96px] xl:text-[64px]"
               className="text-[30px] font-semibold lg:text-[40px]"
               style={{ wordSpacing: ".20em" }}
@@ -18,7 +18,10 @@ export const HeroSection = () => {
               Entertaining <br />
               <span className="mr-2 text-2xl">Approach to</span>
               <span className="text-[#021D76]">Learning!</span>
-            </h2>
+            </h2> */}
+            <h1 className="text wrap font-Poppins w-11/12 text-[30px] font-bold text-white md:text-[40px]">
+              Entertaining Approach to Learning!
+            </h1>
             <h4 className="text-base font-semibold leading-none md:text-xl">
               Quality Basic Education skillfully delivered
             </h4>

@@ -37,10 +37,10 @@ export const Dropdown: React.FC<DropdownProps> = ({ title, description }) => {
       </button>
 
       <div
-        className={`w-full rounded-lg bg-white shadow-lg transition-all duration-300 ${
+        className={`w-full rounded-e-lg bg-white px-2.5 py-4 shadow-lg transition-all duration-300 ${
           isOpen
-            ? "visible max-h-[500px] opacity-100"
-            : "invisible max-h-0 opacity-0"
+            ? "block max-h-[500px] opacity-100"
+            : "hidden max-h-0 opacity-0"
         }`}
         style={{ overflow: "hidden" }}
       >

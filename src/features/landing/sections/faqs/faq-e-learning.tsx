@@ -23,7 +23,7 @@ export const FAQELearing = () => {
           </div>
         </div>
         <div className="flex-1">
-          <div className="relative h-[509px] w-full border-2 border-orange-500 lg:hidden">
+          <div className="relative h-[509px] w-full lg:hidden">
             <Image
               src="/images/phone-3d.png"
               alt="phone 3d"
