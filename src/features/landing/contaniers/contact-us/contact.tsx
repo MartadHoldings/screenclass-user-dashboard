@@ -4,7 +4,7 @@ import {
   ContactForm,
   LearningOne,
   LearningTwo,
-} from "../sections/contact-us";
+} from "../../sections/contact-us";
 
 export const Contact = () => {
   return (

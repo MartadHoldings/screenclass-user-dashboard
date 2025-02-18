@@ -6,7 +6,7 @@ import {
   WhoWeAreSection,
   WhatWeDoSection,
   Features,
-} from "../sections/about-us";
+} from "../../sections/about-us";
 
 export const About = () => {
   return (

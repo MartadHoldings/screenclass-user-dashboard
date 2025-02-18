@@ -30,6 +30,13 @@ export default {
         "bg-pricing-sub": "url('/images/bg-pricing-sub.png')",
         "bg-pricing-feature": "url('/images/pricing-people-gathering-1.png')",
         "bg-pricing-feature-sm": "url('/images/pricing-people-gathering.png')",
+        "bg-faq-hero": "url('/images/faq-hero-section.png')",
+        "bg-faq-hero-sm": "url(/images/faq-hero-section-sm.png)",
+        "bg-faq-section-one": "url('/images/faq-second-section.png')",
+        "bg-faq-section-two": "url('/images/faq-third-section.png')",
+        "bg-faq-section-two-sm": "url('/images/faqs-third-section-sm.png')",
+        "bg-faq-section-three": "url('/images/faq-fourth-section.png')",
+        "bg-faq-section-three-sm": "url('/images/faq-fourth-section-sm.png')",
       },
       fontFamily: {
         poppins: ["Poppins", "serif"],

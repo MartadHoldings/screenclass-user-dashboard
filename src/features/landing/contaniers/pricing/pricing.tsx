@@ -3,7 +3,7 @@ import {
   PricingSection,
   PricingFeatures,
   PricingGrowth,
-} from "../sections/pricing";
+} from "../../sections/pricing";
 
 export const Pricing = () => {
   return (

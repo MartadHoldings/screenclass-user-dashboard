@@ -1,5 +1,5 @@
 import React from "react";
-import { Pricing } from "@/features/landing/pricing";
+import { Pricing } from "@/features/landing/contaniers/pricing";
 
 export default function page() {
   return (

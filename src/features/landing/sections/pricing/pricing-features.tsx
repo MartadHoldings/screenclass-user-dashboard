@@ -27,7 +27,7 @@ export const PricingFeatures = () => {
   return (
     <section className="min-h-screen w-full bg-bg-pricing-sub bg-cover bg-center bg-no-repeat">
       <div className="flex min-h-screen w-full flex-col gap-y-4 lg:flex-row">
-        <div className="bg-bg-pricing-feature-sm lg:bg-bg-pricing-feature relative h-[450px] w-full border-2 border-black bg-cover bg-center bg-no-repeat px-8 pt-6 lg:h-screen lg:w-1/2 lg:px-[3.5rem] lg:pt-[2.5rem]">
+        <div className="relative h-[450px] w-full bg-bg-pricing-feature-sm bg-cover bg-center bg-no-repeat px-8 pt-6 lg:h-screen lg:w-1/2 lg:bg-bg-pricing-feature lg:px-[3.5rem] lg:pt-[2.5rem]">
           <h4 className="text-xs font-medium text-black md:text-xl">
             Our Platforms offer the best solutions
           </h4>
