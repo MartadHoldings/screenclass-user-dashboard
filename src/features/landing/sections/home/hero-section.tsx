@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Header } from "../../components";
+import Link from "next/link";
 
 export const HeroSection = () => {
   return (
@@ -29,12 +30,18 @@ export const HeroSection = () => {
 
           {/* Buttons */}
           <div className="flex w-full gap-x-4">
-            <button className="rounded-lg bg-SC-Orange px-4 py-2 font-poppins text-sm font-medium uppercase text-white md:px-6 md:py-4 lg:text-base">
+            <Link
+              href="/signup"
+              className="rounded-lg bg-SC-Orange px-4 py-2 font-poppins text-sm font-medium uppercase text-white md:px-6 md:py-4 lg:text-base"
+            >
               Get Started
-            </button>
-            <button className="block w-[122px] rounded-lg bg-SC-Nav-Blue px-4 py-2 text-sm font-medium capitalize text-white md:hidden">
+            </Link>
+            <Link
+              href="/signin"
+              className="block w-[122px] rounded-lg bg-SC-Nav-Blue px-4 py-2 text-center text-sm font-medium capitalize text-white md:hidden"
+            >
               Login
-            </button>
+            </Link>
           </div>
 
           {/* Download Buttons */}

@@ -1,5 +1,6 @@
 @import "../components/styles/typography.css";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sedan+SC&display=swap");
 /* for swiper default styling */
 @import "swiper/css";
 @import "swiper/css/effect-coverflow";

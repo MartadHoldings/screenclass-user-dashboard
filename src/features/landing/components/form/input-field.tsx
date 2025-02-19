@@ -96,7 +96,7 @@ export const InputField: React.FC<InputFieldProps> = ({
           type={inputType}
           placeholder={placeholder}
           className={twMerge(
-            `block w-full rounded-lg bg-[#fbfbfb] font-poppins text-sm font-normal text-black${icon ? "pl-10" : ""} ${size[inputSize]} `,
+            `block w-full rounded-lg bg-[#fbfbfb] font-poppins text-sm font-normal text-black ${icon ? "pl-10" : ""} ${size[inputSize]} `,
             className,
           )}
           style={{

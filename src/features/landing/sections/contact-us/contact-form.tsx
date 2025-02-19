@@ -1,7 +1,7 @@
 "use client";
 
 import { InputField, TextAreaField } from "../../components/form";
-import { useForm, FormProvider, Form } from "react-hook-form";
+import { useForm, FormProvider } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { contactFormSchema } from "@/utils";
 
