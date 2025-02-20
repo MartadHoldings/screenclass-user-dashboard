@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 interface FormContentProps {
   title?: string;
@@ -8,15 +9,18 @@ interface FormContentProps {
 export const FormContent = ({ title, content }: FormContentProps) => {
   return (
     <section className="h-fit w-full px-8 lg:px-14">
-      <div className="flex w-full flex-col gap-y-12 lg:gap-y-48">
-        <div className="relative h-[35px] w-[175px] lg:h-[74px] lg:w-[360px]">
+      <div className="flex w-full flex-col gap-y-12 lg:gap-y-36">
+        <Link
+          href="/"
+          className="relative h-[35px] w-[175px] lg:h-[74px] lg:w-[300px]"
+        >
           <Image
             src="/images/screenclass-logo-white.png"
             alt="screenclass logo"
             fill
             className="h-full w-full object-contain"
           />
-        </div>
+        </Link>
         <div className="relative mx-auto w-fit lg:mx-0">
           <h5 className="text-center font-Sedan-sc text-lg font-normal uppercase text-white lg:text-4xl">
             {title}

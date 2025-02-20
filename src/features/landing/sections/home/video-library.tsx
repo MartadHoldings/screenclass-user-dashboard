@@ -50,7 +50,7 @@ export const VideoLibrary = () => {
           students have watched these
         </p>
       </div>
-      <div className="mt-5 grid w-full grid-cols-2 gap-4 lg:mt-10 lg:grid-cols-4">
+      <div className="grid w-full grid-cols-2 gap-4 lg:mt-10 lg:grid-cols-4">
         {data.map((item, index) => (
           <div className="h-fit rounded-sm bg-white" key={index}>
             <VideoCard {...item} />

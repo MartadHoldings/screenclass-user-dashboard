@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export const PricingGrowth = () => {
   return (
@@ -26,9 +27,12 @@ export const PricingGrowth = () => {
               stystem (LMS) Developed to meet and suit the learning process.
             </p>
           </div>
-          <button className="mt-8 w-fit rounded-lg bg-SC-Orange px-6 py-3 font-poppins text-sm font-medium uppercase text-white md:w-[206px] md:py-4 lg:text-base">
+          <Link
+            href="/signup"
+            className="mt-8 w-fit rounded-lg bg-SC-Orange px-6 py-3 text-center font-poppins text-sm font-medium uppercase text-white md:w-[206px] md:py-4 lg:text-base"
+          >
             Get Started
-          </button>
+          </Link>
         </div>
       </div>
     </section>
