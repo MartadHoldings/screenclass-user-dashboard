@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Header } from "../../components";
+import Link from "next/link";
 
 export const HeroSection = () => {
   return (
@@ -10,18 +11,9 @@ export const HeroSection = () => {
         {/* Left Content */}
         <div className="flex min-h-full w-full flex-col justify-center gap-y-6 lg:w-fit xl:w-[50%]">
           <div className="w-full text-white">
-            {/* <h2
-              // className="text-4xl font-semibold leading-[58px] lg:text-[54px] lg:leading-[96px] xl:text-[64px]"
-              className="text-[30px] font-semibold lg:text-[40px]"
-              style={{ wordSpacing: ".20em" }}
-            >
-              Entertaining <br />
-              <span className="mr-2 text-2xl">Approach to</span>
-              <span className="text-[#021D76]">Learning!</span>
-            </h2> */}
-            <h1 className="text wrap font-Poppins w-11/12 text-[30px] font-bold text-white md:text-[40px]">
+            <h2 className="text wrap font-Poppins w-full max-w-[500px] text-[30px] font-bold text-white md:text-[40px]">
               Entertaining Approach to Learning!
-            </h1>
+            </h2>
             <h4 className="text-base font-semibold leading-none md:text-xl">
               Quality Basic Education skillfully delivered
             </h4>
@@ -29,12 +21,18 @@ export const HeroSection = () => {
 
           {/* Buttons */}
           <div className="flex w-full gap-x-4">
-            <button className="rounded-lg bg-SC-Orange px-4 py-2 font-poppins text-sm font-medium uppercase text-white md:px-6 md:py-4 lg:text-base">
+            <Link
+              href="/signup"
+              className="rounded-lg bg-SC-Orange px-4 py-2 font-poppins text-sm font-medium uppercase text-white md:px-6 md:py-4 lg:text-base"
+            >
               Get Started
-            </button>
-            <button className="block w-[122px] rounded-lg bg-SC-Nav-Blue px-4 py-2 text-sm font-medium capitalize text-white md:hidden">
+            </Link>
+            <Link
+              href="/signin"
+              className="block w-[122px] rounded-lg bg-SC-Nav-Blue px-4 py-2 text-center text-sm font-medium capitalize text-white md:hidden"
+            >
               Login
-            </button>
+            </Link>
           </div>
 
           {/* Download Buttons */}

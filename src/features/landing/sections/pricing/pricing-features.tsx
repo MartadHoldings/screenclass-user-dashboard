@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Link from "next/link";
 
 const features = [
   {
@@ -54,9 +54,12 @@ export const PricingFeatures = () => {
               </div>
             ))}
           </div>
-          <button className="ml-4 mt-8 w-fit rounded-lg bg-SC-Orange px-6 py-3 font-poppins text-sm font-medium uppercase text-white md:w-[206px] md:py-4 lg:text-base">
+          <Link
+            href="/signup"
+            className="ml-4 mt-8 w-fit rounded-lg bg-SC-Orange px-6 py-3 text-center font-poppins text-sm font-medium uppercase text-white md:w-[206px] md:py-4 lg:text-base"
+          >
             Get Started
-          </button>
+          </Link>
         </div>
       </div>
     </section>

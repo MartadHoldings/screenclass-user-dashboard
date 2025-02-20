@@ -1,4 +1,3 @@
-// import { Header } from "@/features/landing/components";
 import { FooterSection } from "@/features/landing/sections/home";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {

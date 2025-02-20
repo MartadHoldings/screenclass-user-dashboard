@@ -4,7 +4,7 @@ import React from "react";
 
 export const Footer = () => {
   return (
-    <div className="w-full pb-5 pt-10">
+    <div className="w-full pt-5">
       <div className="mx-auto mb-6 max-w-screen-xl px-8 md:mb-0 xl:px-0">
         <Link href="/" className="w-fit">
           <Image
@@ -16,7 +16,7 @@ export const Footer = () => {
           />
         </Link>
       </div>
-      <div className="mx-auto mt-9 grid max-w-screen-xl grid-cols-[auto_auto] justify-between gap-8 px-8 sm:gap-6 lg:grid-cols-[auto_auto_auto_auto] xl:px-0">
+      <div className="mx-auto mt-4 grid max-w-screen-xl grid-cols-[auto_auto] justify-between gap-8 px-8 sm:gap-6 lg:grid-cols-[auto_auto_auto_auto] xl:px-0">
         <div className="flex w-[159px] flex-col gap-y-8 md:w-[250px] lg:w-[323px]">
           <p className="text-xs font-medium text-white md:text-base lg:text-xl">
             A product of{" "}
@@ -105,7 +105,7 @@ export const Footer = () => {
         </div>
       </div>
       <hr className="my-2 h-[1px] w-full bg-white" />
-      <div className="max-screen-xl mx-auto mt-8 w-full px-8 xl:px-0">
+      <div className="max-screen-xl mx-auto mt-4 w-full px-8 xl:px-0">
         <p className="text-center text-[10px] text-white sm:text-xs">
           © 2025{" "}
           <Link href="/" className="hover:underline">

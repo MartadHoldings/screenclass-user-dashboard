@@ -34,8 +34,8 @@ export function Navbar({
 
   return (
     <>
-      <nav className={`z-20 w-full`}>
-        <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
+      <nav className="z-20 w-full">
+        <div className="mx-auto flex w-full flex-wrap items-center justify-between p-4 px-8 lg:px-14">
           <Link
             href="/"
             className="relative flex h-[19px] w-[92px] items-center space-x-3 lg:h-[51px] lg:w-[252px]"
@@ -56,12 +56,12 @@ export function Navbar({
           </Link>
 
           <div className="flex space-x-3 md:order-2 md:space-x-0">
-            <button
-              type="button"
+            <Link
+              href="/signin"
               className="hidden rounded-[100px] bg-SC-Orange px-6 py-2 text-center text-lg font-medium text-white hover:bg-orange-600 focus:outline-none focus:ring-4 focus:ring-orange-600 md:block"
             >
               Login
-            </button>
+            </Link>
             <button
               data-collapse-toggle="navbar-sticky"
               type="button"

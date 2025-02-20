@@ -69,8 +69,8 @@ export const InputField: React.FC<InputFieldProps> = ({
 
   const size = {
     sm: "px-3 py-2 text-xs",
-    md: "px-4 py-3 text-sm",
-    lg: "px-5 py-4 text-base",
+    md: "px-4 py-3 text-xs md:text-sm",
+    lg: "px-5 py-4 text-sm lg:text-base",
   };
 
   const inputType = type === "password" && showPassword ? "text" : type;
@@ -80,7 +80,7 @@ export const InputField: React.FC<InputFieldProps> = ({
       {label && (
         <label
           htmlFor={name}
-          className={`mb-2 block text-sm font-medium ${labelColor} ${boldLabel ? "font-bold" : ""} ${labelTextTransform}`}
+          className={`mb-2 block text-xs font-medium md:text-sm ${labelColor} ${boldLabel ? "font-bold" : ""} ${labelTextTransform}`}
         >
           {label} {required && <span className="text-red-500">*</span>}
         </label>
@@ -96,7 +96,7 @@ export const InputField: React.FC<InputFieldProps> = ({
           type={inputType}
           placeholder={placeholder}
           className={twMerge(
-            `block w-full rounded-lg bg-[#fbfbfb] font-poppins text-sm font-normal text-black${icon ? "pl-10" : ""} ${size[inputSize]} `,
+            `block w-full rounded-lg bg-[#fbfbfb] font-poppins font-normal text-black ${icon ? "pl-10" : ""} ${size[inputSize]} `,
             className,
           )}
           style={{

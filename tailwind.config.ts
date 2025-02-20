@@ -37,9 +37,12 @@ export default {
         "bg-faq-section-two-sm": "url('/images/faqs-third-section-sm.png')",
         "bg-faq-section-three": "url('/images/faq-fourth-section.png')",
         "bg-faq-section-three-sm": "url('/images/faq-fourth-section-sm.png')",
+        "bg-auth-bg": "url('/images/screenclass-auth-bg.png')",
+        "bg-auth-bg-2": "url('/images/screenclass-auth-bg-2.png')",
       },
       fontFamily: {
         poppins: ["Poppins", "serif"],
+        "Sedan-sc": ["Sedan SC", "serif"],
       },
       colors: {
         background: "var(--background)",
